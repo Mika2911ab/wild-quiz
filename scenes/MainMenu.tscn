@@ -1,7 +1,8 @@
-[gd_scene load_steps=60 format=3 uid="uid://biaqn65s1pguc"]
+[gd_scene load_steps=61 format=3 uid="uid://biaqn65s1pguc"]
 
 [ext_resource type="Script" uid="uid://crp3cw182qqxw" path="res://main_menu.gd" id="1_i26rj"]
 [ext_resource type="Texture2D" uid="uid://hrtimjs7vwpn" path="res://assets/sprites/Fox Sprite Sheet.png" id="2_0ykhv"]
+[ext_resource type="Script" uid="uid://dota204jo626s" path="res://scenes/camera_2d.gd" id="2_ow34m"]
 [ext_resource type="FontFile" uid="uid://dne4aphor0uht" path="res://alagard.ttf" id="3_2wh52"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_eiy7p"]
@@ -436,14 +437,15 @@ script = ExtResource("1_i26rj")
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(655, 261)
 zoom = Vector2(4, 4)
+script = ExtResource("2_ow34m")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Camera2D"]
+[node name="Fox" type="AnimatedSprite2D" parent="Camera2D"]
 position = Vector2(26, -5)
 scale = Vector2(1.7223, 1.7223)
 sprite_frames = SubResource("SpriteFrames_e2xy7")
 animation = &"moving"
 autoplay = "idle"
-frame_progress = 0.785935
+frame_progress = 0.0412047
 
 [node name="Options (VBox)" type="VBoxContainer" parent="Camera2D"]
 offset_left = -136.0
@@ -452,7 +454,7 @@ offset_right = 118.0
 offset_bottom = 129.0
 scale = Vector2(0.380883, 0.380883)
 
-[node name="Button" type="Button" parent="Camera2D/Options (VBox)"]
+[node name="StartGame" type="Button" parent="Camera2D/Options (VBox)"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
