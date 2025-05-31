@@ -2,8 +2,8 @@ extends Node2D
 
 var animal_test_scene := preload("res://scenes/animal_test.tscn")
 
-var spawn_area_top_left := Vector2(-280, 60)
-var spawn_area_bottom_right := Vector2(-110, 210)
+var spawn_area_top_left := Vector2(0, -90)
+var spawn_area_bottom_right := Vector2(200, -20)
 
 func _ready():
 	randomize()
