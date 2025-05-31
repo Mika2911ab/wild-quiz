@@ -2,7 +2,7 @@ extends Control
 
 func _on_start_game_pressed():
 	print("Game started")
-	get_tree().change_scene_to_file("res://game.tscn") # Or load_scene("...") in Godot 4
+	get_tree().change_scene_to_file("res://scenes/game.tscn") # Or load_scene("...") in Godot 4
 
 func _on_set_difficulty_pressed():
 	print("Set difficulty")
