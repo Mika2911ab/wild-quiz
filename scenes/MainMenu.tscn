@@ -1,9 +1,10 @@
-[gd_scene load_steps=61 format=3 uid="uid://biaqn65s1pguc"]
+[gd_scene load_steps=65 format=3 uid="uid://biaqn65s1pguc"]
 
 [ext_resource type="Script" uid="uid://crp3cw182qqxw" path="res://main_menu.gd" id="1_i26rj"]
 [ext_resource type="Texture2D" uid="uid://hrtimjs7vwpn" path="res://assets/sprites/Fox Sprite Sheet.png" id="2_0ykhv"]
 [ext_resource type="Script" uid="uid://dota204jo626s" path="res://scenes/camera_2d.gd" id="2_ow34m"]
 [ext_resource type="FontFile" uid="uid://dne4aphor0uht" path="res://alagard.ttf" id="3_2wh52"]
+[ext_resource type="Script" uid="uid://enkrjgyq8mgo" path="res://scenes/fox_script.gd" id="3_l72w3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_eiy7p"]
 atlas = ExtResource("2_0ykhv")
@@ -416,6 +417,26 @@ animations = [{
 "speed": 8.0
 }]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ow34m"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ow34m"]
+bg_color = Color(0.838897, 0.838897, 0.838897, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 3.41)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l72w3"]
+bg_color = Color(0.739288, 0.739288, 0.739288, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 3.41)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0ykhv"]
 bg_color = Color(1, 1, 1, 1)
 corner_radius_top_left = 16
@@ -425,101 +446,142 @@ corner_radius_bottom_left = 16
 shadow_size = 5
 shadow_offset = Vector2(0, 3.41)
 
-[node name="Control" type="Control"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("1_i26rj")
+[node name="MainMenu" type="Node2D"]
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Fox" type="Node2D" parent="."]
+
+[node name="Fox Sprite" type="AnimatedSprite2D" parent="Fox"]
+position = Vector2(723, 261)
+scale = Vector2(1.7223, 1.7223)
+sprite_frames = SubResource("SpriteFrames_e2xy7")
+animation = &"idle"
+autoplay = "idle"
+script = ExtResource("3_l72w3")
+
+[node name="Camera2D" type="Camera2D" parent="Fox"]
 position = Vector2(655, 261)
 zoom = Vector2(4, 4)
 script = ExtResource("2_ow34m")
+fox_path = NodePath("../Fox Sprite")
 
-[node name="Fox" type="AnimatedSprite2D" parent="Camera2D"]
-position = Vector2(26, -5)
-scale = Vector2(1.7223, 1.7223)
-sprite_frames = SubResource("SpriteFrames_e2xy7")
-animation = &"moving"
-autoplay = "idle"
-frame_progress = 0.0412047
+[node name="UI" type="Control" parent="Fox/Camera2D"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -655.0
+offset_top = -261.0
+offset_right = -615.0
+offset_bottom = -221.0
+script = ExtResource("1_i26rj")
 
-[node name="Options (VBox)" type="VBoxContainer" parent="Camera2D"]
-offset_left = -136.0
-offset_top = -7.0
-offset_right = 118.0
-offset_bottom = 129.0
+[node name="Options (VBox)" type="VBoxContainer" parent="Fox/Camera2D/UI"]
+offset_left = 519.0
+offset_top = 254.0
+offset_right = 773.0
+offset_bottom = 390.0
 scale = Vector2(0.380883, 0.380883)
 
-[node name="StartGame" type="Button" parent="Camera2D/Options (VBox)"]
+[node name="StartGame" type="Button" parent="Fox/Camera2D/UI/Options (VBox)"]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_2wh52")
 theme_override_font_sizes/font_size = 20
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ow34m")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ow34m")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_l72w3")
 theme_override_styles/normal = SubResource("StyleBoxFlat_0ykhv")
 text = "Start Game"
 
-[node name="Button2" type="Button" parent="Camera2D/Options (VBox)"]
+[node name="Difficulty" type="Button" parent="Fox/Camera2D/UI/Options (VBox)"]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_2wh52")
 theme_override_font_sizes/font_size = 20
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ow34m")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ow34m")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_l72w3")
 theme_override_styles/normal = SubResource("StyleBoxFlat_0ykhv")
 text = "Set Difficulty"
 
-[node name="Button3" type="Button" parent="Camera2D/Options (VBox)"]
+[node name="Settings" type="Button" parent="Fox/Camera2D/UI/Options (VBox)"]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_2wh52")
 theme_override_font_sizes/font_size = 20
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ow34m")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ow34m")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_l72w3")
 theme_override_styles/normal = SubResource("StyleBoxFlat_0ykhv")
 text = "Settings"
 
-[node name="Button4" type="Button" parent="Camera2D/Options (VBox)"]
+[node name="Quit" type="Button" parent="Fox/Camera2D/UI/Options (VBox)"]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_2wh52")
 theme_override_font_sizes/font_size = 20
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ow34m")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ow34m")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_l72w3")
 theme_override_styles/normal = SubResource("StyleBoxFlat_0ykhv")
 text = "Quit"
 
-[node name="Title" type="Label" parent="Camera2D"]
-offset_left = -134.0
-offset_top = -68.0
-offset_right = -60.0
-offset_bottom = -45.0
+[node name="Title" type="Label" parent="Fox/Camera2D/UI"]
+offset_left = 521.0
+offset_top = 193.0
+offset_right = 595.0
+offset_bottom = 216.0
 scale = Vector2(1.82333, 1.82333)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
 theme_override_fonts/font = ExtResource("3_2wh52")
 text = "Wild Quiz"
 
-[node name="Subtitle" type="VBoxContainer" parent="Camera2D"]
-offset_left = -134.0
-offset_top = -38.0
-offset_right = 180.0
-offset_bottom = 2.0
+[node name="Subtitle" type="VBoxContainer" parent="Fox/Camera2D/UI"]
+offset_left = 521.0
+offset_top = 223.0
+offset_right = 835.0
+offset_bottom = 263.0
 scale = Vector2(0.423567, 0.423567)
 
-[node name="Subtitle" type="Label" parent="Camera2D/Subtitle"]
+[node name="Subtitle" type="Label" parent="Fox/Camera2D/UI/Subtitle"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_2wh52")
 text = "Discover new animals, learn about biotops,
 get connected with our world."
 
-[node name="Creators" type="VBoxContainer" parent="Camera2D"]
-offset_left = -136.0
-offset_top = 67.0
-offset_right = 532.0
-offset_bottom = 107.0
+[node name="Creators" type="VBoxContainer" parent="Fox/Camera2D/UI"]
+offset_left = 519.0
+offset_top = 328.0
+offset_right = 1187.0
+offset_bottom = 368.0
 scale = Vector2(0.289762, 0.289762)
 
-[node name="Label" type="Label" parent="Camera2D/Creators"]
+[node name="Label" type="Label" parent="Fox/Camera2D/UI/Creators"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_2wh52")
 text = "A Serious Game made by Mikael Alves Brito, Levin Kaus, Tianyao Ye, Steven Mkhitarian"
+
+[connection signal="pressed" from="Fox/Camera2D/UI/Options (VBox)/StartGame" to="Fox/Camera2D/UI" method="_on_start_game_pressed"]
+[connection signal="pressed" from="Fox/Camera2D/UI/Options (VBox)/Difficulty" to="Fox/Camera2D/UI" method="_on_difficulty_pressed"]
+[connection signal="pressed" from="Fox/Camera2D/UI/Options (VBox)/Settings" to="Fox/Camera2D/UI" method="_on_settings_pressed"]
+[connection signal="pressed" from="Fox/Camera2D/UI/Options (VBox)/Quit" to="Fox/Camera2D/UI" method="_on_quit_pressed"]
