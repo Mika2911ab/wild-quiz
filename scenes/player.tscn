@@ -1,6 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://mcsc0eqqqpno"]
+[gd_scene load_steps=11 format=3 uid="uid://mcsc0eqqqpno"]
 
 [ext_resource type="Texture2D" uid="uid://bmnlu4cs3s2rs" path="res://assets/sprites/knight.png" id="1_3vyb7"]
+[ext_resource type="Script" uid="uid://8l4tvlm6sqwy" path="res://scripts/player.gd" id="1_g2els"]
+[ext_resource type="Texture2D" uid="uid://b0pw4a5qg8bqi" path="res://assets/sprites/pixilart-drawing.png" id="2_qhqgy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tuyoq"]
+atlas = ExtResource("2_qhqgy")
+region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g2els"]
 atlas = ExtResource("1_3vyb7")
@@ -22,6 +28,14 @@ region = Rect2(96, 0, 32, 32)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_tuyoq")
+}],
+"loop": true,
+"name": &"boot",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_g2els")
 }, {
 "duration": 1.0,
@@ -34,7 +48,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_qlg0r")
 }],
 "loop": true,
-"name": &"default",
+"name": &"idle",
 "speed": 10.0
 }]
 
@@ -42,13 +56,13 @@ animations = [{
 radius = 5.0
 
 [node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_g2els")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -12)
 sprite_frames = SubResource("SpriteFrames_tuyoq")
-autoplay = "default"
-frame = 1
-frame_progress = 0.92233
+animation = &"boot"
+autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -5)
