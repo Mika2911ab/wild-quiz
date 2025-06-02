@@ -1,46 +1,46 @@
 [gd_scene load_steps=15 format=3 uid="uid://brp0jxv2impta"]
 
-[ext_resource type="Texture2D" uid="uid://c3o1axgg26c5n" path="res://assets/sprites/Idle.png" id="1_d3gqv"]
-[ext_resource type="Script" uid="uid://cuh1bugo6p7ee" path="res://scripts/animal_test.gd" id="1_s3kkx"]
+[ext_resource type="Script" uid="uid://cuh1bugo6p7ee" path="res://scripts/animal.gd" id="1_8dtbx"]
+[ext_resource type="Texture2D" uid="uid://ktc3221vylxw" path="res://assets/sprites/Idle.png" id="2_236rq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d3gqv"]
-atlas = ExtResource("1_d3gqv")
+atlas = ExtResource("2_236rq")
 region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_s3kkx"]
-atlas = ExtResource("1_d3gqv")
+atlas = ExtResource("2_236rq")
 region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_k2r5b"]
-atlas = ExtResource("1_d3gqv")
+atlas = ExtResource("2_236rq")
 region = Rect2(64, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_82n7h"]
-atlas = ExtResource("1_d3gqv")
+atlas = ExtResource("2_236rq")
 region = Rect2(96, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pfijn"]
-atlas = ExtResource("1_d3gqv")
+atlas = ExtResource("2_236rq")
 region = Rect2(128, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pgykv"]
-atlas = ExtResource("1_d3gqv")
+atlas = ExtResource("2_236rq")
 region = Rect2(160, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tbnmk"]
-atlas = ExtResource("1_d3gqv")
+atlas = ExtResource("2_236rq")
 region = Rect2(192, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cpnh4"]
-atlas = ExtResource("1_d3gqv")
+atlas = ExtResource("2_236rq")
 region = Rect2(224, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_t051g"]
-atlas = ExtResource("1_d3gqv")
+atlas = ExtResource("2_236rq")
 region = Rect2(256, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4i03q"]
-atlas = ExtResource("1_d3gqv")
+atlas = ExtResource("2_236rq")
 region = Rect2(288, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_pcjxj"]
@@ -82,18 +82,20 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jaeda"]
-radius = 17.0
+radius = 15.0
 
 [node name="Animal_Test" type="Area2D"]
-script = ExtResource("1_s3kkx")
+script = ExtResource("1_8dtbx")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(4, -4)
+position = Vector2(0, -16)
 sprite_frames = SubResource("SpriteFrames_pcjxj")
 autoplay = "default"
-frame_progress = 0.310119
+frame = 1
+frame_progress = 0.886395
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -13)
 shape = SubResource("CircleShape2D_jaeda")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

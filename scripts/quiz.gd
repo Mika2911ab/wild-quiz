@@ -729,7 +729,7 @@ var quiz_data = {
 		  "wrong_answers": ["Wegen Vulkanausbrüchen", "Wegen Mangel an Nahrung", "Wegen Fischfang"]
 		}
   	],
-		"alpensteinmurmeltier_eu": [
+	"alpensteinmurmeltier_eu": [
 		{
 		  "question": "In welcher Region lebt das Alpensteinmurmeltier hauptsächlich?",
 		  "correct_answer": "In den Alpen und anderen Hochgebirgen Europas",
@@ -1249,7 +1249,7 @@ var quiz_data = {
 		  "wrong_answers": ["Über Duftmarken, Laute und Kratzspuren", "Über Lichtsignale", "Nur mit Blicken"]
 		}
   	],
-	"lowwe_af": [
+	"loewe_af": [
 		{
 		  "question": "Zu welcher Tierfamilie gehört der Löwe?",
 		  "correct_answer": "Katzenartige (Großkatzen)",
@@ -1769,7 +1769,7 @@ var quiz_data = {
 		  "wrong_answers": ["Überfischung durch Möwen", "Raubkatzen", "Vulkanische Gase"]
 		}
   	],
-		"buckelwale_ant": [
+	"buckelwale_ant": [
 		{
 		  "question": "Zu welcher Tiergruppe gehört der Buckelwal?",
 		  "correct_answer": "Säugetiere (Meeressäuger)",
@@ -1822,3 +1822,10 @@ var quiz_data = {
 		}
 	]
 }
+
+var animal_name = ""
+
+func set_animal(name: String):
+	animal_name = name
+	print("Animal set to:", animal_name)
+	# TODO: Change quiz questions and answers according to the animal_name

@@ -27,9 +27,9 @@ func _physics_process(delta: float) -> void:
 	if tile_id != -1:
 		SPEED = 200
 		anim.play("idle")  # Land
-		print("Land")
+		#print("Land")
 		
 	else:
 		SPEED = 400
 		anim.play("boot")     # Wasser / leer
-		print("Wasser")
+		#print("Wasser")

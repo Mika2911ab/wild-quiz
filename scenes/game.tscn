@@ -371,10 +371,8 @@ sources/0 = SubResource("TileSetAtlasSource_lnu2h")
 sources/1 = SubResource("TileSetAtlasSource_iywne")
 
 [node name="Game" type="Node2D"]
-position = Vector2(501, -302)
 
 [node name="TileMap" type="TileMap" parent="."]
-position = Vector2(-501, 302)
 tile_set = SubResource("TileSet_lbhrr")
 format = 2
 layer_0/name = "Background"
@@ -385,7 +383,7 @@ layer_2/name = "FrontLayer"
 
 [node name="Player" parent="." node_paths=PackedStringArray("tilemap") instance=ExtResource("1_uwrxv")]
 z_index = 1
-position = Vector2(-501, 302)
+position = Vector2(49, -66)
 tilemap = NodePath("../TileMap")
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
