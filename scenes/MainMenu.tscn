@@ -1,10 +1,10 @@
 [gd_scene load_steps=65 format=3 uid="uid://biaqn65s1pguc"]
 
-[ext_resource type="Script" uid="uid://crp3cw182qqxw" path="res://main_menu.gd" id="1_i26rj"]
+[ext_resource type="Script" uid="uid://crp3cw182qqxw" path="res://scripts/main_menu.gd" id="1_i26rj"]
 [ext_resource type="Texture2D" uid="uid://hrtimjs7vwpn" path="res://assets/sprites/Fox Sprite Sheet.png" id="2_0ykhv"]
-[ext_resource type="Script" uid="uid://dota204jo626s" path="res://scenes/camera_2d.gd" id="2_ow34m"]
+[ext_resource type="Script" uid="uid://dota204jo626s" path="res://scripts/camera_2d.gd" id="2_ow34m"]
 [ext_resource type="FontFile" uid="uid://dne4aphor0uht" path="res://alagard.ttf" id="3_2wh52"]
-[ext_resource type="Script" uid="uid://enkrjgyq8mgo" path="res://scenes/fox_script.gd" id="3_l72w3"]
+[ext_resource type="Script" uid="uid://enkrjgyq8mgo" path="res://scripts/fox_script.gd" id="3_l72w3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_eiy7p"]
 atlas = ExtResource("2_0ykhv")
@@ -474,6 +474,7 @@ offset_bottom = -221.0
 script = ExtResource("1_i26rj")
 
 [node name="Options (VBox)" type="VBoxContainer" parent="Fox/Camera2D/UI"]
+layout_mode = 0
 offset_left = 519.0
 offset_top = 254.0
 offset_right = 773.0
@@ -545,6 +546,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_0ykhv")
 text = "Quit"
 
 [node name="Title" type="Label" parent="Fox/Camera2D/UI"]
+layout_mode = 0
 offset_left = 521.0
 offset_top = 193.0
 offset_right = 595.0
@@ -557,6 +559,7 @@ theme_override_fonts/font = ExtResource("3_2wh52")
 text = "Wild Quiz"
 
 [node name="Subtitle" type="VBoxContainer" parent="Fox/Camera2D/UI"]
+layout_mode = 0
 offset_left = 521.0
 offset_top = 223.0
 offset_right = 835.0
@@ -570,6 +573,7 @@ text = "Discover new animals, learn about biotops,
 get connected with our world."
 
 [node name="Creators" type="VBoxContainer" parent="Fox/Camera2D/UI"]
+layout_mode = 0
 offset_left = 519.0
 offset_top = 328.0
 offset_right = 1187.0

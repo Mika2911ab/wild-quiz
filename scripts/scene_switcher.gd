@@ -7,18 +7,19 @@ func _ready() -> void:
 	var root = get_tree().root
 	current_scene = root.get_child(root.get_child_count() - 1)
 
-func switch_scene(res_path: String, animal_name: String):
+# Use "" as default if no animal_name is passed
+func switch_scene(res_path: String, animal_name: String = ""):
 	call_deferred("_deferred_switch_scene", res_path, animal_name)
 
 func _deferred_switch_scene(res_path: String, animal_name: String):
 	if current_scene:
-		current_scene.free()
+		current_scene.queue_free()  # use queue_free instead of free()
 
 	var packed_scene = load(res_path)
 	current_scene = packed_scene.instantiate()
 
-	# Pass the animal name to the new scene
-	if current_scene.has_method("set_animal"):
+	# Only call set_animal if it's meaningful
+	if animal_name != "" and current_scene.has_method("set_animal"):
 		current_scene.set_animal(animal_name)
 
 	get_tree().root.add_child(current_scene)
