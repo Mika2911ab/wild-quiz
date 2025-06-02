@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Wild Quiz"
-run/main_scene="uid://dbo4ired1kh8r"
+run/main_scene="uid://biaqn65s1pguc"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
