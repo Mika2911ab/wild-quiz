@@ -1,0 +1,368 @@
+[gd_scene load_steps=39 format=3 uid="uid://cg1o35hgs01lw"]
+
+[ext_resource type="Script" uid="uid://gesb2njds2yb" path="res://scripts/quiz.gd" id="1_16nxq"]
+[ext_resource type="Texture2D" uid="uid://cd6xmhplh6vbr" path="res://assets/sprites/bg.png" id="1_euwqo"]
+[ext_resource type="Texture2D" uid="uid://ktc3221vylxw" path="res://assets/sprites/Idle.png" id="2_3bubg"]
+[ext_resource type="Texture2D" uid="uid://b7sasdpxq60jh" path="res://assets/sprites/underground.png" id="2_m81w7"]
+[ext_resource type="Texture2D" uid="uid://bb61eyf750fk3" path="res://assets/sprites/lexicon.png" id="3_vwwmd"]
+[ext_resource type="Texture2D" uid="uid://bmnlu4cs3s2rs" path="res://assets/sprites/knight.png" id="3_w5ac1"]
+[ext_resource type="Texture2D" uid="uid://78e4mfbsejub" path="res://assets/sprites/animal_status_bg.png" id="5_xq7j8"]
+[ext_resource type="Texture2D" uid="uid://b3tofanynydj5" path="res://assets/sprites/character_status_bg.png" id="6_bn6h1"]
+[ext_resource type="Texture2D" uid="uid://5ep764l7r0l2" path="res://assets/sprites/question_bg.png" id="7_vwwmd"]
+[ext_resource type="Texture2D" uid="uid://bjr02ft16cudv" path="res://assets/sprites/button_orange.png" id="8_16nxq"]
+[ext_resource type="Texture2D" uid="uid://dme4q15hegyvk" path="res://assets/sprites/button_blue.png" id="9_xcx78"]
+[ext_resource type="Texture2D" uid="uid://dmu7b5k7ukjgm" path="res://assets/sprites/button_green.png" id="10_kp58l"]
+[ext_resource type="Texture2D" uid="uid://db74mlbilrmbe" path="res://assets/sprites/button_red.png" id="11_4qkfh"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_16nxq"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xcx78"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m81w7"]
+atlas = ExtResource("2_3bubg")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xq7j8"]
+atlas = ExtResource("2_3bubg")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bn6h1"]
+atlas = ExtResource("2_3bubg")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t0h63"]
+atlas = ExtResource("2_3bubg")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lcje5"]
+atlas = ExtResource("2_3bubg")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_euwqo"]
+atlas = ExtResource("2_3bubg")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vwwmd"]
+atlas = ExtResource("2_3bubg")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_16nxq"]
+atlas = ExtResource("2_3bubg")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xcx78"]
+atlas = ExtResource("2_3bubg")
+region = Rect2(256, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kp58l"]
+atlas = ExtResource("2_3bubg")
+region = Rect2(288, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4qkfh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m81w7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xq7j8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bn6h1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t0h63")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lcje5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_euwqo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vwwmd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_16nxq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xcx78")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kp58l")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kp58l"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4qkfh"]
+bg_color = Color(0.141176, 0.168627, 0.203922, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5da4r"]
+atlas = ExtResource("3_w5ac1")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d56me"]
+atlas = ExtResource("3_w5ac1")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wsttk"]
+atlas = ExtResource("3_w5ac1")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_24vnv"]
+atlas = ExtResource("3_w5ac1")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fpy57"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5da4r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d56me")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wsttk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_24vnv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t0h63"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_euwqo"]
+texture = ExtResource("11_4qkfh")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vwwmd"]
+texture = ExtResource("8_16nxq")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_16nxq"]
+texture = ExtResource("10_kp58l")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xcx78"]
+texture = ExtResource("9_xcx78")
+
+[node name="Quiz" type="Node2D"]
+script = ExtResource("1_16nxq")
+
+[node name="Background" type="Sprite2D" parent="."]
+scale = Vector2(4, 4)
+texture = ExtResource("1_euwqo")
+
+[node name="AnimalStatusBar" type="Panel" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_16nxq")
+
+[node name="AnimalStatusBg" type="Sprite2D" parent="AnimalStatusBar"]
+position = Vector2(-400, -280)
+scale = Vector2(4, 4)
+texture = ExtResource("5_xq7j8")
+
+[node name="Lexicon" type="Sprite2D" parent="AnimalStatusBar"]
+position = Vector2(-605, -244)
+scale = Vector2(2.8, 2.8)
+texture = ExtResource("3_vwwmd")
+
+[node name="AnimalName" type="Label" parent="AnimalStatusBar"]
+layout_mode = 0
+offset_left = -622.0
+offset_top = -321.0
+offset_right = -227.0
+offset_bottom = -279.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "Löwe"
+autowrap_mode = 2
+clip_text = true
+
+[node name="Animal" type="Panel" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_xcx78")
+
+[node name="AnimalUnderground" type="Sprite2D" parent="Animal"]
+position = Vector2(313, -156)
+scale = Vector2(4, 4)
+texture = ExtResource("2_m81w7")
+
+[node name="AnimalSprite" type="AnimatedSprite2D" parent="Animal"]
+position = Vector2(333, -223)
+scale = Vector2(4.5, 4.5)
+sprite_frames = SubResource("SpriteFrames_4qkfh")
+autoplay = "default"
+frame = 3
+frame_progress = 0.88536
+
+[node name="PlayerStatusBar" type="Panel" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_kp58l")
+
+[node name="PlayerStatusBg" type="Sprite2D" parent="PlayerStatusBar"]
+position = Vector2(400, -50)
+scale = Vector2(4, 4)
+texture = ExtResource("6_bn6h1")
+
+[node name="PlayerName" type="Label" parent="PlayerStatusBar"]
+layout_mode = 0
+offset_left = 239.0
+offset_top = -91.0
+offset_right = 636.0
+offset_bottom = -49.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "Player"
+autowrap_mode = 2
+clip_text = true
+
+[node name="Player" type="Panel" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_4qkfh")
+
+[node name="PlayerUnderground" type="Sprite2D" parent="Player"]
+position = Vector2(-313, -40)
+scale = Vector2(4, 4)
+texture = ExtResource("2_m81w7")
+
+[node name="PlayerSprite" type="AnimatedSprite2D" parent="Player"]
+position = Vector2(-307, -111)
+scale = Vector2(6.2, 6.2)
+sprite_frames = SubResource("SpriteFrames_fpy57")
+autoplay = "default"
+frame = 1
+frame_progress = 0.0951945
+
+[node name="QuizBox" type="Panel" parent="."]
+offset_left = -640.0
+offset_top = 40.0
+offset_right = 640.0
+offset_bottom = 360.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_t0h63")
+
+[node name="QuestionBg" type="Sprite2D" parent="QuizBox"]
+position = Vector2(280, 160)
+scale = Vector2(4, 4)
+texture = ExtResource("7_vwwmd")
+
+[node name="QuestionLabel" type="Label" parent="QuizBox"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 25.0
+offset_right = 528.0
+offset_bottom = 295.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "Wie nennt man die Gruppe, in der Löwen gemeinsam leben?"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+clip_text = true
+
+[node name="AnswerGrid" type="GridContainer" parent="QuizBox"]
+layout_mode = 0
+offset_left = 560.0
+offset_top = 1.0
+offset_right = 1280.0
+offset_bottom = 321.0
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
+columns = 2
+
+[node name="AnswerButton1" type="Button" parent="QuizBox/AnswerGrid"]
+custom_minimum_size = Vector2(360, 160)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_euwqo")
+
+[node name="AnswerLabel1" type="Label" parent="QuizBox/AnswerGrid/AnswerButton1"]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 19.0
+offset_right = 343.0
+offset_bottom = 145.0
+theme_override_colors/font_color = Color(0.968627, 0.968627, 0.968627, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 30
+text = "Meute"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+clip_text = true
+
+[node name="AnswerButton2" type="Button" parent="QuizBox/AnswerGrid"]
+custom_minimum_size = Vector2(360, 160)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_vwwmd")
+
+[node name="AnswerLabel2" type="Label" parent="QuizBox/AnswerGrid/AnswerButton2"]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 19.0
+offset_right = 339.0
+offset_bottom = 145.0
+theme_override_colors/font_color = Color(0.968627, 0.968627, 0.968627, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 30
+text = "Herde"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+clip_text = true
+
+[node name="AnswerButton3" type="Button" parent="QuizBox/AnswerGrid"]
+custom_minimum_size = Vector2(360, 160)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_16nxq")
+
+[node name="AnswerLabel3" type="Label" parent="QuizBox/AnswerGrid/AnswerButton3"]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 15.0
+offset_right = 343.0
+offset_bottom = 141.0
+theme_override_colors/font_color = Color(0.968627, 0.968627, 0.968627, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 30
+text = "Rudel"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+clip_text = true
+
+[node name="AnswerButton4" type="Button" parent="QuizBox/AnswerGrid"]
+custom_minimum_size = Vector2(360, 160)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_xcx78")
+
+[node name="AnswerLabel4" type="Label" parent="QuizBox/AnswerGrid/AnswerButton4"]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 17.0
+offset_right = 341.0
+offset_bottom = 143.0
+theme_override_colors/font_color = Color(0.968627, 0.968627, 0.968627, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 30
+text = "Pride"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+clip_text = true
