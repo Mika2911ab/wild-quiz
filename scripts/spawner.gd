@@ -2,53 +2,53 @@ extends Node2D
 
 var animals = {
 	"na": [
-		"grizzlybaer_na",
-		"kojote_na",
-		"weisskopfseeadler_na",
-		"bison_na",
-		"praeriehund_na"
+		"Grizzlybär",
+		"Kojote",
+		"Weißkopfseeadler",
+		"Bison",
+		"Präriehund"
 	],
 	"sa": [
-		"alpaka_sa",
-		"anakonda_sa",
-		"jaguar_sa",
-		"flamingo_sa",
-		"papagei_sa"
+		"Alpaka",
+		"Anakonda",
+		"Jaguar",
+		"Flamingo",
+		"Papagei"
 	],
 	"eu": [
-		"wolf_eu",
-		"luchs_eu",
-		"eichhoernchen_eu",
-		"biber_eu",
-		"alpensteinmurmeltier_eu"
+		"Wolf",
+		"Luchs",
+		"Eichhörnchen",
+		"Biber",
+		"Alpensteinmurmeltier"
 	],
 	"as": [
-		"panda_as",
-		"orang_utan_as",
-		"yak_as",
-		"honigdachs_as",
-		"koenigsriesenhoernchen_as"
+		"Panda",
+		"Orang-Utan",
+		"Yak",
+		"Honigdachs",
+		"Königsriesenhörnchen"
 	],
 	"af": [
-		"okapi_af",
-		"aye_aye_af",
-		"galago_af",
-		"leopard_af",
-		"loewe_af"
+		"Okapi",
+		"Aye-aye",
+		"Galago",
+		"Leopard",
+		"Löwe"
 	],
 	"au": [
-		"kaenguru_au",
-		"koala_au",
-		"emu_au",
-		"wombat_au",
-		"helmkasuar_au"
+		"Känguru",
+		"Koala",
+		"Emu",
+		"Wombat",
+		"Helmkasuar"
 	],
 	"ant": [
-		"antarktischer_krill_ant",
-		"kaiserpinguin_ant",
-		"seeleopard_ant",
-		"antarktische_sturmvoegel_ant",
-		"buckelwale_ant"
+		"Antarktischer Krill",
+		"Kaiserpinguin",
+		"Seeleopard",
+		"Antarktiksturmvogel",
+		"Buckelwal"
 	]
 }
 
@@ -67,7 +67,7 @@ func spawn_animal_with_chance(chance: float) -> void:
 		var tier = animal_test_scene.instantiate()
 		
 		if tier.has_method("set_animal"):
-			tier.set_animal("loewe_af") # TODO: Spawn (5) random animals at a time per continent from the animals list/array
+			tier.set_animal("Löwe") # TODO: Spawn (5) random animals at a time per continent from the animals list/array
 
 		
 		# Random position in square

@@ -1,7 +1,7 @@
 extends Node2D
 
 var quiz_data = {
-	"grizzlybaer_na": [
+	"Grizzlybär": [
 	 	{
 			"question": "Was unterscheidet den Grizzlybären von anderen Braunbärenarten anatomisch deutlich?",
 			"correct_answer": "Ein ausgeprägter Schulterbuckel aus Muskeln",
@@ -53,7 +53,7 @@ var quiz_data = {
 			"wrong_answers": ["Wegen Viren", "Wegen zu großer Rudel", "Wegen Schnee"]
 		}
 	],
-	"kojote_na": [
+	"Kojote": [
 		{
 			"question": "Welcher Familie gehört der Kojote biologisch an?",
 			"correct_answer": "Hundeartige",
@@ -105,7 +105,7 @@ var quiz_data = {
 			"wrong_answers": ["Sie bestäuben Blumen", "Sie graben Wasserlöcher", "Sie fressen Müll und reinigen Städte"]
 		}
 	],
-	"weisskopfseeadler_na": [
+	"Weißkopfseeadler": [
 		{
 			"question": "Was ist das auffälligste äußere Merkmal eines ausgewachsenen Weißkopfseeadlers?",
 			"correct_answer": "Weißer Kopf und weißer Schwanz",
@@ -157,7 +157,7 @@ var quiz_data = {
 			"wrong_answers": ["Weil er zu viele Menschen angriff", "Weil er nur Regen trank", "Wegen eines Wanderproblems"]
 		}
 	],
-	"bison_na": [
+	"Bison": [
 		{
 			"question": "Was ist das auffälligste körperliche Merkmal des Bisons?",
 			"correct_answer": "Massiger Vorderkörper mit starkem Schulterbuckel",
@@ -209,7 +209,7 @@ var quiz_data = {
 			"wrong_answers": ["Er gräbt Wasserlöcher", "Er frisst andere Pflanzenfresser", "Er bestäubt Blumen"]
 		}
 	],
-	"praeriehund_na": [
+	"Präriehund": [
 		{
 			"question": "Was ist ein Präriehund eigentlich für ein Tier?",
 			"correct_answer": "Ein Nagetier",
@@ -261,7 +261,7 @@ var quiz_data = {
 			"wrong_answers": ["Weil sie zu viele Nüsse essen", "Wegen Frostempfindlichkeit", "Weil sie nicht graben können"]
 		}
 	],
-	"alpaka_sa": [
+	"Alpaka": [
 		{
 		  "question": "Woher stammt das Alpaka ursprünglich?",
 		  "correct_answer": "Südamerika (Andenregion)",
@@ -313,7 +313,7 @@ var quiz_data = {
 		  "wrong_answers": ["Lamas sind kleiner", "Alpakas haben Hörner", "Lamas können fliegen"]
 		}
   	],
-  	"anakonda_sa": [
+  	"Anakonda": [
 		{
 		  "question": "Zu welcher Tiergruppe gehört die Anakonda?",
 		  "correct_answer": "Reptilien",
@@ -365,7 +365,7 @@ var quiz_data = {
 		  "wrong_answers": ["Sie frisst nur Pflanzen", "Sie ist zu klein", "Sie hat keine Zähne"]
 		}
   	],
-  	"jaguar_sa": [
+  	"Jaguar": [
 		{
 		  "question": "Zu welcher Tierfamilie gehört der Jaguar?",
 		  "correct_answer": "Katzen",
@@ -417,7 +417,7 @@ var quiz_data = {
 		  "wrong_answers": ["Goldjaguar", "Schattenpuma", "Bergpanther"]
 		}
   	],
-  	"flamingo_sa": [
+  	"Flamingo": [
 		{
 		  "question": "Wodurch erhält der Flamingo seine rosa Farbe?",
 		  "correct_answer": "Durch Farbstoffe in seiner Nahrung (Krebse & Algen)",
@@ -469,7 +469,7 @@ var quiz_data = {
 		  "wrong_answers": ["Kämpfen gegeneinander", "Sich tarnen", "Allein schlafen"]
 		}
   	],
-	"papagei_sa": [
+	"Papagei": [
 		{
 			"question": "Was ist eine bekannte Fähigkeit vieler Papageienarten?",
 			"correct_answer": "Sie können Laute und Worte nachahmen",
@@ -521,7 +521,7 @@ var quiz_data = {
 			"wrong_answers": ["Fressen", "Schlafen", "Laute machen"]
 		}
 	],
-	"wolf_eu": [
+	"Wolf": [
 		{
 			"question": "Zu welcher Tierfamilie gehört der Wolf?",
 			"correct_answer": "Hundeartige",
@@ -573,7 +573,7 @@ var quiz_data = {
 			"wrong_answers": ["Nur in Nordskandinavien", "Nur auf Inseln", "Nur in Zoos"]
 		}
 	],
-	"luchs_eu": [
+	"Luchs": [
 		{
 		  "question": "Was ist ein typisches Erkennungsmerkmal des Luchses?",
 		  "correct_answer": "Pinselohren und kurzer Schwanz",
@@ -625,7 +625,7 @@ var quiz_data = {
 		  "wrong_answers": ["Käfige im Wald aufstellen", "Tägliches Füttern", "Umsiedlung nach Afrika"]
 		}
   	],
-	"eichhoernchen_eu": [
+	"Eichhörnchen": [
 		{
 		  "question": "Zu welcher Tiergruppe gehört das Eichhörnchen?",
 		  "correct_answer": "Nagetiere",
@@ -677,7 +677,7 @@ var quiz_data = {
 		  "wrong_answers": ["Sie graben Höhlen", "Sie bellen zu laut", "Sie fressen Plastik"]
 		}
   	],
-	"biber_eu": [
+	"Biber": [
 		{
 		  "question": "Was ist das auffälligste Merkmal des Bibers?",
 		  "correct_answer": "Breiter, flacher Schwanz (Kelle)",
@@ -729,7 +729,7 @@ var quiz_data = {
 		  "wrong_answers": ["Wegen Vulkanausbrüchen", "Wegen Mangel an Nahrung", "Wegen Fischfang"]
 		}
   	],
-	"alpensteinmurmeltier_eu": [
+	"Alpensteinmurmeltier": [
 		{
 		  "question": "In welcher Region lebt das Alpensteinmurmeltier hauptsächlich?",
 		  "correct_answer": "In den Alpen und anderen Hochgebirgen Europas",
@@ -781,7 +781,7 @@ var quiz_data = {
 		  "wrong_answers": ["Sie können klettern wie Ziegen", "Sie trinken nur Tau", "Sie haben Flügel für Gleitflüge"]
 		}
   	],
-	"panda_as": [
+	"Panda": [
 		{
 		  "question": "Wo lebt der Große Panda in freier Wildbahn?",
 		  "correct_answer": "In Bergwäldern Chinas",
@@ -833,7 +833,7 @@ var quiz_data = {
 		  "wrong_answers": ["Maximal 10 Jahre", "Nie älter als 15", "5 Jahre"]
 		}
   	],
-	"orang_utan_as": [
+	"Orang-Utan": [
 		{
 		  "question": "Wo leben Orang-Utans in freier Wildbahn?",
 		  "correct_answer": "Indonesien: Borneo und Sumatra",
@@ -885,7 +885,7 @@ var quiz_data = {
 		  "wrong_answers": ["Maximal 10 Jahre", "15–20 Jahre", "Nur 30 Jahre"]
 		}
 	],
-	"yak_as": [
+	"Yak": [
 		{
 		  "question": "Wo lebt der wilde Yak in freier Wildbahn?",
 		  "correct_answer": "In den Hochgebirgen des Himalaya und Tibet",
@@ -937,7 +937,7 @@ var quiz_data = {
 		  "wrong_answers": ["Maximal 1.000 Meter", "Nur in Tälern", "Nie über 2.000 Meter"]
 		}
 	],
-  	"honigdachs_as": [
+  	"Honigdachs": [
 		{
 		  "question": "Wo lebt der Honigdachs in freier Wildbahn?",
 		  "correct_answer": "In Afrika, Südwestasien und Indien",
@@ -989,7 +989,7 @@ var quiz_data = {
 		  "wrong_answers": ["Er wird unsichtbar", "Er klettert Bäume hoch wie ein Affe", "Er wechselt das Gehege"]
 		}
   	],
-  	"koenigsriesenhoernchen_as": [
+  	"Königsriesenhörnchen": [
 		{
 		  "question": "Wo lebt das Königsriesenhörnchen in freier Wildbahn?",
 		  "correct_answer": "In Indien, vor allem in tropischen Wäldern",
@@ -1041,7 +1041,7 @@ var quiz_data = {
 		  "wrong_answers": ["Es hat kein Fell", "Es lebt unterirdisch", "Es fliegt mit Flügeln"]
 		}
   	],
-	"okapi_af": [
+	"Okapi": [
 		{
 		"question": "Wo lebt das Okapi in freier Wildbahn?",
 		"correct_answer": "In den Regenwäldern der Demokratischen Republik Kongo",
@@ -1093,7 +1093,7 @@ var quiz_data = {
 		"wrong_answers": ["Wegen natürlicher Feinde", "Wegen zu hoher Temperaturen", "Wegen Krankheiten"]
 	  }
 	],
-	"aye_aye_af": [
+	"Aye-aye": [
 		{
 		"question": "Wo lebt das Aye-Aye in freier Wildbahn?",
 		"correct_answer": "Madagaskar",
@@ -1145,7 +1145,7 @@ var quiz_data = {
 		"wrong_answers": ["Es riecht sie", "Es beobachtet andere Tiere", "Es ruft sie heraus"]
 	  }
 	],
-	"galago_af": [
+	"Galago": [
 		{
 		"question": "Wo lebt der Galago in freier Wildbahn?",
 		"correct_answer": "Afrika südlich der Sahara",
@@ -1197,7 +1197,7 @@ var quiz_data = {
 		"wrong_answers": ["Zum Angreifen", "Zum Tragen von Nahrung", "Zum Graben"]
 	  }
 	],
-	"leopard_af": [
+	"Leopard": [
 		{
 		  "question": "Zu welcher Tierfamilie gehört der Leopard?",
 		  "correct_answer": "Katzenartige (Großkatzen)",
@@ -1249,7 +1249,7 @@ var quiz_data = {
 		  "wrong_answers": ["Über Duftmarken, Laute und Kratzspuren", "Über Lichtsignale", "Nur mit Blicken"]
 		}
   	],
-	"loewe_af": [
+	"Löwe": [
 		{
 		  "question": "Zu welcher Tierfamilie gehört der Löwe?",
 		  "correct_answer": "Katzenartige (Großkatzen)",
@@ -1301,7 +1301,7 @@ var quiz_data = {
 		  "wrong_answers": ["4 Stunden", "8 Stunden", "2 Stunden"]
 		}
   	],
-	"kaenguru_au": [
+	"Känguru": [
 		{
 		  "question": "Wo lebt das Känguru in freier Wildbahn?",
 		  "correct_answer": "Australien und Tasmanien",
@@ -1353,7 +1353,7 @@ var quiz_data = {
 		  "wrong_answers": ["Sie bauen Häuser", "Sie fliegen von Ort zu Ort", "Sie haben keine Feinde"]
 		}
 	],
-	"koala_au": [
+	"Koala": [
 		{
 		  "question": "Wo lebt der Koala in freier Wildbahn?",
 		  "correct_answer": "Australien (vor allem im Osten)",
@@ -1405,7 +1405,7 @@ var quiz_data = {
 		  "wrong_answers": ["Ja, täglich", "Nur im Sommer", "Sie trinken Regen mit den Pfoten"]
 		}
   	],
-	"emu_au": [
+	"Emu": [
 		{
 		  "question": "Wo lebt der Emu in freier Wildbahn?",
 		  "correct_answer": "Australien (fast überall außer in dichten Wäldern)",
@@ -1457,7 +1457,7 @@ var quiz_data = {
 		  "wrong_answers": ["Er lebt im Wasser", "Er fliegt nach Neuseeland", "Er trägt seine Jungen"]
 		}
   	],
-	"wombat_au": [
+	"Wombat": [
 		{
 		  "question": "Wo lebt der Wombat in freier Wildbahn?",
 		  "correct_answer": "Australien und Tasmanien",
@@ -1509,7 +1509,7 @@ var quiz_data = {
 		  "wrong_answers": ["Eiszeiten", "Großkatzen", "Feuerwerke"]
 		}
   	],
-	"helmkasuar_au": [
+	"Helmkasuar": [
 		{
 		  "question": "Wo lebt der Helmkasuar in freier Wildbahn?",
 		  "correct_answer": "Regenwälder von Neuguinea und Nordost-Australien",
@@ -1561,7 +1561,7 @@ var quiz_data = {
 		  "wrong_answers": ["Weil er Gift spuckt", "Wegen seiner Lautstärke", "Wegen seines Fluges"]
 		}
 	],
-	"antarktischer_krill_ant": [
+	"Antarktischer Krill": [
 		{
 		  "question": "Wo lebt der Antarktische Krill?",
 		  "correct_answer": "Im Südpolarmeer rund um die Antarktis",
@@ -1613,7 +1613,7 @@ var quiz_data = {
 		  "wrong_answers": ["Vulkanausbrüche", "Überfischung durch Haie", "Konkurrenz mit Albatrossen"]
 		}
  	],
-	"kaiserpinguin_ant": [
+	"Kaiserpinguin": [
 		{
 		  "question": "Wo lebt der Kaiserpinguin in freier Wildbahn?",
 		  "correct_answer": "Antarktis (Festland und Packeisregionen)",
@@ -1665,7 +1665,7 @@ var quiz_data = {
 		  "wrong_answers": ["Vulkanausbrüche", "Pinguinfresser", "Andere Vogelarten"]
 		}
   	],
-	"seeleopard_ant": [
+	"Seeleopard": [
 		{
 		  "question": "Wo lebt der Seeleopard in freier Wildbahn?",
 		  "correct_answer": "Antarktis – im Südpolarmeer und auf Eisschollen",
@@ -1717,7 +1717,7 @@ var quiz_data = {
 		  "wrong_answers": ["Nein, nie", "Nur im Zoo", "Er ist scheu und flieht immer"]
 		}
   	],
-	"antarktische_sturmvoegel_ant": [
+	"Antarktiksturmvogel": [
 		{
 		  "question": "Wo lebt der Antarktische Sturmvogel?",
 		  "correct_answer": "Antarktis – vor allem rund um das Packeis",
@@ -1769,7 +1769,7 @@ var quiz_data = {
 		  "wrong_answers": ["Überfischung durch Möwen", "Raubkatzen", "Vulkanische Gase"]
 		}
   	],
-	"buckelwale_ant": [
+	"Buckelwal": [
 		{
 		  "question": "Zu welcher Tiergruppe gehört der Buckelwal?",
 		  "correct_answer": "Säugetiere (Meeressäuger)",
@@ -1824,8 +1824,65 @@ var quiz_data = {
 }
 
 var animal_name = ""
+var correct_answer = ""
 
 func set_animal(name: String):
 	animal_name = name
 	print("Animal set to:", animal_name)
-	# TODO: Change quiz questions and answers according to the animal_name
+	set_random_question()
+	
+func set_random_question():
+	if !quiz_data.has(animal_name):
+		print("No data found for animal:", animal_name)
+		return
+
+	var questions = quiz_data[animal_name]
+	var question_data = questions[randi() % questions.size()]
+	
+	# Set animal nam
+	$AnimalStatusBar/AnimalName.text = animal_name
+
+	# Set question text
+	$QuizBox/QuestionLabel.text = question_data["question"]
+	
+	# Save right answer
+	correct_answer = question_data["correct_answer"]
+
+	# Combine and shuffle answers
+	var answers = question_data["wrong_answers"].duplicate()
+	answers.append(question_data["correct_answer"])
+	answers.shuffle()
+
+	# Set all answer labels
+	for i in range(answers.size()):
+		var label_path = "QuizBox/AnswerGrid/AnswerButton" + str(i+1) + "/AnswerLabel" + str(i+1)
+		if has_node(label_path):
+			get_node(label_path).text = answers[i]
+
+# TODO: Add functionality for what happens after a right or wrong answer
+func _on_answer_button_1_pressed() -> void:
+	if $QuizBox/AnswerGrid/AnswerButton1/AnswerLabel1.text == correct_answer:
+		print("Right Answer!")
+	else:
+		print("Wrong Answer!")
+
+
+func _on_answer_button_2_pressed() -> void:
+	if $QuizBox/AnswerGrid/AnswerButton2/AnswerLabel2.text == correct_answer:
+		print("Right Answer!")
+	else:
+		print("Wrong Answer!")
+
+
+func _on_answer_button_3_pressed() -> void:
+	if $QuizBox/AnswerGrid/AnswerButton3/AnswerLabel3.text == correct_answer:
+		print("Right Answer!")
+	else:
+		print("Wrong Answer!")
+
+
+func _on_answer_button_4_pressed() -> void:
+	if $QuizBox/AnswerGrid/AnswerButton4/AnswerLabel4.text == correct_answer:
+		print("Right Answer!")
+	else:
+		print("Wrong Answer!")

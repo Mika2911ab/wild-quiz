@@ -185,7 +185,6 @@ offset_right = -227.0
 offset_bottom = -279.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
-text = "Löwe"
 autowrap_mode = 2
 clip_text = true
 
@@ -267,7 +266,6 @@ offset_right = 528.0
 offset_bottom = 295.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
-text = "Wie nennt man die Gruppe, in der Löwen gemeinsam leben?"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
@@ -298,7 +296,6 @@ theme_override_colors/font_color = Color(0.968627, 0.968627, 0.968627, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
 theme_override_font_sizes/font_size = 30
-text = "Meute"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
@@ -319,7 +316,6 @@ theme_override_colors/font_color = Color(0.968627, 0.968627, 0.968627, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
 theme_override_font_sizes/font_size = 30
-text = "Herde"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
@@ -340,7 +336,6 @@ theme_override_colors/font_color = Color(0.968627, 0.968627, 0.968627, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
 theme_override_font_sizes/font_size = 30
-text = "Rudel"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
@@ -361,10 +356,14 @@ theme_override_colors/font_color = Color(0.968627, 0.968627, 0.968627, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
 theme_override_font_sizes/font_size = 30
-text = "Pride"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 clip_text = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[connection signal="pressed" from="QuizBox/AnswerGrid/AnswerButton1" to="." method="_on_answer_button_1_pressed"]
+[connection signal="pressed" from="QuizBox/AnswerGrid/AnswerButton2" to="." method="_on_answer_button_2_pressed"]
+[connection signal="pressed" from="QuizBox/AnswerGrid/AnswerButton3" to="." method="_on_answer_button_3_pressed"]
+[connection signal="pressed" from="QuizBox/AnswerGrid/AnswerButton4" to="." method="_on_answer_button_4_pressed"]
