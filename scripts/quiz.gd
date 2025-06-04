@@ -1829,6 +1829,8 @@ var correct_answer = ""
 func set_animal(name: String):
 	animal_name = name
 	print("Animal set to:", animal_name)
+	
+	$Animal/Animal_Test.set_animal(name)
 	set_random_question()
 	
 func set_random_question():

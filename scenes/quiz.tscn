@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://cg1o35hgs01lw"]
+[gd_scene load_steps=40 format=3 uid="uid://cg1o35hgs01lw"]
 
 [ext_resource type="Script" uid="uid://gesb2njds2yb" path="res://scripts/quiz.gd" id="1_16nxq"]
 [ext_resource type="Texture2D" uid="uid://cd6xmhplh6vbr" path="res://assets/sprites/bg.png" id="1_euwqo"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://78e4mfbsejub" path="res://assets/sprites/animal_status_bg.png" id="5_xq7j8"]
 [ext_resource type="Texture2D" uid="uid://b3tofanynydj5" path="res://assets/sprites/character_status_bg.png" id="6_bn6h1"]
 [ext_resource type="Texture2D" uid="uid://5ep764l7r0l2" path="res://assets/sprites/question_bg.png" id="7_vwwmd"]
+[ext_resource type="PackedScene" uid="uid://brp0jxv2impta" path="res://scenes/animal.tscn" id="7_xcx78"]
 [ext_resource type="Texture2D" uid="uid://bjr02ft16cudv" path="res://assets/sprites/button_orange.png" id="8_16nxq"]
 [ext_resource type="Texture2D" uid="uid://dme4q15hegyvk" path="res://assets/sprites/button_blue.png" id="9_xcx78"]
 [ext_resource type="Texture2D" uid="uid://dmu7b5k7ukjgm" path="res://assets/sprites/button_green.png" id="10_kp58l"]
@@ -199,12 +200,17 @@ scale = Vector2(4, 4)
 texture = ExtResource("2_m81w7")
 
 [node name="AnimalSprite" type="AnimatedSprite2D" parent="Animal"]
+visible = false
 position = Vector2(333, -223)
 scale = Vector2(4.5, 4.5)
 sprite_frames = SubResource("SpriteFrames_4qkfh")
 autoplay = "default"
 frame = 3
 frame_progress = 0.88536
+
+[node name="Animal_Test" parent="Animal" instance=ExtResource("7_xcx78")]
+position = Vector2(326, -137)
+scale = Vector2(5, 5)
 
 [node name="PlayerStatusBar" type="Panel" parent="."]
 offset_right = 40.0
