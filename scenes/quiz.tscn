@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://cg1o35hgs01lw"]
+[gd_scene load_steps=49 format=3 uid="uid://cg1o35hgs01lw"]
 
 [ext_resource type="Script" uid="uid://gesb2njds2yb" path="res://scripts/quiz.gd" id="1_16nxq"]
 [ext_resource type="Texture2D" uid="uid://cd6xmhplh6vbr" path="res://assets/sprites/bg.png" id="1_euwqo"]
@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://06h005hdupsg" path="res://assets/ui/info_box_bg.png" id="17_24vnv"]
 [ext_resource type="Texture2D" uid="uid://cpdax7jd1fjql" path="res://assets/ui/info_box_banner_left.png" id="18_fpy57"]
 [ext_resource type="Texture2D" uid="uid://cffwryg4amrtg" path="res://assets/ui/info_box_banner_middle.png" id="19_fiaka"]
+[ext_resource type="AudioStream" uid="uid://b45pyfuf0ocdf" path="res://assets/sounds/Sunlight Through Leaves.wav" id="19_wsttk"]
 [ext_resource type="Texture2D" uid="uid://cojq1v4iak611" path="res://assets/ui/info_box_banner_right.png" id="20_4l17v"]
 [ext_resource type="Texture2D" uid="uid://c3wcd3il3j5ur" path="res://assets/ui/info_box_button.png" id="21_fpy57"]
 
@@ -503,6 +504,10 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("19_wsttk")
+autoplay = true
 
 [connection signal="pressed" from="QuizBox/AnswerGrid/AnswerButton1" to="." method="_on_answer_button_1_pressed"]
 [connection signal="pressed" from="QuizBox/AnswerGrid/AnswerButton2" to="." method="_on_answer_button_2_pressed"]
