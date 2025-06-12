@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b8ep30f3d7yde"
+path="res://.godot/imported/Floating Dream.wav-21ce885e7962e362b776ded64d1503ef.sample"
+
+[deps]
+
+source_file="res://assets/sounds/Floating Dream.wav"
+dest_files=["res://.godot/imported/Floating Dream.wav-21ce885e7962e362b776ded64d1503ef.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

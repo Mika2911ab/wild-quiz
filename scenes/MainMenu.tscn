@@ -1,10 +1,11 @@
-[gd_scene load_steps=65 format=3 uid="uid://biaqn65s1pguc"]
+[gd_scene load_steps=66 format=3 uid="uid://biaqn65s1pguc"]
 
 [ext_resource type="Script" uid="uid://crp3cw182qqxw" path="res://scripts/main_menu.gd" id="1_i26rj"]
 [ext_resource type="Texture2D" uid="uid://hrtimjs7vwpn" path="res://assets/sprites/Fox Sprite Sheet.png" id="2_0ykhv"]
 [ext_resource type="Script" uid="uid://dota204jo626s" path="res://scripts/camera_2d.gd" id="2_ow34m"]
 [ext_resource type="FontFile" uid="uid://dne4aphor0uht" path="res://alagard.ttf" id="3_2wh52"]
 [ext_resource type="Script" uid="uid://enkrjgyq8mgo" path="res://scripts/fox_script.gd" id="3_l72w3"]
+[ext_resource type="AudioStream" uid="uid://cjfcgwnpcd6hl" path="res://assets/sounds/Evening Harmony.wav" id="6_826wr"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_eiy7p"]
 atlas = ExtResource("2_0ykhv")
@@ -584,6 +585,10 @@ scale = Vector2(0.289762, 0.289762)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_2wh52")
 text = "A Serious Game made by Mikael Alves Brito, Levin Kaus, Tianyao Ye, Steven Mkhitarian"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_826wr")
+autoplay = true
 
 [connection signal="pressed" from="Fox/Camera2D/UI/Options (VBox)/StartGame" to="Fox/Camera2D/UI" method="_on_start_game_pressed"]
 [connection signal="pressed" from="Fox/Camera2D/UI/Options (VBox)/Difficulty" to="Fox/Camera2D/UI" method="_on_difficulty_pressed"]
