@@ -1824,28 +1824,47 @@ var quiz_data = {
 }
 
 var animal_name = ""
+var animal_continent = ""
+var animal_species = ""
 var correct_answer = ""
+var number_of_questions = 2
+var current_question = 0
+var right_answers_needed = 1
+var right_ansers  = 0
 
-func set_animal(name: String):
+func set_animal(name: String, continent: String, species: String):
 	animal_name = name
+	animal_continent = continent
+	animal_species = species
+	current_question = 0
+	right_answers_needed = 1
+	right_ansers  = 0
+	
 	print("Animal set to:", animal_name)
 	
-	$Animal/Animal_Test.set_animal(name)
+	$Animal/Animal_Test.set_animal(name, continent, species) # TODO: Don't use the Animal_Test Scene here since that scene has a script attached to it that is not needed here
 	set_random_question()
 	
 func set_random_question():
 	if !quiz_data.has(animal_name):
 		print("No data found for animal:", animal_name)
 		return
-
+	
+	current_question += 1
 	var questions = quiz_data[animal_name]
 	var question_data = questions[randi() % questions.size()]
 	
-	# Set animal nam
+	# Set animal name
 	$AnimalStatusBar/AnimalName.text = animal_name
 
 	# Set question text
 	$QuizBox/QuestionLabel.text = question_data["question"]
+	
+	# Set continent
+	$AnimalStatusBar/Continent.text = animal_continent
+	
+	# Set species
+	$AnimalStatusBar/Species.text = animal_species
 	
 	# Save right answer
 	correct_answer = question_data["correct_answer"]
@@ -1864,27 +1883,65 @@ func set_random_question():
 # TODO: Add functionality for what happens after a right or wrong answer
 func _on_answer_button_1_pressed() -> void:
 	if $QuizBox/AnswerGrid/AnswerButton1/AnswerLabel1.text == correct_answer:
-		print("Right Answer!")
+		right_ansers += 1
+		give_answer_feedback(true)
 	else:
-		print("Wrong Answer!")
+		give_answer_feedback(false)
 
 
 func _on_answer_button_2_pressed() -> void:
 	if $QuizBox/AnswerGrid/AnswerButton2/AnswerLabel2.text == correct_answer:
-		print("Right Answer!")
+		right_ansers += 1
+		give_answer_feedback(true)
 	else:
-		print("Wrong Answer!")
+		give_answer_feedback(false)
 
 
 func _on_answer_button_3_pressed() -> void:
 	if $QuizBox/AnswerGrid/AnswerButton3/AnswerLabel3.text == correct_answer:
-		print("Right Answer!")
+		right_ansers += 1
+		give_answer_feedback(true)
 	else:
-		print("Wrong Answer!")
+		give_answer_feedback(false)
 
 
 func _on_answer_button_4_pressed() -> void:
 	if $QuizBox/AnswerGrid/AnswerButton4/AnswerLabel4.text == correct_answer:
-		print("Right Answer!")
+		right_ansers += 1
+		give_answer_feedback(true)
 	else:
-		print("Wrong Answer!")
+		give_answer_feedback(false)
+		
+func give_answer_feedback(is_answer_correct: bool):
+	if is_answer_correct == true:
+		$AnswerFeedback/RightWrongText.text = "Richtig!"
+	else: 
+		$AnswerFeedback/RightWrongText.text = "Falsch!"
+	
+	if current_question == number_of_questions:
+		$AnswerFeedback/AnswerFeedbackButtonText.text = "Quiz Beenden"
+	else:
+		$AnswerFeedback/AnswerFeedbackButtonText.text = "Nächste Frage"
+	
+	$AnswerFeedback/FeedbackText.text = "Die richtige Antwort ist: " + correct_answer
+	$GrayOverlay.visible = true
+	$AnswerFeedback.visible = true
+
+func _on_answer_feedback_button_pressed() -> void:
+	if $AnswerFeedback/AnswerFeedbackButtonText.text == "Weiter":
+		$GrayOverlay.visible = false
+		$AnswerFeedback.visible = false
+		SceneSwitcher.switch_scene("res://scenes/game.tscn")
+	if $AnswerFeedback/AnswerFeedbackButtonText.text == "Quiz Beenden":
+		if right_ansers >= right_answers_needed:
+			$AnswerFeedback/RightWrongText.text = "Glückwunsch!"
+			$AnswerFeedback/FeedbackText.text = "Du hast das Quiz bestanden und ein neues Tier wird registriert!"
+		else:
+			$AnswerFeedback/RightWrongText.text = "Schade!"
+			$AnswerFeedback/FeedbackText.text = "Du hast das Quiz nicht bestanden. Viel Glück beim nächsten mal."
+		$AnswerFeedback/AnswerFeedbackButtonText.text = "Weiter"
+	else: 
+		set_random_question()
+		$GrayOverlay.visible = false
+		$AnswerFeedback.visible = false
+	

@@ -1,6 +1,8 @@
 extends Area2D
 
 var animal_name = ""
+var animal_continent = ""
+var animal_species = ""
 
 @onready var anim = $AnimatedSprite2D
 
@@ -31,12 +33,14 @@ func _process(delta):
 	position.y = base_position.y + sin(wiggle_time * 2.0 + wiggle_offset) * bounce_amount  # 🧷 relativ zum Start
 
 
-func set_animal(name: String):
+func set_animal(name: String, continent: String, species: String):
 	animal_name = name
+	animal_continent = continent
+	animal_species = species
 	
 	if anim == null:
 		await ready
 	anim.play(str(animal_name))
 
 func _on_body_entered(body: Node2D) -> void:
-	SceneSwitcher.switch_scene("res://scenes/quiz.tscn", animal_name)
+	SceneSwitcher.switch_scene("res://scenes/quiz.tscn", animal_name, animal_continent, animal_species)

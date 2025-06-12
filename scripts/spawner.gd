@@ -4,53 +4,53 @@ extends Node2D
 
 var animals = {
 	"na": [
-		"Grizzlybär",
-		"Kojote",
-		"Weißkopfseeadler",
-		"Bison",
-		"Präriehund"
+		["Grizzlybär", "Raubtier"],
+		["Kojote", "Raubtier"],
+		["Weißkopfseeadler", "Greifvogel"],
+		["Bison", "Paarhufer"],
+		["Präriehund", "Nagetier"]
 	],
 	"sa": [
-		"Alpaka",
-		"Anakonda",
-		"Jaguar",
-		"Flamingo",
-		"Papagei"
+		["Alpaka", "Paarhufer"],
+		["Anakonda", "Reptil"],
+		["Jaguar", "Raubtier"],
+		["Flamingo", "Vogel"],
+		["Papagei", "Vogel"]
 	],
 	"eu": [
-		"Wolf",
-		"Luchs",
-		"Eichhörnchen",
-		"Biber",
-		"Alpensteinmurmeltier"
+		["Wolf", "Raubtier"],
+		["Luchs", "Raubtier"],
+		["Eichhörnchen", "Nagetier"],
+		["Biber", "Nagetier"],
+		["Alpensteinmurmeltier", "Nagetier"]
 	],
 	"as": [
-		"Panda",
-		"Orang-Utan",
-		"Yak",
-		"Honigdachs",
-		"Königsriesenhörnchen"
+		["Panda", "Planzenfresser"],
+		["Orang-Utan", "Primat"],
+		["Yak", "Paarhufer"],
+		["Honigdachs", "Raubtier"],
+		["Königsriesenhörnchen", "Nagetier"]
 	],
 	"af": [
-		"Okapi",
-		"Aye-aye",
-		"Galago",
-		"Leopard",
-		"Löwe"
+		["Okapi", "Paarhufer"],
+		["Aye-aye", "Primat"],
+		["Galago", "Primat"],
+		["Leopard", "Raubtier"],
+		["Löwe", "Raubtier"]
 	],
 	"au": [
-		"Känguru",
-		"Koala",
-		"Emu",
-		"Wombat",
-		"Helmkasuar"
+		["Känguru", "Beuteltier"],
+		["Koala", "Beuteltier"],
+		["Emu", "Vogel"],
+		["Wombat", "Beuteltier"],
+		["Helmkasuar", "Vogel"]
 	],
 	"ant": [
-		"Antarktischer Krill",
-		"Kaiserpinguin",
-		"Seeleopard",
-		"Antarktiksturmvogel",
-		"Buckelwal"
+		["Antarktischer Krill", "Krebstier"],
+		["Kaiserpinguin", "Vogel"],
+		["Seeleopard", "Raubtier"],
+		["Antarktiksturmvogel", "Vogel"],
+		["Buckelwal", "Meeressäuger"]
 	]
 }
 
@@ -138,41 +138,38 @@ var spawn_points_au := [
 	Vector2i(74,48),
 ]
 
-
-
-
-
 func _ready():
 	randomize()
 	#spawn_animal_with_chance(1.0) #TODO: Instead of spawing an animal by chance, spawn a fixed amount of animals at random positions from random breed
-	spawn_animals_at_region(animals["eu"], spawn_points_eu) #Europa-Tiere spawnen
-	spawn_animals_at_region(animals["na"], spawn_points_na) #Nordamerika 
-	spawn_animals_at_region(animals["sa"], spawn_points_sa) #Südamerika
-	spawn_animals_at_region(animals["au"], spawn_points_au) #Australien
-	spawn_animals_at_region(animals["af"], spawn_points_af) #Afrika
-	spawn_animals_at_region(animals["as"], spawn_points_as) #Asien
-	
+	spawn_animals_at_region(animals["eu"], "Europe", spawn_points_eu) #Europa-Tiere spawnen
+	spawn_animals_at_region(animals["na"], "North America", spawn_points_na) #Nordamerika 
+	spawn_animals_at_region(animals["sa"], "South America", spawn_points_sa) #Südamerika
+	spawn_animals_at_region(animals["au"], "Australia", spawn_points_au) #Australien
+	spawn_animals_at_region(animals["af"], "Africa", spawn_points_af) #Afrika
+	spawn_animals_at_region(animals["as"], "Asia", spawn_points_as) #Asien
+	# TODO: Add Antarctica
 	
 
-func spawn_animal_at_tile(tile_coords: Vector2i, animal_name: String) -> void:
-	var tier = animal_test_scene.instantiate()
+func spawn_animal_at_tile(tile_coords: Vector2i, animal_name: String, animal_continent: String, animal_species: String) -> void:
+	var animal = animal_test_scene.instantiate()
 	
-	if tier.has_method("set_animal"):
-		tier.set_animal(animal_name)
+	if animal.has_method("set_animal"):
+		animal.set_animal(animal_name, animal_continent, animal_species)
 
 	# TileMap-Koordinaten in Weltkoordinaten umrechnen
 	var world_position = tile_map.map_to_local(tile_coords)
-	tier.position = world_position
+	animal.position = world_position
 
-	add_child(tier)
+	add_child(animal)
 
 
-func spawn_animals_at_region(animals, spawns) -> void:
+func spawn_animals_at_region(animals, animal_continent, spawns) -> void:
 	spawns.shuffle()
 	
 	for i in range(animals.size()):
-		var animal = animals[i]
+		var animal_name = animals[i][0]
+		var animal_species = animals[i][1]
 		var spawn = spawns[i]
-		spawn_animal_at_tile(spawn, animal)
+		spawn_animal_at_tile(spawn, animal_name, animal_continent, animal_species)
 		
 	

@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://cg1o35hgs01lw"]
+[gd_scene load_steps=48 format=3 uid="uid://cg1o35hgs01lw"]
 
 [ext_resource type="Script" uid="uid://gesb2njds2yb" path="res://scripts/quiz.gd" id="1_16nxq"]
 [ext_resource type="Texture2D" uid="uid://cd6xmhplh6vbr" path="res://assets/sprites/bg.png" id="1_euwqo"]
@@ -6,14 +6,18 @@
 [ext_resource type="Texture2D" uid="uid://b7sasdpxq60jh" path="res://assets/sprites/underground.png" id="2_m81w7"]
 [ext_resource type="Texture2D" uid="uid://bb61eyf750fk3" path="res://assets/sprites/lexicon.png" id="3_vwwmd"]
 [ext_resource type="Texture2D" uid="uid://bmnlu4cs3s2rs" path="res://assets/sprites/knight.png" id="3_w5ac1"]
+[ext_resource type="Texture2D" uid="uid://x230edb2cy6o" path="res://assets/sprites/earth.png" id="5_4qkfh"]
 [ext_resource type="Texture2D" uid="uid://78e4mfbsejub" path="res://assets/sprites/animal_status_bg.png" id="5_xq7j8"]
+[ext_resource type="Texture2D" uid="uid://cbrot3y6row5l" path="res://assets/sprites/dna.png" id="6_5da4r"]
 [ext_resource type="Texture2D" uid="uid://b3tofanynydj5" path="res://assets/sprites/character_status_bg.png" id="6_bn6h1"]
-[ext_resource type="Texture2D" uid="uid://5ep764l7r0l2" path="res://assets/sprites/question_bg.png" id="7_vwwmd"]
 [ext_resource type="PackedScene" uid="uid://brp0jxv2impta" path="res://scenes/animal.tscn" id="7_xcx78"]
-[ext_resource type="Texture2D" uid="uid://bjr02ft16cudv" path="res://assets/sprites/button_orange.png" id="8_16nxq"]
-[ext_resource type="Texture2D" uid="uid://dme4q15hegyvk" path="res://assets/sprites/button_blue.png" id="9_xcx78"]
-[ext_resource type="Texture2D" uid="uid://dmu7b5k7ukjgm" path="res://assets/sprites/button_green.png" id="10_kp58l"]
-[ext_resource type="Texture2D" uid="uid://db74mlbilrmbe" path="res://assets/sprites/button_red.png" id="11_4qkfh"]
+[ext_resource type="Texture2D" uid="uid://drl0p6euf1bq1" path="res://assets/ui/textbox.png" id="12_fpy57"]
+[ext_resource type="Texture2D" uid="uid://c4s74f3mx8kra" path="res://assets/ui/button.png" id="13_d56me"]
+[ext_resource type="Texture2D" uid="uid://06h005hdupsg" path="res://assets/ui/info_box_bg.png" id="17_24vnv"]
+[ext_resource type="Texture2D" uid="uid://cpdax7jd1fjql" path="res://assets/ui/info_box_banner_left.png" id="18_fpy57"]
+[ext_resource type="Texture2D" uid="uid://cffwryg4amrtg" path="res://assets/ui/info_box_banner_middle.png" id="19_fiaka"]
+[ext_resource type="Texture2D" uid="uid://cojq1v4iak611" path="res://assets/ui/info_box_banner_right.png" id="20_4l17v"]
+[ext_resource type="Texture2D" uid="uid://c3wcd3il3j5ur" path="res://assets/ui/info_box_button.png" id="21_fpy57"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_16nxq"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -145,16 +149,28 @@ animations = [{
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_euwqo"]
-texture = ExtResource("11_4qkfh")
+texture = ExtResource("13_d56me")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vwwmd"]
-texture = ExtResource("8_16nxq")
+texture = ExtResource("13_d56me")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_16nxq"]
-texture = ExtResource("10_kp58l")
+texture = ExtResource("13_d56me")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xcx78"]
-texture = ExtResource("9_xcx78")
+texture = ExtResource("13_d56me")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_24vnv"]
+bg_color = Color(0.6, 0.6, 0.6, 0.54902)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ahqvi"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8d1ti"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_d56me"]
+texture = ExtResource("21_fpy57")
 
 [node name="Quiz" type="Node2D"]
 script = ExtResource("1_16nxq")
@@ -186,8 +202,39 @@ offset_right = -227.0
 offset_bottom = -279.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
+text = "Wolf"
 autowrap_mode = 2
 clip_text = true
+
+[node name="ContinentImage" type="Sprite2D" parent="AnimalStatusBar"]
+position = Vector2(-544, -236)
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("5_4qkfh")
+
+[node name="Continent" type="Label" parent="AnimalStatusBar"]
+layout_mode = 0
+offset_left = -525.0
+offset_top = -251.0
+offset_right = -393.0
+offset_bottom = -223.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Europa"
+
+[node name="SpeciesImage" type="Sprite2D" parent="AnimalStatusBar"]
+position = Vector2(-373, -236)
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("6_5da4r")
+
+[node name="Species" type="Label" parent="AnimalStatusBar"]
+layout_mode = 0
+offset_left = -354.0
+offset_top = -251.0
+offset_right = -270.0
+offset_bottom = -223.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Raubtier"
 
 [node name="Animal" type="Panel" parent="."]
 offset_right = 40.0
@@ -262,7 +309,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_t0h63")
 [node name="QuestionBg" type="Sprite2D" parent="QuizBox"]
 position = Vector2(280, 160)
 scale = Vector2(4, 4)
-texture = ExtResource("7_vwwmd")
+texture = ExtResource("12_fpy57")
 
 [node name="QuestionLabel" type="Label" parent="QuizBox"]
 layout_mode = 0
@@ -367,9 +414,98 @@ vertical_alignment = 1
 autowrap_mode = 2
 clip_text = true
 
+[node name="GrayOverlay" type="Panel" parent="."]
+visible = false
+offset_left = -640.0
+offset_top = -360.0
+offset_right = 640.0
+offset_bottom = 360.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_24vnv")
+
+[node name="AnswerFeedback" type="Panel" parent="."]
+visible = false
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ahqvi")
+
+[node name="Background" type="Sprite2D" parent="AnswerFeedback"]
+position = Vector2(0, 10)
+scale = Vector2(2, 2)
+texture = ExtResource("17_24vnv")
+
+[node name="Banner" type="Panel" parent="AnswerFeedback"]
+layout_mode = 0
+offset_left = -230.0
+offset_top = -215.0
+offset_right = 230.0
+offset_bottom = -55.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_8d1ti")
+
+[node name="BannerLeft" type="Sprite2D" parent="AnswerFeedback/Banner"]
+position = Vector2(70, 80)
+scale = Vector2(5, 5)
+texture = ExtResource("18_fpy57")
+
+[node name="BannerMiddle" type="Sprite2D" parent="AnswerFeedback/Banner"]
+position = Vector2(230, 75)
+scale = Vector2(5, 5)
+texture = ExtResource("19_fiaka")
+
+[node name="BannerRight" type="Sprite2D" parent="AnswerFeedback/Banner"]
+position = Vector2(390, 80)
+scale = Vector2(5, 5)
+texture = ExtResource("20_4l17v")
+
+[node name="RightWrongText" type="Label" parent="AnswerFeedback"]
+layout_mode = 0
+offset_left = -190.0
+offset_top = -185.0
+offset_right = 190.0
+offset_bottom = -100.0
+theme_override_colors/font_color = Color(1, 0.94902, 0.823529, 1)
+theme_override_font_sizes/font_size = 40
+text = "Falsch!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FeedbackText" type="Label" parent="AnswerFeedback"]
+layout_mode = 0
+offset_left = -290.0
+offset_top = -55.0
+offset_right = 290.0
+offset_bottom = 106.0
+theme_override_colors/font_color = Color(0.427451, 0.294118, 0.152941, 1)
+theme_override_font_sizes/font_size = 30
+text = "Die richtige Antwort ist: ..."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+clip_text = true
+
+[node name="AnswerFeedbackButton" type="Button" parent="AnswerFeedback"]
+layout_mode = 0
+offset_left = -122.0
+offset_top = 106.0
+offset_right = 122.0
+offset_bottom = 180.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_d56me")
+
+[node name="AnswerFeedbackButtonText" type="Label" parent="AnswerFeedback"]
+layout_mode = 0
+offset_left = -110.0
+offset_top = 118.0
+offset_right = 110.0
+offset_bottom = 168.0
+theme_override_colors/font_color = Color(1, 0.94902, 0.823529, 1)
+theme_override_font_sizes/font_size = 25
+text = "Nächste Frage"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [connection signal="pressed" from="QuizBox/AnswerGrid/AnswerButton1" to="." method="_on_answer_button_1_pressed"]
 [connection signal="pressed" from="QuizBox/AnswerGrid/AnswerButton2" to="." method="_on_answer_button_2_pressed"]
 [connection signal="pressed" from="QuizBox/AnswerGrid/AnswerButton3" to="." method="_on_answer_button_3_pressed"]
 [connection signal="pressed" from="QuizBox/AnswerGrid/AnswerButton4" to="." method="_on_answer_button_4_pressed"]
+[connection signal="pressed" from="AnswerFeedback/AnswerFeedbackButton" to="." method="_on_answer_feedback_button_pressed"]
