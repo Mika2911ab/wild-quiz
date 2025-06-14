@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dbo4ired1kh8r"]
+[gd_scene load_steps=11 format=3 uid="uid://dbo4ired1kh8r"]
 
 [ext_resource type="PackedScene" uid="uid://mcsc0eqqqpno" path="res://scenes/player.tscn" id="1_uwrxv"]
 [ext_resource type="Texture2D" uid="uid://dbstfcadhuipg" path="res://assets/sprites/GRASS+.png" id="2_yqjtg"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://pbehbes0e0lw" path="res://assets/sprites/istockphoto-1093514566-612x612 (1).jpg" id="3_lnu2h"]
 [ext_resource type="Script" uid="uid://xpn0ixc4pmix" path="res://scripts/spawner.gd" id="6_p57ef"]
 [ext_resource type="AudioStream" uid="uid://8ikc7qgrrbkj" path="res://assets/sounds/Forgotten Biomes.wav" id="6_u5sy4"]
+[ext_resource type="Texture2D" uid="uid://bb61eyf750fk3" path="res://assets/sprites/lexicon.png" id="7_u5sy4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lnu2h"]
 texture = ExtResource("2_yqjtg")
@@ -391,6 +392,18 @@ tilemap = NodePath("../TileMap")
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(2, 2)
 position_smoothing_enabled = true
+
+[node name="amount_of_points" type="Label" parent="Player/Camera2D"]
+offset_left = -268.0
+offset_top = -164.0
+offset_right = -152.0
+offset_bottom = -141.0
+text = "Punkte:"
+
+[node name="lexicon" type="Sprite2D" parent="Player/Camera2D"]
+position = Vector2(-292, -153)
+scale = Vector2(2.41667, 2.41667)
+texture = ExtResource("7_u5sy4")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 visible = false
