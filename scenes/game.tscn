@@ -377,6 +377,9 @@ sources/1 = SubResource("TileSetAtlasSource_iywne")
 [node name="Game" type="Node2D"]
 script = ExtResource("1_0tnpc")
 
+[node name="CountdownTimer" type="Timer" parent="."]
+autostart = true
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="amount_of_points" type="Label" parent="CanvasLayer"]
@@ -389,6 +392,16 @@ pivot_offset = Vector2(-35, -35)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_gee14")
 text = "Punkte:"
+
+[node name="CountdownLabel" type="Label" parent="CanvasLayer"]
+offset_left = 33.0
+offset_top = 116.0
+offset_right = 172.0
+offset_bottom = 131.0
+scale = Vector2(2.49706, 2.53372)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_gee14")
+text = "Verbleibende Zeit: "
 
 [node name="lexicon" type="Sprite2D" parent="CanvasLayer"]
 position = Vector2(10, 10)
@@ -428,3 +441,5 @@ tilemap = NodePath("../TileMap")
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(2, 2)
 position_smoothing_enabled = true
+
+[connection signal="timeout" from="CountdownTimer" to="." method="_on_countdown_timer_timeout"]
