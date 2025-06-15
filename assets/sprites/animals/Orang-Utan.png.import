@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ckrx0su70ldcs"
-path="res://.godot/imported/water.png-817b08231a2ad4ae2410fb94c54aa35d.ctex"
+uid="uid://dcprokoil3uuf"
+path="res://.godot/imported/Orang-Utan.png-166cb35840811bf10a971455df34473f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/water.png"
-dest_files=["res://.godot/imported/water.png-817b08231a2ad4ae2410fb94c54aa35d.ctex"]
+source_file="res://assets/sprites/animals/Orang-Utan.png"
+dest_files=["res://.godot/imported/Orang-Utan.png-166cb35840811bf10a971455df34473f.ctex"]
 
 [params]
 

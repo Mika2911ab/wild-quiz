@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ckrx0su70ldcs"
-path="res://.godot/imported/water.png-817b08231a2ad4ae2410fb94c54aa35d.ctex"
+uid="uid://c3wcd3il3j5ur"
+path="res://.godot/imported/info_box_button.png-41b251bf14f3be012fa9619ce9333f49.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/water.png"
-dest_files=["res://.godot/imported/water.png-817b08231a2ad4ae2410fb94c54aa35d.ctex"]
+source_file="res://assets/sprites/quiz_ui/info_box_button.png"
+dest_files=["res://.godot/imported/info_box_button.png-41b251bf14f3be012fa9619ce9333f49.ctex"]
 
 [params]
 

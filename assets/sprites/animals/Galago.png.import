@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ckrx0su70ldcs"
-path="res://.godot/imported/water.png-817b08231a2ad4ae2410fb94c54aa35d.ctex"
+uid="uid://s550b25jki6f"
+path="res://.godot/imported/Galago.png-25adbb3e6b7b59e5bb2227e037971852.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/water.png"
-dest_files=["res://.godot/imported/water.png-817b08231a2ad4ae2410fb94c54aa35d.ctex"]
+source_file="res://assets/sprites/animals/Galago.png"
+dest_files=["res://.godot/imported/Galago.png-25adbb3e6b7b59e5bb2227e037971852.ctex"]
 
 [params]
 

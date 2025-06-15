@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ckrx0su70ldcs"
-path="res://.godot/imported/water.png-817b08231a2ad4ae2410fb94c54aa35d.ctex"
+uid="uid://m5478hn5qb3r"
+path="res://.godot/imported/Flamingo.png-a3dd900d5d5a93c84dc1b95d06383521.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/water.png"
-dest_files=["res://.godot/imported/water.png-817b08231a2ad4ae2410fb94c54aa35d.ctex"]
+source_file="res://assets/sprites/animals/Flamingo.png"
+dest_files=["res://.godot/imported/Flamingo.png-a3dd900d5d5a93c84dc1b95d06383521.ctex"]
 
 [params]
 

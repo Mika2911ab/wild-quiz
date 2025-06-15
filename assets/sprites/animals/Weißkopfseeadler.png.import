@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ckrx0su70ldcs"
-path="res://.godot/imported/water.png-817b08231a2ad4ae2410fb94c54aa35d.ctex"
+uid="uid://bxk1e2sufwhuj"
+path="res://.godot/imported/Weißkopfseeadler.png-b9816d704091e82aa21f9bca7aaec761.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/water.png"
-dest_files=["res://.godot/imported/water.png-817b08231a2ad4ae2410fb94c54aa35d.ctex"]
+source_file="res://assets/sprites/animals/Weißkopfseeadler.png"
+dest_files=["res://.godot/imported/Weißkopfseeadler.png-b9816d704091e82aa21f9bca7aaec761.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ckrx0su70ldcs"
-path="res://.godot/imported/water.png-817b08231a2ad4ae2410fb94c54aa35d.ctex"
+uid="uid://c4c642b7juycf"
+path="res://.godot/imported/Bison.png-f186826be887ba7134ff3137c2adc83b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/water.png"
-dest_files=["res://.godot/imported/water.png-817b08231a2ad4ae2410fb94c54aa35d.ctex"]
+source_file="res://assets/sprites/animals/Bison.png"
+dest_files=["res://.godot/imported/Bison.png-f186826be887ba7134ff3137c2adc83b.ctex"]
 
 [params]
 

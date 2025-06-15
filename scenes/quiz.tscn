@@ -1,26 +1,25 @@
 [gd_scene load_steps=52 format=3 uid="uid://cg1o35hgs01lw"]
 
 [ext_resource type="Script" uid="uid://gesb2njds2yb" path="res://scripts/quiz.gd" id="1_16nxq"]
-[ext_resource type="Texture2D" uid="uid://cd6xmhplh6vbr" path="res://assets/sprites/bg.png" id="1_euwqo"]
-[ext_resource type="Texture2D" uid="uid://ktc3221vylxw" path="res://assets/sprites/Idle.png" id="2_3bubg"]
-[ext_resource type="Texture2D" uid="uid://b7sasdpxq60jh" path="res://assets/sprites/underground.png" id="2_m81w7"]
-[ext_resource type="Texture2D" uid="uid://bb61eyf750fk3" path="res://assets/sprites/lexicon.png" id="3_vwwmd"]
+[ext_resource type="Texture2D" uid="uid://cd6xmhplh6vbr" path="res://assets/sprites/quiz_ui/bg.png" id="1_euwqo"]
+[ext_resource type="Texture2D" uid="uid://b7sasdpxq60jh" path="res://assets/sprites/quiz_ui/underground.png" id="2_m81w7"]
+[ext_resource type="Texture2D" uid="uid://bb61eyf750fk3" path="res://assets/sprites/quiz_ui/lexicon.png" id="3_vwwmd"]
 [ext_resource type="Texture2D" uid="uid://bmnlu4cs3s2rs" path="res://assets/sprites/knight.png" id="3_w5ac1"]
-[ext_resource type="Texture2D" uid="uid://x230edb2cy6o" path="res://assets/sprites/earth.png" id="5_4qkfh"]
-[ext_resource type="Texture2D" uid="uid://78e4mfbsejub" path="res://assets/sprites/animal_status_bg.png" id="5_xq7j8"]
-[ext_resource type="Texture2D" uid="uid://cbrot3y6row5l" path="res://assets/sprites/dna.png" id="6_5da4r"]
-[ext_resource type="Texture2D" uid="uid://b3tofanynydj5" path="res://assets/sprites/character_status_bg.png" id="6_bn6h1"]
+[ext_resource type="Texture2D" uid="uid://x230edb2cy6o" path="res://assets/sprites/quiz_ui/earth.png" id="5_4qkfh"]
+[ext_resource type="Texture2D" uid="uid://78e4mfbsejub" path="res://assets/sprites/quiz_ui/animal_status_bg.png" id="5_xq7j8"]
+[ext_resource type="Texture2D" uid="uid://cbrot3y6row5l" path="res://assets/sprites/quiz_ui/dna.png" id="6_5da4r"]
+[ext_resource type="Texture2D" uid="uid://b3tofanynydj5" path="res://assets/sprites/quiz_ui/character_status_bg.png" id="6_bn6h1"]
 [ext_resource type="PackedScene" uid="uid://brp0jxv2impta" path="res://scenes/animal.tscn" id="7_xcx78"]
-[ext_resource type="Texture2D" uid="uid://drl0p6euf1bq1" path="res://assets/ui/textbox.png" id="12_fpy57"]
-[ext_resource type="Texture2D" uid="uid://c4s74f3mx8kra" path="res://assets/ui/button.png" id="13_d56me"]
-[ext_resource type="Texture2D" uid="uid://06h005hdupsg" path="res://assets/ui/info_box_bg.png" id="17_24vnv"]
-[ext_resource type="Texture2D" uid="uid://cpdax7jd1fjql" path="res://assets/ui/info_box_banner_left.png" id="18_fpy57"]
-[ext_resource type="Texture2D" uid="uid://cffwryg4amrtg" path="res://assets/ui/info_box_banner_middle.png" id="19_fiaka"]
+[ext_resource type="Texture2D" uid="uid://drl0p6euf1bq1" path="res://assets/sprites/quiz_ui/textbox.png" id="12_fpy57"]
+[ext_resource type="Texture2D" uid="uid://c4s74f3mx8kra" path="res://assets/sprites/quiz_ui/button.png" id="13_d56me"]
+[ext_resource type="Texture2D" uid="uid://06h005hdupsg" path="res://assets/sprites/quiz_ui/info_box_bg.png" id="17_24vnv"]
+[ext_resource type="Texture2D" uid="uid://cpdax7jd1fjql" path="res://assets/sprites/quiz_ui/info_box_banner_left.png" id="18_fpy57"]
+[ext_resource type="Texture2D" uid="uid://cffwryg4amrtg" path="res://assets/sprites/quiz_ui/info_box_banner_middle.png" id="19_fiaka"]
 [ext_resource type="AudioStream" uid="uid://b45pyfuf0ocdf" path="res://assets/sounds/Sunlight Through Leaves.wav" id="19_wsttk"]
-[ext_resource type="Texture2D" uid="uid://cojq1v4iak611" path="res://assets/ui/info_box_banner_right.png" id="20_4l17v"]
+[ext_resource type="Texture2D" uid="uid://cojq1v4iak611" path="res://assets/sprites/quiz_ui/info_box_banner_right.png" id="20_4l17v"]
 [ext_resource type="AudioStream" uid="uid://vrap4usofsp0" path="res://assets/sounds/correct_sound_effect.mp3" id="20_fpy57"]
 [ext_resource type="AudioStream" uid="uid://dh33pc4tn2hnk" path="res://assets/sounds/wrong_sound_effect.mp3" id="21_fiaka"]
-[ext_resource type="Texture2D" uid="uid://c3wcd3il3j5ur" path="res://assets/ui/info_box_button.png" id="21_fpy57"]
+[ext_resource type="Texture2D" uid="uid://c3wcd3il3j5ur" path="res://assets/sprites/quiz_ui/info_box_button.png" id="21_fpy57"]
 [ext_resource type="AudioStream" uid="uid://c1mlc7dkwqldq" path="res://assets/sounds/congrats_sound.mp3" id="22_fiaka"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_16nxq"]
@@ -29,44 +28,47 @@ bg_color = Color(0.6, 0.6, 0.6, 0)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xcx78"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_fpy57"]
+load_path = "res://.godot/imported/Idle.png-2f6e0801f0653e9581c5d450f4541e9f.ctex"
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_m81w7"]
-atlas = ExtResource("2_3bubg")
+atlas = SubResource("CompressedTexture2D_fpy57")
 region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xq7j8"]
-atlas = ExtResource("2_3bubg")
+atlas = SubResource("CompressedTexture2D_fpy57")
 region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bn6h1"]
-atlas = ExtResource("2_3bubg")
+atlas = SubResource("CompressedTexture2D_fpy57")
 region = Rect2(64, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_t0h63"]
-atlas = ExtResource("2_3bubg")
+atlas = SubResource("CompressedTexture2D_fpy57")
 region = Rect2(96, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lcje5"]
-atlas = ExtResource("2_3bubg")
+atlas = SubResource("CompressedTexture2D_fpy57")
 region = Rect2(128, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_euwqo"]
-atlas = ExtResource("2_3bubg")
+atlas = SubResource("CompressedTexture2D_fpy57")
 region = Rect2(160, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vwwmd"]
-atlas = ExtResource("2_3bubg")
+atlas = SubResource("CompressedTexture2D_fpy57")
 region = Rect2(192, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_16nxq"]
-atlas = ExtResource("2_3bubg")
+atlas = SubResource("CompressedTexture2D_fpy57")
 region = Rect2(224, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xcx78"]
-atlas = ExtResource("2_3bubg")
+atlas = SubResource("CompressedTexture2D_fpy57")
 region = Rect2(256, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kp58l"]
-atlas = ExtResource("2_3bubg")
+atlas = SubResource("CompressedTexture2D_fpy57")
 region = Rect2(288, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_4qkfh"]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ckrx0su70ldcs"
-path="res://.godot/imported/water.png-817b08231a2ad4ae2410fb94c54aa35d.ctex"
+uid="uid://ckckgrifb4v4m"
+path="res://.godot/imported/Anakonda.png-a97b44fe11c2a38fa4d859bdb8331c69.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/water.png"
-dest_files=["res://.godot/imported/water.png-817b08231a2ad4ae2410fb94c54aa35d.ctex"]
+source_file="res://assets/sprites/animals/Anakonda.png"
+dest_files=["res://.godot/imported/Anakonda.png-a97b44fe11c2a38fa4d859bdb8331c69.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ckrx0su70ldcs"
-path="res://.godot/imported/water.png-817b08231a2ad4ae2410fb94c54aa35d.ctex"
+uid="uid://3uc60tcqljic"
+path="res://.godot/imported/Emu.png-08715ebd0923f3bae9dc5c564c326166.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/water.png"
-dest_files=["res://.godot/imported/water.png-817b08231a2ad4ae2410fb94c54aa35d.ctex"]
+source_file="res://assets/sprites/animals/Emu.png"
+dest_files=["res://.godot/imported/Emu.png-08715ebd0923f3bae9dc5c564c326166.ctex"]
 
 [params]
 

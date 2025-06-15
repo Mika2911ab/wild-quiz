@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ckrx0su70ldcs"
-path="res://.godot/imported/water.png-817b08231a2ad4ae2410fb94c54aa35d.ctex"
+uid="uid://bd7ecpax767qk"
+path="res://.godot/imported/Alpaka.png-d387e10aa9ff253dd3917181149a8daf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/water.png"
-dest_files=["res://.godot/imported/water.png-817b08231a2ad4ae2410fb94c54aa35d.ctex"]
+source_file="res://assets/sprites/animals/Alpaka.png"
+dest_files=["res://.godot/imported/Alpaka.png-d387e10aa9ff253dd3917181149a8daf.ctex"]
 
 [params]
 

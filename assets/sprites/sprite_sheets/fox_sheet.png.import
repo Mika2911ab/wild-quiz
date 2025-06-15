@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ckrx0su70ldcs"
-path="res://.godot/imported/water.png-817b08231a2ad4ae2410fb94c54aa35d.ctex"
+uid="uid://hrtimjs7vwpn"
+path="res://.godot/imported/fox_sheet.png-0d3f29184632e264a0b8fb5067460113.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/water.png"
-dest_files=["res://.godot/imported/water.png-817b08231a2ad4ae2410fb94c54aa35d.ctex"]
+source_file="res://assets/sprites/sprite_sheets/fox_sheet.png"
+dest_files=["res://.godot/imported/fox_sheet.png-0d3f29184632e264a0b8fb5067460113.ctex"]
 
 [params]
 

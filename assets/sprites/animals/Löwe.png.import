@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ckrx0su70ldcs"
-path="res://.godot/imported/water.png-817b08231a2ad4ae2410fb94c54aa35d.ctex"
+uid="uid://e8sfghjy2430"
+path="res://.godot/imported/Löwe.png-eab477826d77b02a74e27ee8989a3c0c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/water.png"
-dest_files=["res://.godot/imported/water.png-817b08231a2ad4ae2410fb94c54aa35d.ctex"]
+source_file="res://assets/sprites/animals/Löwe.png"
+dest_files=["res://.godot/imported/Löwe.png-eab477826d77b02a74e27ee8989a3c0c.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ckrx0su70ldcs"
-path="res://.godot/imported/water.png-817b08231a2ad4ae2410fb94c54aa35d.ctex"
+uid="uid://p61mmtfd02ii"
+path="res://.godot/imported/Känguru.png-aec8ed4cc641a09fa0617e8b659d686e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/water.png"
-dest_files=["res://.godot/imported/water.png-817b08231a2ad4ae2410fb94c54aa35d.ctex"]
+source_file="res://assets/sprites/animals/Känguru.png"
+dest_files=["res://.godot/imported/Känguru.png-aec8ed4cc641a09fa0617e8b659d686e.ctex"]
 
 [params]
 

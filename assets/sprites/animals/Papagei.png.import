@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ckrx0su70ldcs"
-path="res://.godot/imported/water.png-817b08231a2ad4ae2410fb94c54aa35d.ctex"
+uid="uid://bjdiuyqksvrr5"
+path="res://.godot/imported/Papagei.png-24578f3f862e63e364cc5a17e58c683d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/water.png"
-dest_files=["res://.godot/imported/water.png-817b08231a2ad4ae2410fb94c54aa35d.ctex"]
+source_file="res://assets/sprites/animals/Papagei.png"
+dest_files=["res://.godot/imported/Papagei.png-24578f3f862e63e364cc5a17e58c683d.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ckrx0su70ldcs"
-path="res://.godot/imported/water.png-817b08231a2ad4ae2410fb94c54aa35d.ctex"
+uid="uid://78e4mfbsejub"
+path="res://.godot/imported/animal_status_bg.png-68194b6bb27a4fbe09eaa6220216664b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/water.png"
-dest_files=["res://.godot/imported/water.png-817b08231a2ad4ae2410fb94c54aa35d.ctex"]
+source_file="res://assets/sprites/quiz_ui/animal_status_bg.png"
+dest_files=["res://.godot/imported/animal_status_bg.png-68194b6bb27a4fbe09eaa6220216664b.ctex"]
 
 [params]
 

@@ -1,37 +1,36 @@
-[gd_scene load_steps=75 format=3 uid="uid://brp0jxv2impta"]
+[gd_scene load_steps=74 format=3 uid="uid://brp0jxv2impta"]
 
 [ext_resource type="Script" uid="uid://cuh1bugo6p7ee" path="res://scripts/animal.gd" id="1_8dtbx"]
-[ext_resource type="Texture2D" uid="uid://h5gh6apgl7jf" path="res://assets/animals/Grizzlybär (2).png" id="2_3v7ex"]
-[ext_resource type="Texture2D" uid="uid://ktc3221vylxw" path="res://assets/sprites/Idle.png" id="2_236rq"]
-[ext_resource type="Texture2D" uid="uid://c4c642b7juycf" path="res://assets/animals/Bison.png" id="2_d7epe"]
-[ext_resource type="Texture2D" uid="uid://bd7ecpax767qk" path="res://assets/animals/Alpaka.png" id="2_ybi86"]
-[ext_resource type="Texture2D" uid="uid://rvb2uaj2l88b" path="res://assets/animals/Alpensteinmurmeltier.png" id="3_7do3a"]
-[ext_resource type="Texture2D" uid="uid://ckckgrifb4v4m" path="res://assets/animals/Anakonda.png" id="3_hb82n"]
-[ext_resource type="Texture2D" uid="uid://dbeslkl5s3d0i" path="res://assets/animals/Kojote.png" id="4_brjsm"]
-[ext_resource type="Texture2D" uid="uid://dbtgin4eh8rlr" path="res://assets/animals/Biber.png" id="4_jp041"]
-[ext_resource type="Texture2D" uid="uid://m5478hn5qb3r" path="res://assets/animals/Flamingo.png" id="5_fiknr"]
-[ext_resource type="Texture2D" uid="uid://dms8luh1w2vrg" path="res://assets/animals/Aye-aye.png" id="5_rori6"]
-[ext_resource type="Texture2D" uid="uid://c0wh607yucdco" path="res://assets/animals/Präriehund.png" id="5_ybi86"]
-[ext_resource type="Texture2D" uid="uid://b7vxst8itwj3c" path="res://assets/animals/Eichhörnchen.png" id="6_7do3a"]
-[ext_resource type="Texture2D" uid="uid://bxk1e2sufwhuj" path="res://assets/animals/Weißkopfseeadler.png" id="6_hb82n"]
-[ext_resource type="Texture2D" uid="uid://njnx1mtacr8m" path="res://assets/animals/Jaguar.png" id="7_d06xb"]
-[ext_resource type="Texture2D" uid="uid://bjdiuyqksvrr5" path="res://assets/animals/Papagei.png" id="9_d06xb"]
-[ext_resource type="Texture2D" uid="uid://bx044502om82r" path="res://assets/animals/Luchs.png" id="9_s21jh"]
-[ext_resource type="Texture2D" uid="uid://3uc60tcqljic" path="res://assets/animals/Emu.png" id="9_xa74n"]
-[ext_resource type="Texture2D" uid="uid://21rdc81pavnj" path="res://assets/animals/Honigdachs.png" id="10_748p7"]
-[ext_resource type="Texture2D" uid="uid://s550b25jki6f" path="res://assets/animals/Galago.png" id="10_gbowl"]
-[ext_resource type="Texture2D" uid="uid://dcprokoil3uuf" path="res://assets/animals/Orang-Utan.png" id="13_10oeq"]
-[ext_resource type="Texture2D" uid="uid://btpylctx4flxi" path="res://assets/animals/Königsriesenhörnchen.png" id="13_h4cte"]
-[ext_resource type="Texture2D" uid="uid://cfefcckjloujk" path="res://assets/animals/Panda.png" id="13_qag4x"]
-[ext_resource type="Texture2D" uid="uid://2qi7oneevrao" path="res://assets/animals/Helmkasuar.png" id="13_r1mgj"]
-[ext_resource type="Texture2D" uid="uid://th28laqw5m5c" path="res://assets/animals/Wolf.png" id="13_xjlt7"]
-[ext_resource type="Texture2D" uid="uid://p61mmtfd02ii" path="res://assets/animals/Känguru.png" id="15_20wpp"]
-[ext_resource type="Texture2D" uid="uid://2wlras0xfn7i" path="res://assets/animals/Koala.png" id="15_v8kal"]
-[ext_resource type="Texture2D" uid="uid://crmfh82qqt31w" path="res://assets/animals/Leopard.png" id="16_em8nj"]
-[ext_resource type="Texture2D" uid="uid://e8sfghjy2430" path="res://assets/animals/Löwe.png" id="18_j1qxf"]
-[ext_resource type="Texture2D" uid="uid://c2d7sfeys7xn4" path="res://assets/animals/Yak.png" id="19_lt1bt"]
-[ext_resource type="Texture2D" uid="uid://b4ldmjrqyrkn2" path="res://assets/animals/Okapi.png" id="20_eaemt"]
-[ext_resource type="Texture2D" uid="uid://baajj25fs74sh" path="res://assets/animals/Wombat.png" id="29_v8kal"]
+[ext_resource type="Texture2D" uid="uid://h5gh6apgl7jf" path="res://assets/sprites/animals/Grizzlybär.png" id="2_3v7ex"]
+[ext_resource type="Texture2D" uid="uid://c4c642b7juycf" path="res://assets/sprites/animals/Bison.png" id="2_d7epe"]
+[ext_resource type="Texture2D" uid="uid://bd7ecpax767qk" path="res://assets/sprites/animals/Alpaka.png" id="2_ybi86"]
+[ext_resource type="Texture2D" uid="uid://rvb2uaj2l88b" path="res://assets/sprites/animals/Alpensteinmurmeltier.png" id="3_7do3a"]
+[ext_resource type="Texture2D" uid="uid://ckckgrifb4v4m" path="res://assets/sprites/animals/Anakonda.png" id="3_hb82n"]
+[ext_resource type="Texture2D" uid="uid://dbeslkl5s3d0i" path="res://assets/sprites/animals/Kojote.png" id="4_brjsm"]
+[ext_resource type="Texture2D" uid="uid://dbtgin4eh8rlr" path="res://assets/sprites/animals/Biber.png" id="4_jp041"]
+[ext_resource type="Texture2D" uid="uid://m5478hn5qb3r" path="res://assets/sprites/animals/Flamingo.png" id="5_fiknr"]
+[ext_resource type="Texture2D" uid="uid://dms8luh1w2vrg" path="res://assets/sprites/animals/Aye-aye.png" id="5_rori6"]
+[ext_resource type="Texture2D" uid="uid://c0wh607yucdco" path="res://assets/sprites/animals/Präriehund.png" id="5_ybi86"]
+[ext_resource type="Texture2D" uid="uid://b7vxst8itwj3c" path="res://assets/sprites/animals/Eichhörnchen.png" id="6_7do3a"]
+[ext_resource type="Texture2D" uid="uid://bxk1e2sufwhuj" path="res://assets/sprites/animals/Weißkopfseeadler.png" id="6_hb82n"]
+[ext_resource type="Texture2D" uid="uid://njnx1mtacr8m" path="res://assets/sprites/animals/Jaguar.png" id="7_d06xb"]
+[ext_resource type="Texture2D" uid="uid://bjdiuyqksvrr5" path="res://assets/sprites/animals/Papagei.png" id="9_d06xb"]
+[ext_resource type="Texture2D" uid="uid://bx044502om82r" path="res://assets/sprites/animals/Luchs.png" id="9_s21jh"]
+[ext_resource type="Texture2D" uid="uid://3uc60tcqljic" path="res://assets/sprites/animals/Emu.png" id="9_xa74n"]
+[ext_resource type="Texture2D" uid="uid://21rdc81pavnj" path="res://assets/sprites/animals/Honigdachs.png" id="10_748p7"]
+[ext_resource type="Texture2D" uid="uid://s550b25jki6f" path="res://assets/sprites/animals/Galago.png" id="10_gbowl"]
+[ext_resource type="Texture2D" uid="uid://dcprokoil3uuf" path="res://assets/sprites/animals/Orang-Utan.png" id="13_10oeq"]
+[ext_resource type="Texture2D" uid="uid://btpylctx4flxi" path="res://assets/sprites/animals/Königsriesenhörnchen.png" id="13_h4cte"]
+[ext_resource type="Texture2D" uid="uid://cfefcckjloujk" path="res://assets/sprites/animals/Panda.png" id="13_qag4x"]
+[ext_resource type="Texture2D" uid="uid://2qi7oneevrao" path="res://assets/sprites/animals/Helmkasuar.png" id="13_r1mgj"]
+[ext_resource type="Texture2D" uid="uid://th28laqw5m5c" path="res://assets/sprites/animals/Wolf.png" id="13_xjlt7"]
+[ext_resource type="Texture2D" uid="uid://p61mmtfd02ii" path="res://assets/sprites/animals/Känguru.png" id="15_20wpp"]
+[ext_resource type="Texture2D" uid="uid://2wlras0xfn7i" path="res://assets/sprites/animals/Koala.png" id="15_v8kal"]
+[ext_resource type="Texture2D" uid="uid://crmfh82qqt31w" path="res://assets/sprites/animals/Leopard.png" id="16_em8nj"]
+[ext_resource type="Texture2D" uid="uid://e8sfghjy2430" path="res://assets/sprites/animals/Löwe.png" id="18_j1qxf"]
+[ext_resource type="Texture2D" uid="uid://c2d7sfeys7xn4" path="res://assets/sprites/animals/Yak.png" id="19_lt1bt"]
+[ext_resource type="Texture2D" uid="uid://b4ldmjrqyrkn2" path="res://assets/sprites/animals/Okapi.png" id="20_eaemt"]
+[ext_resource type="Texture2D" uid="uid://baajj25fs74sh" path="res://assets/sprites/animals/Wombat.png" id="29_v8kal"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xjlt7"]
 atlas = ExtResource("2_ybi86")
@@ -154,43 +153,33 @@ atlas = ExtResource("19_lt1bt")
 region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d3gqv"]
-atlas = ExtResource("2_236rq")
 region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_s3kkx"]
-atlas = ExtResource("2_236rq")
 region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_k2r5b"]
-atlas = ExtResource("2_236rq")
 region = Rect2(64, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_82n7h"]
-atlas = ExtResource("2_236rq")
 region = Rect2(96, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pfijn"]
-atlas = ExtResource("2_236rq")
 region = Rect2(128, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pgykv"]
-atlas = ExtResource("2_236rq")
 region = Rect2(160, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tbnmk"]
-atlas = ExtResource("2_236rq")
 region = Rect2(192, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cpnh4"]
-atlas = ExtResource("2_236rq")
 region = Rect2(224, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_t051g"]
-atlas = ExtResource("2_236rq")
 region = Rect2(256, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4i03q"]
-atlas = ExtResource("2_236rq")
 region = Rect2(288, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_pcjxj"]
@@ -480,7 +469,6 @@ script = ExtResource("1_8dtbx")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -16)
 sprite_frames = SubResource("SpriteFrames_pcjxj")
-animation = &"Helmkasuar"
 autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
