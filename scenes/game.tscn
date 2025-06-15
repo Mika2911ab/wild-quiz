@@ -10,6 +10,9 @@
 [ext_resource type="AudioStream" uid="uid://8ikc7qgrrbkj" path="res://assets/sounds/Forgotten Biomes.wav" id="6_u5sy4"]
 [ext_resource type="Texture2D" uid="uid://bb61eyf750fk3" path="res://assets/sprites/lexicon.png" id="7_u5sy4"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vtaks"]
+size = Vector2(12, 14)
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lnu2h"]
 texture = ExtResource("2_yqjtg")
 1:0/0 = 0
@@ -375,7 +378,84 @@ sources/0 = SubResource("TileSetAtlasSource_lnu2h")
 sources/1 = SubResource("TileSetAtlasSource_iywne")
 
 [node name="Game" type="Node2D"]
-script = ExtResource("1_gee14")
+script = ExtResource("1_0tnpc")
+
+[node name="CountdownTimer" type="Timer" parent="."]
+autostart = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="amount_of_points" type="Label" parent="CanvasLayer"]
+offset_left = 53.0
+offset_top = -10.0
+offset_right = 169.0
+offset_bottom = 6.0
+scale = Vector2(2.5, 2.5)
+pivot_offset = Vector2(-35, -35)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_gee14")
+text = "Punkte:"
+
+[node name="CountdownLabel" type="Label" parent="CanvasLayer"]
+offset_left = 33.0
+offset_top = 116.0
+offset_right = 172.0
+offset_bottom = 131.0
+scale = Vector2(2.49706, 2.53372)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_gee14")
+text = "Verbleibende Zeit: "
+
+[node name="LexiconPopup" type="Control" parent="CanvasLayer"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/LexiconPopup"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/LexiconPopup/MarginContainer"]
+layout_direction = 2
+layout_mode = 2
+size_flags_stretch_ratio = 2.5
+mouse_filter = 0
+texture = ExtResource("4_vtaks")
+
+[node name="CloseButton" type="Button" parent="CanvasLayer/LexiconPopup"]
+modulate = Color(1, 0.101961, 0, 1)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -50.0
+offset_bottom = 31.0
+grow_horizontal = 0
+size_flags_horizontal = 8
+size_flags_vertical = 0
+text = "X"
+
+[node name="Area2D" type="Area2D" parent="CanvasLayer"]
+
+[node name="lexicon" type="Sprite2D" parent="CanvasLayer/Area2D"]
+position = Vector2(10, 10)
+scale = Vector2(5, 5)
+texture = ExtResource("7_u5sy4")
+offset = Vector2(10, 10)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanvasLayer/Area2D"]
+position = Vector2(60, 60)
+scale = Vector2(5, 5)
+shape = SubResource("RectangleShape2D_vtaks")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_lbhrr")
@@ -424,3 +504,16 @@ script = ExtResource("6_p57ef")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_u5sy4")
 autoplay = true
+
+[node name="Player" parent="." node_paths=PackedStringArray("tilemap") instance=ExtResource("1_uwrxv")]
+z_index = 1
+position = Vector2(49, -66)
+tilemap = NodePath("../TileMap")
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+zoom = Vector2(2, 2)
+position_smoothing_enabled = true
+
+[connection signal="timeout" from="CountdownTimer" to="." method="_on_countdown_timer_timeout"]
+[connection signal="pressed" from="CanvasLayer/LexiconPopup/CloseButton" to="." method="_on_close_button_pressed"]
+[connection signal="input_event" from="CanvasLayer/Area2D" to="." method="_on_area_2d_input_event"]
