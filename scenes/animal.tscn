@@ -478,9 +478,9 @@ radius = 15.0
 script = ExtResource("1_8dtbx")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -16)
+position = Vector2(0, -13)
 sprite_frames = SubResource("SpriteFrames_pcjxj")
-animation = &"Helmkasuar"
+animation = &"Wombat"
 autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
