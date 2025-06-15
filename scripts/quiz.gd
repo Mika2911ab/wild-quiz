@@ -1830,7 +1830,13 @@ var correct_answer = ""
 var number_of_questions = 2
 var current_question = 0
 var right_answers_needed = 1
-var right_ansers  = 0
+var right_answers  = 0
+
+@onready var correct_sound: AudioStreamPlayer = $correct_sound
+@onready var wrong_sound: AudioStreamPlayer = $wrong_sound
+@onready var congrats_sound: AudioStreamPlayer = $congrats_sound
+
+
 
 func set_animal(name: String, continent: String, species: String):
 	animal_name = name
@@ -1838,7 +1844,7 @@ func set_animal(name: String, continent: String, species: String):
 	animal_species = species
 	current_question = 0
 	right_answers_needed = 1
-	right_ansers  = 0
+	right_answers  = 0
 	
 	print("Animal set to:", animal_name)
 	
@@ -1880,36 +1886,53 @@ func set_random_question():
 		if has_node(label_path):
 			get_node(label_path).text = answers[i]
 
+func update_points_label():
+		$Player/Camera2D/amount_of_points.text="Punkte: " + str(right_answers)
+		print("punkte: " + str(right_answers))
+
 # TODO: Add functionality for what happens after a right or wrong answer
 func _on_answer_button_1_pressed() -> void:
 	if $QuizBox/AnswerGrid/AnswerButton1/AnswerLabel1.text == correct_answer:
-		right_ansers += 1
+		correct_sound.play()
+		right_answers += 1
+		print("punkte: " + str(right_answers))
+		update_points_label()
 		give_answer_feedback(true)
 	else:
+		wrong_sound.play()
 		give_answer_feedback(false)
 
 
 func _on_answer_button_2_pressed() -> void:
 	if $QuizBox/AnswerGrid/AnswerButton2/AnswerLabel2.text == correct_answer:
-		right_ansers += 1
+		correct_sound.play()
+		right_answers += 1
+		update_points_label()
 		give_answer_feedback(true)
 	else:
+		wrong_sound.play()
 		give_answer_feedback(false)
 
 
 func _on_answer_button_3_pressed() -> void:
 	if $QuizBox/AnswerGrid/AnswerButton3/AnswerLabel3.text == correct_answer:
-		right_ansers += 1
+		correct_sound.play()
+		right_answers += 1
+		update_points_label()
 		give_answer_feedback(true)
 	else:
+		wrong_sound.play()
 		give_answer_feedback(false)
 
 
 func _on_answer_button_4_pressed() -> void:
 	if $QuizBox/AnswerGrid/AnswerButton4/AnswerLabel4.text == correct_answer:
-		right_ansers += 1
+		correct_sound.play()
+		right_answers += 1
+		update_points_label()
 		give_answer_feedback(true)
 	else:
+		wrong_sound.play()
 		give_answer_feedback(false)
 		
 func give_answer_feedback(is_answer_correct: bool):
@@ -1933,10 +1956,12 @@ func _on_answer_feedback_button_pressed() -> void:
 		$AnswerFeedback.visible = false
 		SceneSwitcher.switch_scene("res://scenes/game.tscn")
 	if $AnswerFeedback/AnswerFeedbackButtonText.text == "Quiz Beenden":
-		if right_ansers >= right_answers_needed:
+		if right_answers >= right_answers_needed:
+			congrats_sound.play()
 			$AnswerFeedback/RightWrongText.text = "Glückwunsch!"
 			$AnswerFeedback/FeedbackText.text = "Du hast das Quiz bestanden und ein neues Tier wird registriert!"
 		else:
+			wrong_sound.play()
 			$AnswerFeedback/RightWrongText.text = "Schade!"
 			$AnswerFeedback/FeedbackText.text = "Du hast das Quiz nicht bestanden. Viel Glück beim nächsten mal."
 		$AnswerFeedback/AnswerFeedbackButtonText.text = "Weiter"
