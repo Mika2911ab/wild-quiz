@@ -6,4 +6,4 @@ func _ready():
 	_on_score_changed()
 
 func _on_score_changed():
-	$UI/ScoreText.text = "Registrierte Tiere: " + str(GlobalVariables.score)
+	$UI/ScoreText.text = "Registrierte Tiere: " + str(GlobalVariables.score) + "/35"

@@ -1823,6 +1823,16 @@ var quiz_data = {
 	]
 }
 
+var continents = {
+	"Europa": "eu",
+	"Nordamerika": "na",
+	"Südamerika": "sa",
+	"Australien": "",
+	"Afrika": "",
+	"Asien": "",
+	"Antarktis": ""
+}
+
 var animal_name = ""
 var animal_continent = ""
 var animal_species = ""
@@ -1857,7 +1867,11 @@ func set_random_question():
 		return
 	
 	current_question += 1
-	var questions = quiz_data[animal_name]
+	# TODO: Figure out how to get the questions here
+	var questions
+	for i in range(Animals.animals[continents[animal_continent]].size()):
+		if Animals.animals[continents[animal_continent]][i]["name"] == animal_name:
+			questions = Animals.animals[continents[animal_continent]][i]["questions"]
 	var question_data = questions[randi() % questions.size()]
 	
 	# Set animal name

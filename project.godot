@@ -19,6 +19,7 @@ config/features=PackedStringArray("4.4", "GL Compatibility")
 SceneSwitcher="*res://scripts/scene_switcher.gd"
 GlobalTimer="*res://scenes/Timer.tscn"
 GlobalVariables="*res://scripts/global_variables.gd"
+Animals="*res://scripts/animals.gd"
 
 [display]
 
