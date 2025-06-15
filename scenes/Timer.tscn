@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://dtxuxyw6dtvlq"]
+
+[ext_resource type="Script" uid="uid://beuvl4u3sb5bv" path="res://scenes/timer.gd" id="1_l5usf"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_l5usf"]
+font_size = 50
+font_color = Color(0, 0, 0, 1)
+outline_size = 10
+shadow_size = 20
+
+[node name="Timer" type="CanvasLayer"]
+script = ExtResource("1_l5usf")
+
+[node name="TimerLabel" type="Label" parent="."]
+offset_left = 584.0
+offset_top = 1.0
+offset_right = 712.0
+offset_bottom = 83.0
+text = "00:00"
+label_settings = SubResource("LabelSettings_l5usf")
