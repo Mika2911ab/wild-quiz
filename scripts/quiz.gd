@@ -1839,20 +1839,22 @@ var animal_species = ""
 var correct_answer = ""
 var number_of_questions = 2
 var current_question = 0
-#var right_answers_needed = 1
-#var right_answers  = 0
+var right_answers_needed = 1
+var right_answers  = 0
 
 @onready var correct_sound: AudioStreamPlayer = $correct_sound
 @onready var wrong_sound: AudioStreamPlayer = $wrong_sound
 @onready var congrats_sound: AudioStreamPlayer = $congrats_sound
+
+
 
 func set_animal(name: String, continent: String, species: String):
 	animal_name = name
 	animal_continent = continent
 	animal_species = species
 	current_question = 0
-	Global.right_answers_needed = 1
-	Global.right_answers  = 0
+	right_answers_needed = 1
+	right_answers  = 0
 	
 	print("Animal set to:", animal_name)
 	
@@ -1959,7 +1961,7 @@ func _on_answer_feedback_button_pressed() -> void:
 		$AnswerFeedback.visible = false
 		SceneSwitcher.switch_scene("res://scenes/game.tscn")
 	if $AnswerFeedback/AnswerFeedbackButtonText.text == "Quiz Beenden":
-		if Global.right_answers >= Global.right_answers_needed:
+		if right_answers >= right_answers_needed:
 			congrats_sound.play()
 			GlobalVariables.score += 1
 			$AnswerFeedback/RightWrongText.text = "Glückwunsch!"

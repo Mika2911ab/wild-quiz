@@ -3,7 +3,7 @@ extends CharacterBody2D
 var SPEED = 100.0
 
 @export var tilemap: TileMap
-@onready var anim = $AnimatedSprite2D # Player animation
+@onready var anim = $AnimatedSprite2D
 
 func _physics_process(delta: float) -> void:
 	var input_vector = Vector2(

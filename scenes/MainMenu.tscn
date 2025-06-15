@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://crp3cw182qqxw" path="res://scripts/main_menu.gd" id="1_i26rj"]
 [ext_resource type="Texture2D" uid="uid://hrtimjs7vwpn" path="res://assets/sprites/Fox Sprite Sheet.png" id="2_0ykhv"]
 [ext_resource type="Script" uid="uid://dota204jo626s" path="res://scripts/camera_2d.gd" id="2_ow34m"]
-[ext_resource type="FontFile" uid="uid://dne4aphor0uht" path="res://font.ttf" id="3_2wh52"]
+[ext_resource type="FontFile" uid="uid://dne4aphor0uht" path="res://assets/fonts/alagard.ttf" id="3_2wh52"]
 [ext_resource type="Script" uid="uid://enkrjgyq8mgo" path="res://scripts/fox_script.gd" id="3_l72w3"]
 [ext_resource type="AudioStream" uid="uid://cjfcgwnpcd6hl" path="res://assets/sounds/Evening Harmony.wav" id="6_826wr"]
 
