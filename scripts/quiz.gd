@@ -1848,7 +1848,7 @@ func set_animal(name: String, continent: String, species: String):
 	
 	print("Animal set to:", animal_name)
 	
-	$Animal/Animal_Test.set_animal(name, continent, species) # TODO: Don't use the Animal_Test Scene here since that scene has a script attached to it that is not needed here
+	$Animal/Animal_Test.set_animal(name, continent, species)
 	set_random_question()
 	
 func set_random_question():
@@ -1886,17 +1886,11 @@ func set_random_question():
 		if has_node(label_path):
 			get_node(label_path).text = answers[i]
 
-func update_points_label():
-		$Player/Camera2D/amount_of_points.text="Punkte: " + str(right_answers)
-		print("punkte: " + str(right_answers))
-
-# TODO: Add functionality for what happens after a right or wrong answer
 func _on_answer_button_1_pressed() -> void:
 	if $QuizBox/AnswerGrid/AnswerButton1/AnswerLabel1.text == correct_answer:
 		correct_sound.play()
 		right_answers += 1
 		print("punkte: " + str(right_answers))
-		update_points_label()
 		give_answer_feedback(true)
 	else:
 		wrong_sound.play()
@@ -1907,7 +1901,6 @@ func _on_answer_button_2_pressed() -> void:
 	if $QuizBox/AnswerGrid/AnswerButton2/AnswerLabel2.text == correct_answer:
 		correct_sound.play()
 		right_answers += 1
-		update_points_label()
 		give_answer_feedback(true)
 	else:
 		wrong_sound.play()
@@ -1918,7 +1911,6 @@ func _on_answer_button_3_pressed() -> void:
 	if $QuizBox/AnswerGrid/AnswerButton3/AnswerLabel3.text == correct_answer:
 		correct_sound.play()
 		right_answers += 1
-		update_points_label()
 		give_answer_feedback(true)
 	else:
 		wrong_sound.play()
@@ -1929,7 +1921,6 @@ func _on_answer_button_4_pressed() -> void:
 	if $QuizBox/AnswerGrid/AnswerButton4/AnswerLabel4.text == correct_answer:
 		correct_sound.play()
 		right_answers += 1
-		update_points_label()
 		give_answer_feedback(true)
 	else:
 		wrong_sound.play()
@@ -1958,6 +1949,7 @@ func _on_answer_feedback_button_pressed() -> void:
 	if $AnswerFeedback/AnswerFeedbackButtonText.text == "Quiz Beenden":
 		if right_answers >= right_answers_needed:
 			congrats_sound.play()
+			GlobalVariables.score += 1
 			$AnswerFeedback/RightWrongText.text = "Glückwunsch!"
 			$AnswerFeedback/FeedbackText.text = "Du hast das Quiz bestanden und ein neues Tier wird registriert!"
 		else:

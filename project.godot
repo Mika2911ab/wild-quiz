@@ -13,12 +13,12 @@ config_version=5
 config/name="Wild Quiz"
 run/main_scene="uid://biaqn65s1pguc"
 config/features=PackedStringArray("4.4", "GL Compatibility")
-config/icon="res://icon.svg"
 
 [autoload]
 
 SceneSwitcher="*res://scripts/scene_switcher.gd"
 GlobalTimer="*res://scenes/Timer.tscn"
+GlobalVariables="*res://scripts/global_variables.gd"
 
 [display]
 
