@@ -138,6 +138,20 @@ var spawn_points_au := [
 	Vector2i(74,48),
 ]
 
+var spawn_points_ant :=[
+	Vector2i(-79,75),
+	Vector2i(-63,74),
+	Vector2i(-48,75),
+	Vector2i(-35,72),
+	Vector2i(-20,76),
+	Vector2i(-3,71),
+	Vector2i(20,74),
+	Vector2i(42,75),
+	Vector2i(60,76),
+	Vector2i(77,73),
+	Vector2i(91,76)
+]
+
 func _ready():
 	randomize()
 	#spawn_animal_with_chance(1.0) #TODO: Instead of spawing an animal by chance, spawn a fixed amount of animals at random positions from random breed
@@ -147,7 +161,8 @@ func _ready():
 	spawn_animals_at_region(animals["au"], "Australia", spawn_points_au) #Australien
 	spawn_animals_at_region(animals["af"], "Africa", spawn_points_af) #Afrika
 	spawn_animals_at_region(animals["as"], "Asia", spawn_points_as) #Asien
-	# TODO: Add Antarctica
+	spawn_animals_at_region(animals["ant"], "Antarctica", spawn_points_ant) 
+
 	
 
 func spawn_animal_at_tile(tile_coords: Vector2i, animal_name: String, animal_continent: String, animal_species: String) -> void:

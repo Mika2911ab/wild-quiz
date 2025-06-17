@@ -1,4 +1,4 @@
-[gd_scene load_steps=75 format=3 uid="uid://brp0jxv2impta"]
+[gd_scene load_steps=80 format=3 uid="uid://brp0jxv2impta"]
 
 [ext_resource type="Script" uid="uid://cuh1bugo6p7ee" path="res://scripts/animal.gd" id="1_8dtbx"]
 [ext_resource type="Texture2D" uid="uid://h5gh6apgl7jf" path="res://assets/animals/Grizzlybär (2).png" id="2_3v7ex"]
@@ -10,7 +10,9 @@
 [ext_resource type="Texture2D" uid="uid://dbeslkl5s3d0i" path="res://assets/animals/Kojote.png" id="4_brjsm"]
 [ext_resource type="Texture2D" uid="uid://dbtgin4eh8rlr" path="res://assets/animals/Biber.png" id="4_jp041"]
 [ext_resource type="Texture2D" uid="uid://m5478hn5qb3r" path="res://assets/animals/Flamingo.png" id="5_fiknr"]
+[ext_resource type="Texture2D" uid="uid://5fy2j1avw03r" path="res://assets/animals/Antarktiksturmvogel.png" id="5_nhc2b"]
 [ext_resource type="Texture2D" uid="uid://dms8luh1w2vrg" path="res://assets/animals/Aye-aye.png" id="5_rori6"]
+[ext_resource type="Texture2D" uid="uid://dddhwddjkpq6q" path="res://assets/animals/Antarktischer Krill.png" id="5_wxa41"]
 [ext_resource type="Texture2D" uid="uid://c0wh607yucdco" path="res://assets/animals/Präriehund.png" id="5_ybi86"]
 [ext_resource type="Texture2D" uid="uid://b7vxst8itwj3c" path="res://assets/animals/Eichhörnchen.png" id="6_7do3a"]
 [ext_resource type="Texture2D" uid="uid://bxk1e2sufwhuj" path="res://assets/animals/Weißkopfseeadler.png" id="6_hb82n"]
@@ -18,6 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://bjdiuyqksvrr5" path="res://assets/animals/Papagei.png" id="9_d06xb"]
 [ext_resource type="Texture2D" uid="uid://bx044502om82r" path="res://assets/animals/Luchs.png" id="9_s21jh"]
 [ext_resource type="Texture2D" uid="uid://3uc60tcqljic" path="res://assets/animals/Emu.png" id="9_xa74n"]
+[ext_resource type="Texture2D" uid="uid://d31yf5n7ljfkx" path="res://assets/animals/Buckelwal.png" id="10_1jhi6"]
 [ext_resource type="Texture2D" uid="uid://21rdc81pavnj" path="res://assets/animals/Honigdachs.png" id="10_748p7"]
 [ext_resource type="Texture2D" uid="uid://s550b25jki6f" path="res://assets/animals/Galago.png" id="10_gbowl"]
 [ext_resource type="Texture2D" uid="uid://dcprokoil3uuf" path="res://assets/animals/Orang-Utan.png" id="13_10oeq"]
@@ -29,9 +32,11 @@
 [ext_resource type="Texture2D" uid="uid://2wlras0xfn7i" path="res://assets/animals/Koala.png" id="15_v8kal"]
 [ext_resource type="Texture2D" uid="uid://crmfh82qqt31w" path="res://assets/animals/Leopard.png" id="16_em8nj"]
 [ext_resource type="Texture2D" uid="uid://e8sfghjy2430" path="res://assets/animals/Löwe.png" id="18_j1qxf"]
+[ext_resource type="Texture2D" uid="uid://botq2xwe4dyyx" path="res://assets/animals/Kaiserpinguin.png" id="19_lpx3a"]
 [ext_resource type="Texture2D" uid="uid://c2d7sfeys7xn4" path="res://assets/animals/Yak.png" id="19_lt1bt"]
 [ext_resource type="Texture2D" uid="uid://b4ldmjrqyrkn2" path="res://assets/animals/Okapi.png" id="20_eaemt"]
 [ext_resource type="Texture2D" uid="uid://baajj25fs74sh" path="res://assets/animals/Wombat.png" id="29_v8kal"]
+[ext_resource type="Texture2D" uid="uid://dpg5j0wqwsnh0" path="res://assets/animals/Seeleopard.png" id="32_krckq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xjlt7"]
 atlas = ExtResource("2_ybi86")
@@ -221,6 +226,22 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("5_nhc2b")
+}],
+"loop": true,
+"name": &"Antarktiksturmvogel",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_wxa41")
+}],
+"loop": true,
+"name": &"Antarktischer Krill",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_xa74n")
 }],
 "loop": true,
@@ -241,6 +262,14 @@ animations = [{
 }],
 "loop": true,
 "name": &"Bison",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_1jhi6")
+}],
+"loop": true,
+"name": &"Buckelwal",
 "speed": 5.0
 }, {
 "frames": [{
@@ -305,6 +334,14 @@ animations = [{
 }],
 "loop": true,
 "name": &"Jaguar",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_lpx3a")
+}],
+"loop": true,
+"name": &"Kaiserpinguin",
 "speed": 5.0
 }, {
 "frames": [{
@@ -405,6 +442,14 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("32_krckq")
+}],
+"loop": true,
+"name": &"Seeleopard",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_s21jh")
 }],
 "loop": true,
@@ -480,7 +525,7 @@ script = ExtResource("1_8dtbx")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -16)
 sprite_frames = SubResource("SpriteFrames_pcjxj")
-animation = &"Helmkasuar"
+animation = &"Buckelwal"
 autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
