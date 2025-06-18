@@ -7,3 +7,5 @@ func _ready():
 
 func _on_score_changed():
 	$UI/ScoreText.text = "Registrierte Tiere: " + str(GlobalVariables.score) + "/35"
+	if GlobalVariables.score == 35:
+		SceneSwitcher.switch_scene("res://scenes/won.tscn")
