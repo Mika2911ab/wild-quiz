@@ -22,6 +22,9 @@ var spawn_points := {
 	"au": [
 		Vector2i(71,36), Vector2i(65,38), Vector2i(77,38), Vector2i(68,42), Vector2i(73,43), Vector2i(62,44), Vector2i(78,45), Vector2i(74,48),
 	],
+	"ant": [
+	Vector2i(-79,75), Vector2i(-63,74), Vector2i(-48,75),Vector2i(-35,72),Vector2i(-20,76),Vector2i(-3,71),Vector2i(20,74),Vector2i(42,75),Vector2i(60,76),Vector2i(77,73),Vector2i(91,76)
+	]
 }
 
 func _ready():
@@ -32,6 +35,7 @@ func _ready():
 	spawn_animals_at_region(Animals.animals["au"], "Australien", spawn_points["au"]) #Australien
 	spawn_animals_at_region(Animals.animals["af"], "Afrika", spawn_points["af"]) #Afrika
 	spawn_animals_at_region(Animals.animals["as"], "Asien", spawn_points["as"]) #Asien
+	spawn_animals_at_region(Animals.animals["ant"], "Antarktis", spawn_points["ant"]) 
 	# TODO: Add Antarctica
 
 func spawn_animals_at_region(animals, animal_continent, spawns) -> void:
@@ -48,7 +52,7 @@ func spawn_animal_at_tile(tile_coords: Vector2i, animal_name: String, animal_con
 	
 	if animal.has_method("set_animal"):
 		animal.set_animal(animal_name, animal_continent, animal_species)
-
+ 
 	# TileMap-Koordinaten in Weltkoordinaten umrechnen
 	var world_position = tile_map.map_to_local(tile_coords)
 	animal.position = world_position

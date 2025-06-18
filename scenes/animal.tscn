@@ -1,4 +1,4 @@
-[gd_scene load_steps=74 format=3 uid="uid://brp0jxv2impta"]
+[gd_scene load_steps=79 format=3 uid="uid://brp0jxv2impta"]
 
 [ext_resource type="Script" uid="uid://cuh1bugo6p7ee" path="res://scripts/animal.gd" id="1_8dtbx"]
 [ext_resource type="Texture2D" uid="uid://h5gh6apgl7jf" path="res://assets/sprites/animals/Grizzlybär.png" id="2_3v7ex"]
@@ -9,9 +9,11 @@
 [ext_resource type="Texture2D" uid="uid://dbeslkl5s3d0i" path="res://assets/sprites/animals/Kojote.png" id="4_brjsm"]
 [ext_resource type="Texture2D" uid="uid://dbtgin4eh8rlr" path="res://assets/sprites/animals/Biber.png" id="4_jp041"]
 [ext_resource type="Texture2D" uid="uid://m5478hn5qb3r" path="res://assets/sprites/animals/Flamingo.png" id="5_fiknr"]
+[ext_resource type="Texture2D" uid="uid://5fy2j1avw03r" path="res://assets/sprites/animals/Antarktiksturmvogel.png" id="5_r1mgj"]
 [ext_resource type="Texture2D" uid="uid://dms8luh1w2vrg" path="res://assets/sprites/animals/Aye-aye.png" id="5_rori6"]
 [ext_resource type="Texture2D" uid="uid://c0wh607yucdco" path="res://assets/sprites/animals/Präriehund.png" id="5_ybi86"]
 [ext_resource type="Texture2D" uid="uid://b7vxst8itwj3c" path="res://assets/sprites/animals/Eichhörnchen.png" id="6_7do3a"]
+[ext_resource type="Texture2D" uid="uid://dddhwddjkpq6q" path="res://assets/sprites/animals/Antarktischer Krill.png" id="6_d57ma"]
 [ext_resource type="Texture2D" uid="uid://bxk1e2sufwhuj" path="res://assets/sprites/animals/Weißkopfseeadler.png" id="6_hb82n"]
 [ext_resource type="Texture2D" uid="uid://njnx1mtacr8m" path="res://assets/sprites/animals/Jaguar.png" id="7_d06xb"]
 [ext_resource type="Texture2D" uid="uid://bjdiuyqksvrr5" path="res://assets/sprites/animals/Papagei.png" id="9_d06xb"]
@@ -19,6 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://3uc60tcqljic" path="res://assets/sprites/animals/Emu.png" id="9_xa74n"]
 [ext_resource type="Texture2D" uid="uid://21rdc81pavnj" path="res://assets/sprites/animals/Honigdachs.png" id="10_748p7"]
 [ext_resource type="Texture2D" uid="uid://s550b25jki6f" path="res://assets/sprites/animals/Galago.png" id="10_gbowl"]
+[ext_resource type="Texture2D" uid="uid://d31yf5n7ljfkx" path="res://assets/sprites/animals/Buckelwal.png" id="10_nhc2b"]
 [ext_resource type="Texture2D" uid="uid://dcprokoil3uuf" path="res://assets/sprites/animals/Orang-Utan.png" id="13_10oeq"]
 [ext_resource type="Texture2D" uid="uid://btpylctx4flxi" path="res://assets/sprites/animals/Königsriesenhörnchen.png" id="13_h4cte"]
 [ext_resource type="Texture2D" uid="uid://cfefcckjloujk" path="res://assets/sprites/animals/Panda.png" id="13_qag4x"]
@@ -28,9 +31,11 @@
 [ext_resource type="Texture2D" uid="uid://2wlras0xfn7i" path="res://assets/sprites/animals/Koala.png" id="15_v8kal"]
 [ext_resource type="Texture2D" uid="uid://crmfh82qqt31w" path="res://assets/sprites/animals/Leopard.png" id="16_em8nj"]
 [ext_resource type="Texture2D" uid="uid://e8sfghjy2430" path="res://assets/sprites/animals/Löwe.png" id="18_j1qxf"]
+[ext_resource type="Texture2D" uid="uid://botq2xwe4dyyx" path="res://assets/sprites/animals/Kaiserpinguin.png" id="19_1jhi6"]
 [ext_resource type="Texture2D" uid="uid://c2d7sfeys7xn4" path="res://assets/sprites/animals/Yak.png" id="19_lt1bt"]
 [ext_resource type="Texture2D" uid="uid://b4ldmjrqyrkn2" path="res://assets/sprites/animals/Okapi.png" id="20_eaemt"]
 [ext_resource type="Texture2D" uid="uid://baajj25fs74sh" path="res://assets/sprites/animals/Wombat.png" id="29_v8kal"]
+[ext_resource type="Texture2D" uid="uid://dpg5j0wqwsnh0" path="res://assets/sprites/animals/Seeleopard.png" id="32_lpx3a"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xjlt7"]
 atlas = ExtResource("2_ybi86")
@@ -210,6 +215,22 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("5_r1mgj")
+}],
+"loop": true,
+"name": &"Antarktiksturmvogel",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_d57ma")
+}],
+"loop": true,
+"name": &"Antarktischer Krill",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_xa74n")
 }],
 "loop": true,
@@ -230,6 +251,14 @@ animations = [{
 }],
 "loop": true,
 "name": &"Bison",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_nhc2b")
+}],
+"loop": true,
+"name": &"Buckelwal",
 "speed": 5.0
 }, {
 "frames": [{
@@ -294,6 +323,14 @@ animations = [{
 }],
 "loop": true,
 "name": &"Jaguar",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_1jhi6")
+}],
+"loop": true,
+"name": &"Kaiserpinguin",
 "speed": 5.0
 }, {
 "frames": [{
@@ -394,6 +431,14 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("32_lpx3a")
+}],
+"loop": true,
+"name": &"Seeleopard",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_s21jh")
 }],
 "loop": true,
@@ -469,6 +514,7 @@ script = ExtResource("1_8dtbx")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -16)
 sprite_frames = SubResource("SpriteFrames_pcjxj")
+animation = &"Seeleopard"
 autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

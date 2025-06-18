@@ -4,10 +4,10 @@ var continents = {
 	"Europa": "eu",
 	"Nordamerika": "na",
 	"Südamerika": "sa",
-	"Australien": "",
-	"Afrika": "",
-	"Asien": "",
-	"Antarktis": ""
+	"Australien": "au",
+	"Afrika": "af",
+	"Asien": "as",
+	"Antarktis": "ant"
 }
 
 var animal_name = ""
@@ -42,6 +42,7 @@ func set_random_question():
 	current_question += 1
 	# TODO: Figure out how to get the questions here
 	var questions
+	print(Animals.animals[continents[animal_continent]].size())
 	for i in range(Animals.animals[continents[animal_continent]].size()):
 		if Animals.animals[continents[animal_continent]][i]["name"] == animal_name:
 			questions = Animals.animals[continents[animal_continent]][i]["questions"]
