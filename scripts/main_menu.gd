@@ -2,9 +2,10 @@ extends Control
 
 func _on_start_game_pressed():
 	print("Game started")
-	SceneSwitcher.switch_scene("res://scenes/game.tscn")
-	GlobalTimer.reset_timer()
-	GlobalTimer.start_timer()
+	#SceneSwitcher.switch_scene("res://scenes/game.tscn")
+	SceneSwitcher.switch_scene("res://scenes/intro_story.tscn")
+	#GlobalTimer.reset_timer()
+	#GlobalTimer.start_timer()
 
 func _on_set_difficulty_pressed():
 	print("Set difficulty")

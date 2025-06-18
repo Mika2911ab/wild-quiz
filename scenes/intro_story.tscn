@@ -1,0 +1,50 @@
+[gd_scene load_steps=3 format=3 uid="uid://q2de6qkh1cgq"]
+
+[ext_resource type="Script" uid="uid://d120i22jnumgp" path="res://scripts/intro_story.gd" id="1_bumqu"]
+[ext_resource type="FontFile" uid="uid://dne4aphor0uht" path="res://assets/fonts/alagard.ttf" id="2_r1les"]
+
+[node name="IntroStory" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_bumqu")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 1150.0
+offset_bottom = 542.0
+scale = Vector2(1.1212, 1.35623)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+scale = Vector2(1.42793, 1.42793)
+theme_override_fonts/font = ExtResource("2_r1les")
+text = "🌀 Der große Wissenssturm
+
+Lange Zeit lebten Tiere in Harmonie auf der ganzen Welt – im Dschungel, in der Steppe, in den Bergen und Meeren.
+
+Doch ein seltsamer Sturm zog auf. Kein Regen – nur Vergessenheit.
+
+Die Tiere verschwanden. Ihr Wissen verblasste.  
+Das große Tierlexikon wurde ausgelöscht.
+
+Jetzt liegt es an dir:  
+Ein neues, magisches Lexikon ist aufgetaucht – und DU bist die einzige Hoffnung!
+
+⏳ Du hast 10 Minuten, um Tiere zu entdecken und ihr Wissen zu retten.
+
+🎒 Klicke auf „Weiter“, um dein Abenteuer zu beginnen!
+"
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 891.0
+offset_top = 585.0
+offset_right = 946.0
+offset_bottom = 608.0
+scale = Vector2(5.00669, 4.88847)
+theme_override_fonts/font = ExtResource("2_r1les")
+text = "Weiter"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://f8qlcesk8cpc" path="res://scripts/game.gd" id="1_gee14"]
 [ext_resource type="PackedScene" uid="uid://mcsc0eqqqpno" path="res://scenes/player.tscn" id="1_uwrxv"]
 [ext_resource type="Texture2D" uid="uid://dbstfcadhuipg" path="res://assets/sprites/sprite_sheets/terrain_sheet.png" id="2_yqjtg"]
-[ext_resource type="Texture2D" uid="uid://ckrx0su70ldcs" path="res://assets/sprites/water.png" id="3_lbhrr"]
+[ext_resource type="Texture2D" uid="uid://ckrx0su70ldcs" path="res://assets/sprites/Water.png" id="3_lbhrr"]
 [ext_resource type="FontFile" uid="uid://dne4aphor0uht" path="res://assets/fonts/alagard.ttf" id="6_0tnpc"]
 [ext_resource type="Script" uid="uid://xpn0ixc4pmix" path="res://scripts/spawner.gd" id="6_p57ef"]
 [ext_resource type="AudioStream" uid="uid://8ikc7qgrrbkj" path="res://assets/sounds/Forgotten Biomes.wav" id="6_u5sy4"]
