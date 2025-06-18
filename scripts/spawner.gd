@@ -35,7 +35,7 @@ func _ready():
 	spawn_animals_at_region(Animals.animals["au"], "Australien", spawn_points["au"]) #Australien
 	spawn_animals_at_region(Animals.animals["af"], "Afrika", spawn_points["af"]) #Afrika
 	spawn_animals_at_region(Animals.animals["as"], "Asien", spawn_points["as"]) #Asien
-	spawn_animals_at_region(Animals.animals["ant"], "Antarctica", spawn_points["ant"]) 
+	spawn_animals_at_region(Animals.animals["ant"], "Antarktis", spawn_points["ant"]) 
 	# TODO: Add Antarctica
 
 func spawn_animals_at_region(animals, animal_continent, spawns) -> void:
@@ -52,7 +52,7 @@ func spawn_animal_at_tile(tile_coords: Vector2i, animal_name: String, animal_con
 	
 	if animal.has_method("set_animal"):
 		animal.set_animal(animal_name, animal_continent, animal_species)
-
+ 
 	# TileMap-Koordinaten in Weltkoordinaten umrechnen
 	var world_position = tile_map.map_to_local(tile_coords)
 	animal.position = world_position
