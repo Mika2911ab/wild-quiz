@@ -7,10 +7,11 @@ func _on_start_game_pressed():
 	#GlobalTimer.reset_timer()
 	#GlobalTimer.start_timer()
 
-func _on_set_difficulty_pressed():
+func _on_difficulty_pressed():
 	print("Set difficulty")
 	# Open difficulty submenu or popup
-	$DifficultyPanel.visible = true
+	SceneSwitcher.switch_scene("res://scenes/set_difficulty.tscn")
+	
 
 func _on_settings_pressed():
 	print("Go into settings")

@@ -110,8 +110,13 @@ func _on_answer_button_4_pressed() -> void:
 func give_answer_feedback(is_answer_correct: bool):
 	if is_answer_correct == true:
 		$AnswerFeedback/RightWrongText.text = "Richtig!"
+		if right_answers == 35:
+			SceneSwitcher.switch_scene("res://scenes/won.tscn")
 	else: 
 		$AnswerFeedback/RightWrongText.text = "Falsch!"
+		if GlobalVariables.difficulty == "difficult":
+			SceneSwitcher.switch_scene("res://scenes/GameOver.tscn")
+
 	
 	if current_question == number_of_questions:
 		$AnswerFeedback/AnswerFeedbackButtonText.text = "Quiz Beenden"

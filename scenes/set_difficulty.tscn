@@ -1,0 +1,36 @@
+[gd_scene load_steps=3 format=3 uid="uid://cbwvi64qvjc6i"]
+
+[ext_resource type="Script" uid="uid://dt2c0m6tlfeii" path="res://scripts/set_difficulty.gd" id="1_xp7t3"]
+[ext_resource type="FontFile" uid="uid://dne4aphor0uht" path="res://assets/fonts/alagard.ttf" id="2_hyel3"]
+
+[node name="SetDifficulty" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xp7t3")
+
+[node name="Easy" type="Button" parent="."]
+layout_mode = 0
+offset_left = 173.0
+offset_top = 258.0
+offset_right = 216.0
+offset_bottom = 289.0
+scale = Vector2(6.36418, 6.36418)
+theme_override_fonts/font = ExtResource("2_hyel3")
+text = "Easy"
+
+[node name="Difficult" type="Button" parent="."]
+layout_mode = 0
+offset_left = 666.0
+offset_top = 254.0
+offset_right = 739.0
+offset_bottom = 285.0
+scale = Vector2(6.36418, 6.36418)
+theme_override_fonts/font = ExtResource("2_hyel3")
+text = "Difficult"
+
+[connection signal="pressed" from="Easy" to="." method="_on_easy_pressed"]
+[connection signal="pressed" from="Difficult" to="." method="_on_difficult_pressed"]
