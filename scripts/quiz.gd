@@ -131,7 +131,10 @@ func _on_answer_feedback_button_pressed() -> void:
 	if $AnswerFeedback/AnswerFeedbackButtonText.text == "Weiter":
 		$GrayOverlay.visible = false
 		$AnswerFeedback.visible = false
-		SceneSwitcher.switch_scene("res://scenes/game.tscn")
+		if right_answers >= right_answers_needed:
+			SceneSwitcher.switch_scene("res://scenes/lexicon.tscn", animal_name, animal_continent, animal_species)
+		else:
+			SceneSwitcher.switch_scene("res://scenes/game.tscn")
 	if $AnswerFeedback/AnswerFeedbackButtonText.text == "Quiz Beenden":
 		if right_answers >= right_answers_needed:
 			congrats_sound.play()

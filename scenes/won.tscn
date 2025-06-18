@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://yu6lp25e6wim"]
 
-[ext_resource type="Script" uid="uid://fe6ten0wxb5k" path="res://scenes/won.gd" id="1_4pchp"]
+[ext_resource type="Script" uid="uid://fe6ten0wxb5k" path="res://scripts/won.gd" id="1_4pchp"]
 [ext_resource type="FontFile" uid="uid://dne4aphor0uht" path="res://assets/fonts/alagard.ttf" id="1_ix7v3"]
 
 [node name="Won" type="Control"]

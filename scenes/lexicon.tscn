@@ -1,15 +1,44 @@
-[gd_scene load_steps=7 format=3 uid="uid://bug2fepast4gq"]
+[gd_scene load_steps=17 format=3 uid="uid://bug2fepast4gq"]
 
+[ext_resource type="Script" uid="uid://c5civiem0do2" path="res://scripts/lexicon.gd" id="1_p2kj3"]
 [ext_resource type="Texture2D" uid="uid://kpj47ldhnui" path="res://assets/sprites/lexicon/lexicon_cover.png" id="1_pb84f"]
+[ext_resource type="Texture2D" uid="uid://cd6xmhplh6vbr" path="res://assets/sprites/quiz_ui/bg.png" id="1_uqyim"]
 [ext_resource type="Texture2D" uid="uid://vbtrwuspais0" path="res://assets/sprites/lexicon/lexicon_page_left.png" id="2_yp6yi"]
 [ext_resource type="Texture2D" uid="uid://wpfkq0vvm2mk" path="res://assets/sprites/lexicon/lexicon_page_right.png" id="3_vrv63"]
 [ext_resource type="Texture2D" uid="uid://bd7ecpax767qk" path="res://assets/sprites/animals/Alpaka.png" id="4_vrv63"]
 [ext_resource type="FontFile" uid="uid://dne4aphor0uht" path="res://assets/fonts/alagard.ttf" id="5_n1gpt"]
+[ext_resource type="Texture2D" uid="uid://c3wcd3il3j5ur" path="res://assets/sprites/quiz_ui/info_box_button.png" id="8_p2kj3"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4dj2o"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uqyim"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p2kj3"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rqmfs"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eumqo"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i2hna"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_23t0f"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rqmfs"]
+texture = ExtResource("8_p2kj3")
+
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_p2kj3")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(4, 4)
+texture = ExtResource("1_uqyim")
 
 [node name="LexiconCover" type="Sprite2D" parent="."]
 position = Vector2(-1.90735e-06, -5.96046e-08)
@@ -18,192 +47,363 @@ texture = ExtResource("1_pb84f")
 
 [node name="LexiconPageLeft" type="Sprite2D" parent="LexiconCover"]
 position = Vector2(-52, 4.47035e-08)
-scale = Vector2(1, 1)
 texture = ExtResource("2_yp6yi")
 
 [node name="LexiconPageRight" type="Sprite2D" parent="LexiconCover"]
 position = Vector2(52, -2.98023e-08)
-scale = Vector2(1, 1)
 texture = ExtResource("3_vrv63")
 
-[node name="AnimalEntryTopLeft" type="Panel" parent="."]
+[node name="AnimalEntry" type="Panel" parent="."]
 offset_left = -463.0
 offset_top = -326.0
 offset_bottom = 299.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_4dj2o")
 
-[node name="AnimalPicture" type="Sprite2D" parent="AnimalEntryTopLeft"]
+[node name="AnimalPicture" type="Sprite2D" parent="AnimalEntry"]
 position = Vector2(48, 48)
 scale = Vector2(3, 3)
 texture = ExtResource("4_vrv63")
 
-[node name="Name" type="Label" parent="AnimalEntryTopLeft"]
+[node name="Basics" type="Panel" parent="AnimalEntry"]
 layout_mode = 0
-offset_left = 100.0
+offset_left = 91.0
 offset_top = 15.0
-offset_right = 144.0
-offset_bottom = 38.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+offset_right = 463.0
+offset_bottom = 75.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_uqyim")
+
+[node name="Name" type="Label" parent="AnimalEntry/Basics"]
+layout_mode = 0
+offset_right = 44.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(0.286275, 0.2, 0.2, 1)
 theme_override_fonts/font = ExtResource("5_n1gpt")
 text = "Name:"
 
-[node name="ScientificName" type="Label" parent="AnimalEntryTopLeft"]
-layout_mode = 0
-offset_left = 100.0
-offset_top = 37.0
-offset_right = 289.0
-offset_bottom = 60.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+[node name="NameField" type="Label" parent="AnimalEntry/Basics/Name"]
+offset_left = 48.0
+offset_right = 92.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(0.611765, 0.262745, 0.317647, 1)
 theme_override_fonts/font = ExtResource("5_n1gpt")
-text = "Wissenschaftlicher Name:"
+text = "Alpaka"
 
-[node name="Family" type="Label" parent="AnimalEntryTopLeft"]
-offset_left = 100.0
-offset_top = 59.0
-offset_right = 289.0
-offset_bottom = 82.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+[node name="ScientificName" type="Label" parent="AnimalEntry/Basics"]
+layout_mode = 0
+offset_top = 25.0
+offset_right = 84.0
+offset_bottom = 48.0
+theme_override_colors/font_color = Color(0.286275, 0.2, 0.2, 1)
+theme_override_fonts/font = ExtResource("5_n1gpt")
+text = "Wiss. Name:"
+
+[node name="ScientificNameField" type="Label" parent="AnimalEntry/Basics/ScientificName"]
+offset_left = 88.0
+offset_right = 172.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(0.611765, 0.262745, 0.317647, 1)
+theme_override_fonts/font = ExtResource("5_n1gpt")
+text = "Vicugna pacos"
+
+[node name="Family" type="Label" parent="AnimalEntry/Basics"]
+layout_mode = 0
+offset_top = 50.0
+offset_right = 58.0
+offset_bottom = 73.0
+theme_override_colors/font_color = Color(0.286275, 0.2, 0.2, 1)
 theme_override_fonts/font = ExtResource("5_n1gpt")
 text = "Familie:"
 
-[node name="SizeAndWeight" type="Label" parent="AnimalEntryTopLeft"]
-offset_left = 15.0
-offset_top = 90.0
-offset_right = 204.0
-offset_bottom = 113.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+[node name="FamilyField" type="Label" parent="AnimalEntry/Basics/Family"]
+offset_left = 62.0
+offset_right = 120.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(0.611765, 0.262745, 0.317647, 1)
 theme_override_fonts/font = ExtResource("5_n1gpt")
-text = "Größe und Gewicht"
+text = "Kamele (Camelidae)"
 
-[node name="BodyLength" type="Label" parent="AnimalEntryTopLeft/SizeAndWeight"]
-offset_left = 10.0
-offset_top = 22.0
-offset_right = 199.0
-offset_bottom = 45.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+[node name="SizeAndWeight" type="Panel" parent="AnimalEntry"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 89.0
+offset_right = 478.0
+offset_bottom = 171.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_p2kj3")
+
+[node name="BodyLength" type="Label" parent="AnimalEntry/SizeAndWeight"]
+layout_mode = 0
+offset_top = 6.0
+offset_right = 97.0
+offset_bottom = 29.0
+theme_override_colors/font_color = Color(0.286275, 0.2, 0.2, 1)
 theme_override_fonts/font = ExtResource("5_n1gpt")
 text = "Körperlänge:"
 
-[node name="ShoulderHeight" type="Label" parent="AnimalEntryTopLeft/SizeAndWeight"]
-offset_left = 10.0
-offset_top = 44.0
-offset_right = 199.0
-offset_bottom = 67.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+[node name="BodyLengthField" type="Label" parent="AnimalEntry/SizeAndWeight/BodyLength"]
+offset_left = 101.0
+offset_right = 198.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(0.611765, 0.262745, 0.317647, 1)
+theme_override_fonts/font = ExtResource("5_n1gpt")
+text = "ca. 1,2-2 Meter (inkl. Hals)"
+
+[node name="ShoulderHeight" type="Label" parent="AnimalEntry/SizeAndWeight"]
+layout_mode = 0
+offset_top = 32.0
+offset_right = 105.0
+offset_bottom = 55.0
+theme_override_colors/font_color = Color(0.286275, 0.2, 0.2, 1)
 theme_override_fonts/font = ExtResource("5_n1gpt")
 text = "Schulterhöhe:"
 
-[node name="Weight" type="Label" parent="AnimalEntryTopLeft/SizeAndWeight"]
-offset_left = 10.0
-offset_top = 66.0
-offset_right = 199.0
-offset_bottom = 89.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+[node name="ShoulderHeightField" type="Label" parent="AnimalEntry/SizeAndWeight/ShoulderHeight"]
+offset_left = 109.0
+offset_right = 214.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(0.611765, 0.262745, 0.317647, 1)
+theme_override_fonts/font = ExtResource("5_n1gpt")
+text = "ca. 85 – 100 cm"
+
+[node name="Weight" type="Label" parent="AnimalEntry/SizeAndWeight"]
+layout_mode = 0
+offset_top = 58.0
+offset_right = 62.0
+offset_bottom = 81.0
+theme_override_colors/font_color = Color(0.286275, 0.2, 0.2, 1)
 theme_override_fonts/font = ExtResource("5_n1gpt")
 text = "Gewicht:"
 
-[node name="Note" type="Label" parent="AnimalEntryTopLeft/SizeAndWeight"]
-offset_left = 10.0
-offset_top = 88.0
-offset_right = 199.0
-offset_bottom = 111.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+[node name="WeightField" type="Label" parent="AnimalEntry/SizeAndWeight/Weight"]
+offset_left = 66.0
+offset_right = 128.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(0.611765, 0.262745, 0.317647, 1)
+theme_override_fonts/font = ExtResource("5_n1gpt")
+text = "48-84 Kg"
+
+[node name="Note" type="Label" parent="AnimalEntry/SizeAndWeight"]
+layout_mode = 0
+offset_top = 83.0
+offset_right = 91.0
+offset_bottom = 106.0
+theme_override_colors/font_color = Color(0.286275, 0.2, 0.2, 1)
 theme_override_fonts/font = ExtResource("5_n1gpt")
 text = "Anmerkung:"
 
-[node name="Habitat" type="Label" parent="AnimalEntryTopLeft"]
-offset_left = 14.0
-offset_top = 209.0
-offset_right = 203.0
-offset_bottom = 232.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+[node name="NoteField" type="Label" parent="AnimalEntry/SizeAndWeight/Note"]
+offset_top = 15.0
+offset_right = 448.0
+offset_bottom = 52.0
+theme_override_colors/font_color = Color(0.611765, 0.262745, 0.317647, 1)
 theme_override_fonts/font = ExtResource("5_n1gpt")
-text = "Lebensraum"
+text = "Männchen und Weibchen ähnlich groß"
+autowrap_mode = 2
+clip_text = true
 
-[node name="Continent" type="Label" parent="AnimalEntryTopLeft/Habitat"]
-offset_left = 10.0
-offset_top = 22.0
-offset_right = 199.0
-offset_bottom = 45.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+[node name="Habitat" type="Panel" parent="AnimalEntry"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_rqmfs")
+
+[node name="Continent" type="Label" parent="AnimalEntry/Habitat"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 238.0
+offset_right = 92.0
+offset_bottom = 261.0
+theme_override_colors/font_color = Color(0.286275, 0.2, 0.2, 1)
 theme_override_fonts/font = ExtResource("5_n1gpt")
 text = "Kontinent:"
 
-[node name="PreferredHabitats" type="Label" parent="AnimalEntryTopLeft/Habitat"]
-offset_left = 10.0
-offset_top = 44.0
-offset_right = 200.0
-offset_bottom = 67.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+[node name="ContinentField" type="Label" parent="AnimalEntry/Habitat/Continent"]
+offset_top = 15.0
+offset_right = 448.0
+offset_bottom = 52.0
+theme_override_colors/font_color = Color(0.611765, 0.262745, 0.317647, 1)
+theme_override_fonts/font = ExtResource("5_n1gpt")
+text = "Südamerika (vor allem Andenregionen in Peru, Bolivien, Chile und Ecuador)"
+autowrap_mode = 2
+clip_text = true
+
+[node name="PreferredHabitats" type="Label" parent="AnimalEntry/Habitat"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 298.0
+offset_right = 205.0
+offset_bottom = 321.0
+theme_override_colors/font_color = Color(0.286275, 0.2, 0.2, 1)
 theme_override_fonts/font = ExtResource("5_n1gpt")
 text = "Bevorzugte Lebensräume:"
 
-[node name="DietOmnivore" type="Label" parent="AnimalEntryTopLeft"]
-offset_left = 15.0
-offset_top = 284.0
-offset_right = 205.0
-offset_bottom = 307.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+[node name="PreferredHabitatsField" type="Label" parent="AnimalEntry/Habitat/PreferredHabitats"]
+offset_top = 16.0
+offset_right = 448.0
+offset_bottom = 57.0
+theme_override_colors/font_color = Color(0.611765, 0.262745, 0.317647, 1)
 theme_override_fonts/font = ExtResource("5_n1gpt")
-text = "Ernährung"
+text = "Hochlandebenen und Berghänge in Höhenlagen zwischen 3.500 und 5.000 Metern"
+autowrap_mode = 2
+clip_text = true
 
-[node name="PlantBasedFood" type="Label" parent="AnimalEntryTopLeft/DietOmnivore"]
-offset_left = 10.0
-offset_top = 22.0
-offset_right = 200.0
-offset_bottom = 45.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+[node name="Diet" type="Panel" parent="AnimalEntry"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_eumqo")
+
+[node name="PlantBasedFood" type="Label" parent="AnimalEntry/Diet"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 364.0
+offset_right = 174.0
+offset_bottom = 387.0
+theme_override_colors/font_color = Color(0.286275, 0.2, 0.2, 1)
 theme_override_fonts/font = ExtResource("5_n1gpt")
 text = "Pflanzliche Nahrung:"
 
-[node name="AnimalBasedFood" type="Label" parent="AnimalEntryTopLeft/DietOmnivore"]
-offset_left = 10.0
-offset_top = 44.0
-offset_right = 200.0
-offset_bottom = 67.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+[node name="PlantBasedFoodField" type="Label" parent="AnimalEntry/Diet/PlantBasedFood"]
+offset_left = 1.0
+offset_top = 15.0
+offset_right = 448.0
+offset_bottom = 54.0
+theme_override_colors/font_color = Color(0.611765, 0.262745, 0.317647, 1)
+theme_override_fonts/font = ExtResource("5_n1gpt")
+text = "Gräser, Kräuter, Moose"
+autowrap_mode = 2
+clip_text = true
+
+[node name="AnimalBasedFood" type="Label" parent="AnimalEntry/Diet"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 425.0
+offset_right = 160.0
+offset_bottom = 448.0
+theme_override_colors/font_color = Color(0.286275, 0.2, 0.2, 1)
 theme_override_fonts/font = ExtResource("5_n1gpt")
 text = "Tierische Nahrung:"
 
-[node name="Lifestyle" type="Label" parent="AnimalEntryTopLeft"]
-offset_left = 15.0
-offset_top = 359.0
-offset_right = 205.0
-offset_bottom = 382.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+[node name="AnimalBasedFoodField" type="Label" parent="AnimalEntry/Diet/AnimalBasedFood"]
+offset_top = 15.0
+offset_right = 447.0
+offset_bottom = 51.0
+theme_override_colors/font_color = Color(0.611765, 0.262745, 0.317647, 1)
+theme_override_fonts/font = ExtResource("5_n1gpt")
+text = "Keine"
+autowrap_mode = 2
+clip_text = true
+
+[node name="Other" type="Panel" parent="AnimalEntry"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_i2hna")
+
+[node name="Lifestyle" type="Label" parent="AnimalEntry/Other"]
+layout_mode = 0
+offset_left = 478.0
+offset_top = 15.0
+offset_right = 668.0
+offset_bottom = 38.0
+theme_override_colors/font_color = Color(0.286275, 0.2, 0.2, 1)
 theme_override_fonts/font = ExtResource("5_n1gpt")
 text = "Lebensweise:"
 
-[node name="Reproduction" type="Label" parent="AnimalEntryTopLeft"]
-offset_left = 15.0
-offset_top = 392.0
-offset_right = 205.0
-offset_bottom = 415.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+[node name="LifestyleField" type="Label" parent="AnimalEntry/Other/Lifestyle"]
+offset_top = 17.0
+offset_right = 448.0
+offset_bottom = 128.0
+theme_override_colors/font_color = Color(0.611765, 0.262745, 0.317647, 1)
+theme_override_fonts/font = ExtResource("5_n1gpt")
+text = "Alpakas sind tagaktive Herdentiere, die sehr sozial leben und in engen Gruppenverbänden starke Bindungen untereinander entwickeln."
+autowrap_mode = 2
+clip_text = true
+
+[node name="Reproduction" type="Label" parent="AnimalEntry/Other"]
+layout_mode = 0
+offset_left = 478.0
+offset_top = 156.0
+offset_right = 668.0
+offset_bottom = 179.0
+theme_override_colors/font_color = Color(0.286275, 0.2, 0.2, 1)
 theme_override_fonts/font = ExtResource("5_n1gpt")
 text = "Fortpflanzung:"
 
-[node name="SpecialCharacteristics" type="Label" parent="AnimalEntryTopLeft"]
-offset_left = 15.0
-offset_top = 423.0
-offset_right = 205.0
-offset_bottom = 446.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+[node name="ReproductionField" type="Label" parent="AnimalEntry/Other/Reproduction"]
+offset_top = 17.0
+offset_right = 447.0
+offset_bottom = 129.0
+theme_override_colors/font_color = Color(0.611765, 0.262745, 0.317647, 1)
+theme_override_fonts/font = ExtResource("5_n1gpt")
+text = "Die Fortpflanzung ist ganzjährig möglich, wobei die Tragzeit etwa 11 bis 12 Monate dauert. In der Regel wird ein einzelnes Jungtier, ein sogenanntes 'Cria', geboren, das mehrere Monate von der Mutter gesäugt wird."
+autowrap_mode = 2
+clip_text = true
+
+[node name="SpecialCharacteristics" type="Label" parent="AnimalEntry/Other"]
+layout_mode = 0
+offset_left = 478.0
+offset_top = 297.0
+offset_right = 668.0
+offset_bottom = 320.0
+theme_override_colors/font_color = Color(0.286275, 0.2, 0.2, 1)
 theme_override_fonts/font = ExtResource("5_n1gpt")
 text = "Besonderheiten:"
 
-[node name="ConservationStatus" type="Label" parent="AnimalEntryTopLeft"]
-offset_left = 15.0
-offset_top = 454.0
-offset_right = 205.0
-offset_bottom = 477.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+[node name="SpecialCharacteristicsField" type="Label" parent="AnimalEntry/Other/SpecialCharacteristics"]
+offset_left = 1.0
+offset_top = 17.0
+offset_right = 448.0
+offset_bottom = 132.0
+theme_override_colors/font_color = Color(0.611765, 0.262745, 0.317647, 1)
+theme_override_fonts/font = ExtResource("5_n1gpt")
+text = "Alpakas wurden bereits vor rund 6.000 Jahren domestiziert und sind besonders für ihre feine, wärmende Wolle bekannt. Sie sind sehr ruhige, intelligente Tiere mit einem sanften Wesen und nutzen Körpersprache und Summlaute zur Kommunikation."
+autowrap_mode = 2
+clip_text = true
+
+[node name="ConservationStatus" type="Label" parent="AnimalEntry/Other"]
+layout_mode = 0
+offset_left = 478.0
+offset_top = 440.0
+offset_right = 668.0
+offset_bottom = 463.0
+theme_override_colors/font_color = Color(0.286275, 0.2, 0.2, 1)
 theme_override_fonts/font = ExtResource("5_n1gpt")
 text = "Schutzstatus:"
 
-[node name="AnimalEntryTopRight" type="Panel" parent="."]
-offset_top = -326.0
-offset_right = 463.0
-offset_bottom = 298.0
+[node name="ConservationStatusField" type="Label" parent="AnimalEntry/Other/ConservationStatus"]
+offset_top = 17.0
+offset_right = 447.0
+offset_bottom = 132.0
+theme_override_colors/font_color = Color(0.611765, 0.262745, 0.317647, 1)
+theme_override_fonts/font = ExtResource("5_n1gpt")
+text = "Alpakas sind nicht bedroht, da sie weltweit gezüchtet und landwirtschaftlich genutzt werden. Sie spielen eine wichtige Rolle für indigene Gemeinden und die nachhaltige Tierhaltung in den Anden."
+autowrap_mode = 2
+clip_text = true
+
+[node name="NextButton" type="Panel" parent="."]
+offset_left = -122.0
+offset_top = 263.0
+offset_right = 122.0
+offset_bottom = 337.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_23t0f")
+
+[node name="Next" type="Button" parent="NextButton"]
+layout_mode = 0
+offset_right = 244.0
+offset_bottom = 74.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_rqmfs")
+
+[node name="NextText" type="Label" parent="NextButton"]
+offset_left = 12.0
+offset_top = 12.0
+offset_right = 232.0
+offset_bottom = 62.0
+theme_override_colors/font_color = Color(1, 0.94902, 0.823529, 1)
+theme_override_font_sizes/font_size = 25
+text = "Weiter"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[connection signal="pressed" from="NextButton/Next" to="." method="_on_next_pressed"]
