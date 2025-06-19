@@ -1,50 +1,154 @@
-[gd_scene load_steps=3 format=3 uid="uid://q2de6qkh1cgq"]
+[gd_scene load_steps=19 format=3 uid="uid://q2de6qkh1cgq"]
 
 [ext_resource type="Script" uid="uid://d120i22jnumgp" path="res://scripts/intro_story.gd" id="1_bumqu"]
-[ext_resource type="FontFile" uid="uid://dne4aphor0uht" path="res://assets/fonts/alagard.ttf" id="2_r1les"]
+[ext_resource type="Texture2D" uid="uid://cd6xmhplh6vbr" path="res://assets/sprites/quiz_ui/bg.png" id="2_cgnwt"]
+[ext_resource type="Texture2D" uid="uid://06h005hdupsg" path="res://assets/sprites/quiz_ui/info_box_bg.png" id="3_hg05c"]
+[ext_resource type="Texture2D" uid="uid://cpdax7jd1fjql" path="res://assets/sprites/quiz_ui/info_box_banner_left.png" id="4_10tom"]
+[ext_resource type="Texture2D" uid="uid://cffwryg4amrtg" path="res://assets/sprites/quiz_ui/info_box_banner_middle.png" id="5_kh7uq"]
+[ext_resource type="Texture2D" uid="uid://cojq1v4iak611" path="res://assets/sprites/quiz_ui/info_box_banner_right.png" id="6_kfay6"]
+[ext_resource type="Texture2D" uid="uid://coq2njcw4d7mr" path="res://assets/sprites/quiz_ui/info_box_button_press.png" id="7_whfbt"]
+[ext_resource type="Texture2D" uid="uid://bs6l4wlyno6be" path="res://assets/sprites/quiz_ui/info_box_button_hover.png" id="8_3fxxn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pmj2g"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jd5cs"]
+bg_color = Color(0.6, 0.6, 0.6, 0.392157)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ijfym"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3y3ka"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cympp"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_irk4n"]
+texture = ExtResource("7_whfbt")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_a0grf"]
+texture = ExtResource("8_3fxxn")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1jpu1"]
+texture = ExtResource("7_whfbt")
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_oa1go"]
+load_path = "res://.godot/imported/info_box_button.png-41b251bf14f3be012fa9619ce9333f49.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yu6ak"]
+texture = SubResource("CompressedTexture2D_oa1go")
 
 [node name="IntroStory" type="Control"]
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_bumqu")
 
-[node name="Panel" type="Panel" parent="."]
-layout_mode = 0
-offset_right = 1150.0
-offset_bottom = 542.0
-scale = Vector2(1.1212, 1.35623)
-
-[node name="Label" type="Label" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-scale = Vector2(1.42793, 1.42793)
-theme_override_fonts/font = ExtResource("2_r1les")
-text = "🌀 Der große Wissenssturm
-
-Lange Zeit lebten Tiere in Harmonie auf der ganzen Welt – im Dschungel, in der Steppe, in den Bergen und Meeren.
-
-Doch ein seltsamer Sturm zog auf. Kein Regen – nur Vergessenheit.
-
-Die Tiere verschwanden. Ihr Wissen verblasste.  
-Das große Tierlexikon wurde ausgelöscht.
-
-Jetzt liegt es an dir:  
-Ein neues, magisches Lexikon ist aufgetaucht – und DU bist die einzige Hoffnung!
-
-⏳ Du hast 10 Minuten, um Tiere zu entdecken und ihr Wissen zu retten.
-
-🎒 Klicke auf „Weiter“, um dein Abenteuer zu beginnen!
-"
-
-[node name="Button" type="Button" parent="."]
-layout_mode = 0
+[node name="Background" type="Panel" parent="."]
 offset_left = 891.0
 offset_top = 585.0
-offset_right = 946.0
-offset_bottom = 608.0
-scale = Vector2(5.00669, 4.88847)
-theme_override_fonts/font = ExtResource("2_r1les")
-text = "Weiter"
+offset_right = 931.0
+offset_bottom = 625.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_pmj2g")
 
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[node name="Image" type="Sprite2D" parent="Background"]
+position = Vector2(-891, -585)
+scale = Vector2(4, 4)
+texture = ExtResource("2_cgnwt")
+
+[node name="GrayOverlay" type="Panel" parent="Background"]
+offset_left = -1531.0
+offset_top = -945.0
+offset_right = -251.0
+offset_bottom = -225.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_jd5cs")
+
+[node name="Story" type="Panel" parent="."]
+offset_left = 4.0
+offset_top = 20.0
+offset_right = 633.0
+offset_bottom = 116.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ijfym")
+
+[node name="Background" type="Sprite2D" parent="Story"]
+position = Vector2(-4, -20)
+scale = Vector2(3, 3)
+texture = ExtResource("3_hg05c")
+
+[node name="Banner" type="Panel" parent="Story"]
+layout_mode = 0
+offset_left = -222.0
+offset_top = -215.0
+offset_right = 238.0
+offset_bottom = -55.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_3y3ka")
+
+[node name="BannerLeft" type="Sprite2D" parent="Story/Banner"]
+position = Vector2(-6, -36)
+scale = Vector2(7, 7)
+texture = ExtResource("4_10tom")
+
+[node name="BannerMiddle" type="Sprite2D" parent="Story/Banner"]
+position = Vector2(218, -43)
+scale = Vector2(7, 7)
+texture = ExtResource("5_kh7uq")
+
+[node name="BannerRight" type="Sprite2D" parent="Story/Banner"]
+position = Vector2(442, -36)
+scale = Vector2(7, 7)
+texture = ExtResource("6_kfay6")
+
+[node name="StoryTitle" type="Label" parent="Story/Banner"]
+layout_mode = 0
+offset_left = -76.0
+offset_top = -106.0
+offset_right = 512.0
+offset_bottom = 13.0
+theme_override_colors/font_color = Color(1, 0.94902, 0.823529, 1)
+theme_override_font_sizes/font_size = 40
+text = "🌀 Der große Wissenssturm"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StoryText" type="Label" parent="Story"]
+layout_mode = 0
+offset_left = -326.0
+offset_top = -139.0
+offset_right = 318.0
+offset_bottom = 156.0
+theme_override_colors/font_color = Color(0.427451, 0.294118, 0.152941, 1)
+theme_override_font_sizes/font_size = 30
+text = "Die Tiere verschwanden. Ihr Wissen verblasste.  Das große Tierlexikon wurde ausgelöscht."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+clip_text = true
+
+[node name="Button" type="Button" parent="Story"]
+layout_mode = 0
+offset_left = -126.0
+offset_top = 156.0
+offset_right = 118.0
+offset_bottom = 230.0
+theme_override_styles/focus = SubResource("StyleBoxTexture_cympp")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_irk4n")
+theme_override_styles/hover = SubResource("StyleBoxTexture_a0grf")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_1jpu1")
+theme_override_styles/normal = SubResource("StyleBoxTexture_yu6ak")
+
+[node name="ButtonText" type="Label" parent="Story/Button"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 12.0
+offset_right = 232.0
+offset_bottom = 62.0
+theme_override_colors/font_color = Color(1, 0.94902, 0.823529, 1)
+theme_override_font_sizes/font_size = 25
+text = "Weiter"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, -6.10352e-05)
+scale = Vector2(5.00669, 4.88847)
+
+[connection signal="pressed" from="Story/Button" to="." method="_on_button_pressed"]

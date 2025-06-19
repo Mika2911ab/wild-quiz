@@ -1,7 +1,45 @@
-[gd_scene load_steps=3 format=3 uid="uid://cbwvi64qvjc6i"]
+[gd_scene load_steps=19 format=3 uid="uid://cbwvi64qvjc6i"]
 
 [ext_resource type="Script" uid="uid://dt2c0m6tlfeii" path="res://scripts/set_difficulty.gd" id="1_xp7t3"]
 [ext_resource type="FontFile" uid="uid://dne4aphor0uht" path="res://assets/fonts/alagard.ttf" id="2_hyel3"]
+[ext_resource type="Texture2D" uid="uid://cd6xmhplh6vbr" path="res://assets/sprites/quiz_ui/bg.png" id="2_j03d5"]
+[ext_resource type="Texture2D" uid="uid://e5e1t73prj8g" path="res://assets/sprites/quiz_ui/info_box_button.png" id="6_enejf"]
+[ext_resource type="Texture2D" uid="uid://coq2njcw4d7mr" path="res://assets/sprites/quiz_ui/info_box_button_press.png" id="7_bhdu6"]
+[ext_resource type="Texture2D" uid="uid://bs6l4wlyno6be" path="res://assets/sprites/quiz_ui/info_box_button_hover.png" id="8_p72b8"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4r40s"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lbwsi"]
+bg_color = Color(0.6, 0.6, 0.6, 0.392157)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cfy0i"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_megvv"]
+texture = ExtResource("7_bhdu6")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ojlae"]
+texture = ExtResource("8_p72b8")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nbx1o"]
+texture = ExtResource("7_bhdu6")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_704aq"]
+texture = ExtResource("6_enejf")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7mi33"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2sdck"]
+texture = ExtResource("7_bhdu6")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1p3li"]
+texture = ExtResource("8_p72b8")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_manwp"]
+texture = ExtResource("7_bhdu6")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xyev5"]
+texture = ExtResource("6_enejf")
 
 [node name="SetDifficulty" type="Control"]
 layout_mode = 3
@@ -12,25 +50,77 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_xp7t3")
 
+[node name="Background" type="Panel" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_4r40s")
+
+[node name="Image" type="Sprite2D" parent="Background"]
+scale = Vector2(4, 4)
+texture = ExtResource("2_j03d5")
+
+[node name="GrayOverlay" type="Panel" parent="Background"]
+offset_left = -640.0
+offset_top = -360.0
+offset_right = 640.0
+offset_bottom = 360.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_lbwsi")
+
 [node name="Easy" type="Button" parent="."]
 layout_mode = 0
-offset_left = 173.0
-offset_top = 258.0
-offset_right = 216.0
-offset_bottom = 289.0
-scale = Vector2(6.36418, 6.36418)
+offset_left = -344.0
+offset_top = -37.0
+offset_right = -222.0
+scale = Vector2(2, 2)
 theme_override_fonts/font = ExtResource("2_hyel3")
-text = "Easy"
+theme_override_styles/focus = SubResource("StyleBoxTexture_cfy0i")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_megvv")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ojlae")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_nbx1o")
+theme_override_styles/normal = SubResource("StyleBoxTexture_704aq")
+
+[node name="Label" type="Label" parent="Easy"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 6.0
+offset_right = 117.0
+offset_bottom = 31.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_fonts/font = ExtResource("2_hyel3")
+text = "Einfach"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Difficult" type="Button" parent="."]
 layout_mode = 0
-offset_left = 666.0
-offset_top = 254.0
-offset_right = 739.0
-offset_bottom = 285.0
-scale = Vector2(6.36418, 6.36418)
+offset_left = 100.0
+offset_top = -37.0
+offset_right = 222.0
+scale = Vector2(2, 2)
 theme_override_fonts/font = ExtResource("2_hyel3")
-text = "Difficult"
+theme_override_styles/focus = SubResource("StyleBoxTexture_7mi33")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_2sdck")
+theme_override_styles/hover = SubResource("StyleBoxTexture_1p3li")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_manwp")
+theme_override_styles/normal = SubResource("StyleBoxTexture_xyev5")
+
+[node name="Label" type="Label" parent="Difficult"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 6.0
+offset_right = 116.0
+offset_bottom = 31.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_fonts/font = ExtResource("2_hyel3")
+text = "Schwer"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Camera2D" type="Camera2D" parent="."]
 
 [connection signal="pressed" from="Easy" to="." method="_on_easy_pressed"]
 [connection signal="pressed" from="Difficult" to="." method="_on_difficult_pressed"]

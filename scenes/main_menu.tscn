@@ -1,4 +1,4 @@
-[gd_scene load_steps=84 format=3 uid="uid://biaqn65s1pguc"]
+[gd_scene load_steps=85 format=3 uid="uid://biaqn65s1pguc"]
 
 [ext_resource type="Texture2D" uid="uid://hrtimjs7vwpn" path="res://assets/sprites/sprite_sheets/fox_sheet.png" id="1_rtw2f"]
 [ext_resource type="Texture2D" uid="uid://cd6xmhplh6vbr" path="res://assets/sprites/quiz_ui/bg.png" id="1_tbmy8"]
@@ -11,8 +11,11 @@
 [ext_resource type="AudioStream" uid="uid://cjfcgwnpcd6hl" path="res://assets/sounds/Evening Harmony.wav" id="6_lgwnu"]
 [ext_resource type="Texture2D" uid="uid://e5e1t73prj8g" path="res://assets/sprites/quiz_ui/info_box_button.png" id="6_oa1go"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lgwnu"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jk1qb"]
-bg_color = Color(0.6, 0.6, 0.6, 0.54902)
+bg_color = Color(0.6, 0.6, 0.6, 0.392157)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tbmy8"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -476,11 +479,16 @@ animations = [{
 [node name="MainMenu" type="Node2D"]
 script = ExtResource("4_jk1qb")
 
-[node name="Background" type="Sprite2D" parent="."]
+[node name="Background" type="Panel" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_lgwnu")
+
+[node name="Image" type="Sprite2D" parent="Background"]
 scale = Vector2(4, 4)
 texture = ExtResource("1_tbmy8")
 
-[node name="GrayOverlay" type="Panel" parent="."]
+[node name="GrayOverlay" type="Panel" parent="Background"]
 offset_left = -640.0
 offset_top = -360.0
 offset_right = 640.0

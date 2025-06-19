@@ -211,11 +211,11 @@ texture = ExtResource("18_4l17v")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xoaf3"]
 texture = ExtResource("17_fiaka")
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_oa1go"]
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ahqvi"]
 load_path = "res://.godot/imported/info_box_button.png-41b251bf14f3be012fa9619ce9333f49.ctex"
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_d56me"]
-texture = SubResource("CompressedTexture2D_oa1go")
+texture = SubResource("CompressedTexture2D_ahqvi")
 
 [node name="Quiz" type="Node2D"]
 script = ExtResource("1_16nxq")
