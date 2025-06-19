@@ -1,11 +1,66 @@
-[gd_scene load_steps=66 format=3 uid="uid://biaqn65s1pguc"]
+[gd_scene load_steps=84 format=3 uid="uid://biaqn65s1pguc"]
 
 [ext_resource type="Texture2D" uid="uid://hrtimjs7vwpn" path="res://assets/sprites/sprite_sheets/fox_sheet.png" id="1_rtw2f"]
+[ext_resource type="Texture2D" uid="uid://cd6xmhplh6vbr" path="res://assets/sprites/quiz_ui/bg.png" id="1_tbmy8"]
 [ext_resource type="Script" uid="uid://enkrjgyq8mgo" path="res://scripts/fox_script.gd" id="2_oa1go"]
 [ext_resource type="Script" uid="uid://dota204jo626s" path="res://scripts/camera_2d.gd" id="3_tbmy8"]
+[ext_resource type="Texture2D" uid="uid://bs6l4wlyno6be" path="res://assets/sprites/quiz_ui/info_box_button_hover.png" id="4_5dd4i"]
 [ext_resource type="Script" uid="uid://crp3cw182qqxw" path="res://scripts/main_menu.gd" id="4_jk1qb"]
 [ext_resource type="FontFile" uid="uid://dne4aphor0uht" path="res://assets/fonts/alagard.ttf" id="5_5dd4i"]
+[ext_resource type="Texture2D" uid="uid://coq2njcw4d7mr" path="res://assets/sprites/quiz_ui/info_box_button_press.png" id="5_lgwnu"]
 [ext_resource type="AudioStream" uid="uid://cjfcgwnpcd6hl" path="res://assets/sounds/Evening Harmony.wav" id="6_lgwnu"]
+[ext_resource type="Texture2D" uid="uid://e5e1t73prj8g" path="res://assets/sprites/quiz_ui/info_box_button.png" id="6_oa1go"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jk1qb"]
+bg_color = Color(0.6, 0.6, 0.6, 0.54902)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tbmy8"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5dd4i"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8egab"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hstxw"]
+texture = ExtResource("5_lgwnu")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lgwnu"]
+texture = ExtResource("4_5dd4i")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5pajh"]
+texture = ExtResource("5_lgwnu")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tbmy8"]
+texture = ExtResource("6_oa1go")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gw5y6"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5dd4i"]
+texture = ExtResource("5_lgwnu")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rcqid"]
+texture = ExtResource("4_5dd4i")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_j7ex8"]
+texture = ExtResource("5_lgwnu")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oa1go"]
+texture = ExtResource("6_oa1go")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_a8gd2"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_flqon"]
+texture = ExtResource("5_lgwnu")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7b55j"]
+texture = ExtResource("4_5dd4i")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1ajci"]
+texture = ExtResource("5_lgwnu")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jk1qb"]
+texture = ExtResource("6_oa1go")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_eiy7p"]
 atlas = ExtResource("1_rtw2f")
@@ -418,179 +473,201 @@ animations = [{
 "speed": 8.0
 }]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ow34m"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ow34m"]
-bg_color = Color(0.838897, 0.838897, 0.838897, 1)
-corner_radius_top_left = 16
-corner_radius_top_right = 16
-corner_radius_bottom_right = 16
-corner_radius_bottom_left = 16
-shadow_size = 5
-shadow_offset = Vector2(0, 3.41)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l72w3"]
-bg_color = Color(0.739288, 0.739288, 0.739288, 1)
-corner_radius_top_left = 16
-corner_radius_top_right = 16
-corner_radius_bottom_right = 16
-corner_radius_bottom_left = 16
-shadow_size = 5
-shadow_offset = Vector2(0, 3.41)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0ykhv"]
-bg_color = Color(1, 1, 1, 1)
-corner_radius_top_left = 16
-corner_radius_top_right = 16
-corner_radius_bottom_right = 16
-corner_radius_bottom_left = 16
-shadow_size = 5
-shadow_offset = Vector2(0, 3.41)
-
 [node name="MainMenu" type="Node2D"]
-
-[node name="Fox" type="Node2D" parent="."]
-
-[node name="Fox Sprite" type="AnimatedSprite2D" parent="Fox"]
-position = Vector2(723, 261)
-scale = Vector2(1.7223, 1.7223)
-sprite_frames = SubResource("SpriteFrames_e2xy7")
-animation = &"idle"
-autoplay = "idle"
-script = ExtResource("2_oa1go")
-
-[node name="Camera2D" type="Camera2D" parent="Fox"]
-position = Vector2(655, 261)
-zoom = Vector2(4, 4)
-script = ExtResource("3_tbmy8")
-fox_path = NodePath("../Fox Sprite")
-
-[node name="UI" type="Control" parent="Fox/Camera2D"]
-layout_mode = 3
-anchors_preset = 0
-offset_left = -655.0
-offset_top = -261.0
-offset_right = -615.0
-offset_bottom = -221.0
 script = ExtResource("4_jk1qb")
 
-[node name="Options (VBox)" type="VBoxContainer" parent="Fox/Camera2D/UI"]
+[node name="Background" type="Sprite2D" parent="."]
+scale = Vector2(4, 4)
+texture = ExtResource("1_tbmy8")
+
+[node name="GrayOverlay" type="Panel" parent="."]
+offset_left = -640.0
+offset_top = -360.0
+offset_right = 640.0
+offset_bottom = 360.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_jk1qb")
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -640.0
+offset_top = -360.0
+offset_right = 640.0
+offset_bottom = 360.0
+
+[node name="Header" type="Panel" parent="UI"]
 layout_mode = 0
-offset_left = 519.0
-offset_top = 254.0
-offset_right = 773.0
-offset_bottom = 390.0
-scale = Vector2(0.380883, 0.380883)
+offset_right = 639.0
+offset_bottom = 209.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_tbmy8")
 
-[node name="StartGame" type="Button" parent="Fox/Camera2D/UI/Options (VBox)"]
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("5_5dd4i")
-theme_override_font_sizes/font_size = 20
-theme_override_styles/focus = SubResource("StyleBoxEmpty_ow34m")
-theme_override_styles/hover = SubResource("StyleBoxFlat_ow34m")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_l72w3")
-theme_override_styles/normal = SubResource("StyleBoxFlat_0ykhv")
-text = "Start Game"
-
-[node name="Difficulty" type="Button" parent="Fox/Camera2D/UI/Options (VBox)"]
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("5_5dd4i")
-theme_override_font_sizes/font_size = 20
-theme_override_styles/focus = SubResource("StyleBoxEmpty_ow34m")
-theme_override_styles/hover = SubResource("StyleBoxFlat_ow34m")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_l72w3")
-theme_override_styles/normal = SubResource("StyleBoxFlat_0ykhv")
-text = "Set Difficulty"
-
-[node name="Settings" type="Button" parent="Fox/Camera2D/UI/Options (VBox)"]
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("5_5dd4i")
-theme_override_font_sizes/font_size = 20
-theme_override_styles/focus = SubResource("StyleBoxEmpty_ow34m")
-theme_override_styles/hover = SubResource("StyleBoxFlat_ow34m")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_l72w3")
-theme_override_styles/normal = SubResource("StyleBoxFlat_0ykhv")
-text = "Settings"
-
-[node name="Quit" type="Button" parent="Fox/Camera2D/UI/Options (VBox)"]
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("5_5dd4i")
-theme_override_font_sizes/font_size = 20
-theme_override_styles/focus = SubResource("StyleBoxEmpty_ow34m")
-theme_override_styles/hover = SubResource("StyleBoxFlat_ow34m")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_l72w3")
-theme_override_styles/normal = SubResource("StyleBoxFlat_0ykhv")
-text = "Quit"
-
-[node name="Title" type="Label" parent="Fox/Camera2D/UI"]
+[node name="Title" type="Label" parent="UI/Header"]
 layout_mode = 0
-offset_left = 521.0
-offset_top = 193.0
-offset_right = 595.0
-offset_bottom = 216.0
+offset_left = 50.0
+offset_top = 30.0
+offset_right = 309.0
+offset_bottom = 87.0
 scale = Vector2(1.82333, 1.82333)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 2
 theme_override_constants/shadow_offset_y = 2
 theme_override_fonts/font = ExtResource("5_5dd4i")
+theme_override_font_sizes/font_size = 60
 text = "Wild Quiz"
 
-[node name="Subtitle" type="VBoxContainer" parent="Fox/Camera2D/UI"]
-layout_mode = 0
-offset_left = 521.0
-offset_top = 223.0
-offset_right = 835.0
-offset_bottom = 263.0
-scale = Vector2(0.423567, 0.423567)
-
-[node name="Subtitle" type="Label" parent="Fox/Camera2D/UI/Subtitle"]
+[node name="Subtitle" type="Label" parent="UI/Header"]
 layout_mode = 2
+offset_left = 52.0
+offset_top = 139.0
+offset_right = 1128.0
+offset_bottom = 176.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
 theme_override_fonts/font = ExtResource("5_5dd4i")
-text = "Discover new animals, learn about biotops,
-get connected with our world."
+theme_override_font_sizes/font_size = 35
+text = "Entdecke neue Tiere und sammle sie alle in deinem Tierlexikon!"
 
-[node name="Creators" type="VBoxContainer" parent="Fox/Camera2D/UI"]
+[node name="Buttons" type="Panel" parent="UI"]
 layout_mode = 0
-offset_left = 519.0
-offset_top = 328.0
-offset_right = 1187.0
-offset_bottom = 368.0
-scale = Vector2(0.289762, 0.289762)
+offset_left = 200.0
+offset_top = 271.0
+offset_right = 444.0
+offset_bottom = 523.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_5dd4i")
 
-[node name="Label" type="Label" parent="Fox/Camera2D/UI/Creators"]
+[node name="StartGame" type="Button" parent="UI/Buttons"]
 layout_mode = 2
+offset_right = 122.0
+offset_bottom = 37.0
+scale = Vector2(2, 2)
+size_flags_vertical = 3
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("5_5dd4i")
-text = "A Serious Game made by Mikael Alves Brito, Levin Kaus, Tianyao Ye, Steven Mkhitarian"
+theme_override_font_sizes/font_size = 20
+theme_override_styles/focus = SubResource("StyleBoxTexture_8egab")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_hstxw")
+theme_override_styles/hover = SubResource("StyleBoxTexture_lgwnu")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_5pajh")
+theme_override_styles/normal = SubResource("StyleBoxTexture_tbmy8")
+
+[node name="Label" type="Label" parent="UI/Buttons/StartGame"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 6.0
+offset_right = 116.0
+offset_bottom = 31.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_fonts/font = ExtResource("5_5dd4i")
+text = "Spiel Starten"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Settings" type="Button" parent="UI/Buttons"]
+layout_mode = 2
+offset_top = 89.0
+offset_right = 122.0
+offset_bottom = 126.0
+scale = Vector2(2, 2)
+size_flags_vertical = 3
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_5dd4i")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/focus = SubResource("StyleBoxTexture_gw5y6")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_5dd4i")
+theme_override_styles/hover = SubResource("StyleBoxTexture_rcqid")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_j7ex8")
+theme_override_styles/normal = SubResource("StyleBoxTexture_oa1go")
+
+[node name="Label" type="Label" parent="UI/Buttons/Settings"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 6.0
+offset_right = 116.0
+offset_bottom = 31.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_fonts/font = ExtResource("5_5dd4i")
+text = "Einstellungen"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Quit" type="Button" parent="UI/Buttons"]
+layout_mode = 2
+offset_top = 178.0
+offset_right = 122.0
+offset_bottom = 215.0
+scale = Vector2(2, 2)
+size_flags_vertical = 3
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_5dd4i")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/focus = SubResource("StyleBoxTexture_a8gd2")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_flqon")
+theme_override_styles/hover = SubResource("StyleBoxTexture_7b55j")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_1ajci")
+theme_override_styles/normal = SubResource("StyleBoxTexture_jk1qb")
+
+[node name="Label" type="Label" parent="UI/Buttons/Quit"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 6.0
+offset_right = 116.0
+offset_bottom = 31.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_fonts/font = ExtResource("5_5dd4i")
+text = "Beenden"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Creators" type="Label" parent="UI"]
+layout_mode = 2
+offset_left = 50.0
+offset_top = 681.0
+offset_right = 1049.0
+offset_bottom = 705.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_fonts/font = ExtResource("5_5dd4i")
+theme_override_font_sizes/font_size = 25
+text = "Ein Serious Game erstellt von Mikael Alves Brito, Levin Kaus, Tianyao Ye, Steven Mkhitarian."
+
+[node name="Fox Sprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(170, -3)
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_e2xy7")
+animation = &"idle"
+autoplay = "idle"
+script = ExtResource("2_oa1go")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+script = ExtResource("3_tbmy8")
+
+[node name="Fox" type="Node2D" parent="."]
+visible = false
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_lgwnu")
 autoplay = true
 
-[connection signal="pressed" from="Fox/Camera2D/UI/Options (VBox)/StartGame" to="Fox/Camera2D/UI" method="_on_start_game_pressed"]
-[connection signal="pressed" from="Fox/Camera2D/UI/Options (VBox)/Difficulty" to="Fox/Camera2D/UI" method="_on_difficulty_pressed"]
-[connection signal="pressed" from="Fox/Camera2D/UI/Options (VBox)/Settings" to="Fox/Camera2D/UI" method="_on_settings_pressed"]
-[connection signal="pressed" from="Fox/Camera2D/UI/Options (VBox)/Quit" to="Fox/Camera2D/UI" method="_on_quit_pressed"]
+[connection signal="pressed" from="UI/Buttons/StartGame" to="." method="_on_start_game_pressed"]
+[connection signal="pressed" from="UI/Buttons/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="UI/Buttons/Quit" to="." method="_on_quit_pressed"]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://e5e1t73prj8g"
-path="res://.godot/imported/info_box_button.png-41b251bf14f3be012fa9619ce9333f49.ctex"
+uid="uid://bs6l4wlyno6be"
+path="res://.godot/imported/info_box_button_hover.png-fbccf1cfcfb38a9a5ba3cc9ca08c11de.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/quiz_ui/info_box_button.png"
-dest_files=["res://.godot/imported/info_box_button.png-41b251bf14f3be012fa9619ce9333f49.ctex"]
+source_file="res://assets/sprites/quiz_ui/info_box_button_hover.png"
+dest_files=["res://.godot/imported/info_box_button_hover.png-fbccf1cfcfb38a9a5ba3cc9ca08c11de.ctex"]
 
 [params]
 

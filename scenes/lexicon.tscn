@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bug2fepast4gq"]
+[gd_scene load_steps=23 format=3 uid="uid://bug2fepast4gq"]
 
 [ext_resource type="Script" uid="uid://c5civiem0do2" path="res://scripts/lexicon.gd" id="1_p2kj3"]
 [ext_resource type="Texture2D" uid="uid://kpj47ldhnui" path="res://assets/sprites/lexicon/lexicon_cover.png" id="1_pb84f"]
@@ -7,7 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://wpfkq0vvm2mk" path="res://assets/sprites/lexicon/lexicon_page_right.png" id="3_vrv63"]
 [ext_resource type="Texture2D" uid="uid://bd7ecpax767qk" path="res://assets/sprites/animals/Alpaka.png" id="4_vrv63"]
 [ext_resource type="FontFile" uid="uid://dne4aphor0uht" path="res://assets/fonts/alagard.ttf" id="5_n1gpt"]
-[ext_resource type="Texture2D" uid="uid://c3wcd3il3j5ur" path="res://assets/sprites/quiz_ui/info_box_button.png" id="8_p2kj3"]
+[ext_resource type="Texture2D" uid="uid://coq2njcw4d7mr" path="res://assets/sprites/quiz_ui/info_box_button_press.png" id="8_eumqo"]
+[ext_resource type="Texture2D" uid="uid://e5e1t73prj8g" path="res://assets/sprites/quiz_ui/info_box_button.png" id="8_p2kj3"]
+[ext_resource type="Texture2D" uid="uid://bs6l4wlyno6be" path="res://assets/sprites/quiz_ui/info_box_button_hover.png" id="9_i2hna"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4dj2o"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -29,6 +31,17 @@ bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_23t0f"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_23t0f"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cjkb2"]
+texture = ExtResource("8_eumqo")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_s16n1"]
+texture = ExtResource("9_i2hna")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sqbfy"]
+texture = ExtResource("8_eumqo")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rqmfs"]
 texture = ExtResource("8_p2kj3")
@@ -81,6 +94,7 @@ theme_override_fonts/font = ExtResource("5_n1gpt")
 text = "Name:"
 
 [node name="NameField" type="Label" parent="AnimalEntry/Basics/Name"]
+layout_mode = 0
 offset_left = 48.0
 offset_right = 92.0
 offset_bottom = 23.0
@@ -98,6 +112,7 @@ theme_override_fonts/font = ExtResource("5_n1gpt")
 text = "Wiss. Name:"
 
 [node name="ScientificNameField" type="Label" parent="AnimalEntry/Basics/ScientificName"]
+layout_mode = 0
 offset_left = 88.0
 offset_right = 172.0
 offset_bottom = 23.0
@@ -115,6 +130,7 @@ theme_override_fonts/font = ExtResource("5_n1gpt")
 text = "Familie:"
 
 [node name="FamilyField" type="Label" parent="AnimalEntry/Basics/Family"]
+layout_mode = 0
 offset_left = 62.0
 offset_right = 120.0
 offset_bottom = 23.0
@@ -140,6 +156,7 @@ theme_override_fonts/font = ExtResource("5_n1gpt")
 text = "Körperlänge:"
 
 [node name="BodyLengthField" type="Label" parent="AnimalEntry/SizeAndWeight/BodyLength"]
+layout_mode = 0
 offset_left = 101.0
 offset_right = 198.0
 offset_bottom = 23.0
@@ -157,6 +174,7 @@ theme_override_fonts/font = ExtResource("5_n1gpt")
 text = "Schulterhöhe:"
 
 [node name="ShoulderHeightField" type="Label" parent="AnimalEntry/SizeAndWeight/ShoulderHeight"]
+layout_mode = 0
 offset_left = 109.0
 offset_right = 214.0
 offset_bottom = 23.0
@@ -174,6 +192,7 @@ theme_override_fonts/font = ExtResource("5_n1gpt")
 text = "Gewicht:"
 
 [node name="WeightField" type="Label" parent="AnimalEntry/SizeAndWeight/Weight"]
+layout_mode = 0
 offset_left = 66.0
 offset_right = 128.0
 offset_bottom = 23.0
@@ -191,6 +210,7 @@ theme_override_fonts/font = ExtResource("5_n1gpt")
 text = "Anmerkung:"
 
 [node name="NoteField" type="Label" parent="AnimalEntry/SizeAndWeight/Note"]
+layout_mode = 0
 offset_top = 15.0
 offset_right = 448.0
 offset_bottom = 52.0
@@ -217,6 +237,7 @@ theme_override_fonts/font = ExtResource("5_n1gpt")
 text = "Kontinent:"
 
 [node name="ContinentField" type="Label" parent="AnimalEntry/Habitat/Continent"]
+layout_mode = 0
 offset_top = 15.0
 offset_right = 448.0
 offset_bottom = 52.0
@@ -237,6 +258,7 @@ theme_override_fonts/font = ExtResource("5_n1gpt")
 text = "Bevorzugte Lebensräume:"
 
 [node name="PreferredHabitatsField" type="Label" parent="AnimalEntry/Habitat/PreferredHabitats"]
+layout_mode = 0
 offset_top = 16.0
 offset_right = 448.0
 offset_bottom = 57.0
@@ -263,6 +285,7 @@ theme_override_fonts/font = ExtResource("5_n1gpt")
 text = "Pflanzliche Nahrung:"
 
 [node name="PlantBasedFoodField" type="Label" parent="AnimalEntry/Diet/PlantBasedFood"]
+layout_mode = 0
 offset_left = 1.0
 offset_top = 15.0
 offset_right = 448.0
@@ -284,6 +307,7 @@ theme_override_fonts/font = ExtResource("5_n1gpt")
 text = "Tierische Nahrung:"
 
 [node name="AnimalBasedFoodField" type="Label" parent="AnimalEntry/Diet/AnimalBasedFood"]
+layout_mode = 0
 offset_top = 15.0
 offset_right = 447.0
 offset_bottom = 51.0
@@ -310,6 +334,7 @@ theme_override_fonts/font = ExtResource("5_n1gpt")
 text = "Lebensweise:"
 
 [node name="LifestyleField" type="Label" parent="AnimalEntry/Other/Lifestyle"]
+layout_mode = 0
 offset_top = 17.0
 offset_right = 448.0
 offset_bottom = 128.0
@@ -330,6 +355,7 @@ theme_override_fonts/font = ExtResource("5_n1gpt")
 text = "Fortpflanzung:"
 
 [node name="ReproductionField" type="Label" parent="AnimalEntry/Other/Reproduction"]
+layout_mode = 0
 offset_top = 17.0
 offset_right = 447.0
 offset_bottom = 129.0
@@ -350,6 +376,7 @@ theme_override_fonts/font = ExtResource("5_n1gpt")
 text = "Besonderheiten:"
 
 [node name="SpecialCharacteristicsField" type="Label" parent="AnimalEntry/Other/SpecialCharacteristics"]
+layout_mode = 0
 offset_left = 1.0
 offset_top = 17.0
 offset_right = 448.0
@@ -371,6 +398,7 @@ theme_override_fonts/font = ExtResource("5_n1gpt")
 text = "Schutzstatus:"
 
 [node name="ConservationStatusField" type="Label" parent="AnimalEntry/Other/ConservationStatus"]
+layout_mode = 0
 offset_top = 17.0
 offset_right = 447.0
 offset_bottom = 132.0
@@ -391,9 +419,14 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_23t0f")
 layout_mode = 0
 offset_right = 244.0
 offset_bottom = 74.0
+theme_override_styles/focus = SubResource("StyleBoxTexture_23t0f")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_cjkb2")
+theme_override_styles/hover = SubResource("StyleBoxTexture_s16n1")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_sqbfy")
 theme_override_styles/normal = SubResource("StyleBoxTexture_rqmfs")
 
 [node name="NextText" type="Label" parent="NextButton"]
+layout_mode = 0
 offset_left = 12.0
 offset_top = 12.0
 offset_right = 232.0

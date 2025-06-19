@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://qtbyjkaw4fjm"]
 
-[ext_resource type="Script" uid="uid://d1iu4f2pxrffw" path="res://scripts/game_over.gd" id="1_6bcno"]
-[ext_resource type="FontFile" uid="uid://dne4aphor0uht" path="res://assets/fonts/alagard.ttf" id="2_qae0b"]
+[ext_resource type="Script" uid="uid://d1iu4f2pxrffw" path="res://scripts/game_over.gd" id="1_wqhvx"]
+[ext_resource type="FontFile" uid="uid://dne4aphor0uht" path="res://assets/fonts/alagard.ttf" id="2_tbwuq"]
 
 [node name="GameOver" type="Control"]
 layout_mode = 3
@@ -10,7 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_6bcno")
+script = ExtResource("1_wqhvx")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
@@ -20,7 +20,7 @@ offset_right = 421.0
 offset_bottom = 234.0
 scale = Vector2(7.15665, 7.15665)
 theme_override_colors/font_color = Color(1, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_qae0b")
+theme_override_fonts/font = ExtResource("2_tbwuq")
 text = "Game Over..."
 
 [node name="Quit" type="Button" parent="."]
@@ -35,7 +35,7 @@ offset_top = -46.72
 offset_right = 515.76
 offset_bottom = -23.72
 scale = Vector2(8.02567, 8.02567)
-theme_override_fonts/font = ExtResource("2_qae0b")
+theme_override_fonts/font = ExtResource("2_tbwuq")
 text = "Quit"
 
 [node name="Start Again" type="Button" parent="."]
@@ -45,7 +45,7 @@ offset_top = 446.0
 offset_right = 251.0
 offset_bottom = 469.0
 scale = Vector2(7.25019, 7.25019)
-theme_override_fonts/font = ExtResource("2_qae0b")
+theme_override_fonts/font = ExtResource("2_tbwuq")
 text = "Restart"
 
 [connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
