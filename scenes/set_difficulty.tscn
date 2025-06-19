@@ -51,6 +51,7 @@ grow_vertical = 2
 script = ExtResource("1_xp7t3")
 
 [node name="Background" type="Panel" parent="."]
+layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_4r40s")
@@ -60,6 +61,7 @@ scale = Vector2(4, 4)
 texture = ExtResource("2_j03d5")
 
 [node name="GrayOverlay" type="Panel" parent="Background"]
+layout_mode = 0
 offset_left = -640.0
 offset_top = -360.0
 offset_right = 640.0

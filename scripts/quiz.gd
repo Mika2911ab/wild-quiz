@@ -18,6 +18,7 @@ var number_of_questions = 2
 var current_question = 0
 var right_answers_needed = 1
 var right_answers  = 0
+var already_discovered = false
 
 @onready var correct_sound: AudioStreamPlayer = $correct_sound
 @onready var wrong_sound: AudioStreamPlayer = $wrong_sound
@@ -32,17 +33,23 @@ func set_animal(name: String, continent: String, species: String):
 	current_question = 0
 	right_answers_needed = 1
 	right_answers  = 0
-	
-	print("Animal set to:", animal_name)
+	if GlobalVariables.difficulty == "difficult":
+		number_of_questions = 1
 	
 	$Animal/Animal_Test.set_animal(name, continent, species)
+	
+	for i in range(Animals.animals[continents[animal_continent]].size()):
+		if Animals.animals[continents[animal_continent]][i]["name"] == animal_name:
+			already_discovered = Animals.animals[continents[animal_continent]][i]["discovered"]
+			
+	if already_discovered == true:
+		$AnimalStatusBar/Lexicon.texture = load("res://assets/sprites/quiz_ui/lexicon.png")
+	
 	set_random_question()
 	
 func set_random_question():	
 	current_question += 1
-	# TODO: Figure out how to get the questions here
 	var questions
-	print(Animals.animals[continents[animal_continent]].size())
 	for i in range(Animals.animals[continents[animal_continent]].size()):
 		if Animals.animals[continents[animal_continent]][i]["name"] == animal_name:
 			questions = Animals.animals[continents[animal_continent]][i]["questions"]
@@ -72,7 +79,6 @@ func _on_answer_button_1_pressed() -> void:
 	if $QuizBox/AnswerGrid/AnswerButton1/AnswerLabel1.text == correct_answer:
 		correct_sound.play()
 		right_answers += 1
-		print("punkte: " + str(right_answers))
 		give_answer_feedback(true)
 	else:
 		wrong_sound.play()
@@ -115,9 +121,6 @@ func give_answer_feedback(is_answer_correct: bool):
 			SceneSwitcher.switch_scene("res://scenes/won.tscn")
 	else: 
 		$AnswerFeedback/RightWrongText.text = "Falsch!"
-		if GlobalVariables.difficulty == "difficult":
-			SceneSwitcher.switch_scene("res://scenes/GameOver.tscn")
-
 	
 	if current_question == number_of_questions:
 		$AnswerFeedback/AnswerFeedbackButtonText.text = "Quiz Beenden"
@@ -133,15 +136,25 @@ func _on_answer_feedback_button_pressed() -> void:
 		$GrayOverlay.visible = false
 		$AnswerFeedback.visible = false
 		if right_answers >= right_answers_needed:
-			SceneSwitcher.switch_scene("res://scenes/lexicon.tscn", animal_name, animal_continent, animal_species)
+			if already_discovered == false:
+				GlobalVariables.score += 1
+				for i in range(Animals.animals[continents[animal_continent]].size()):
+					if Animals.animals[continents[animal_continent]][i]["name"] == animal_name:
+						Animals.animals[continents[animal_continent]][i]["discovered"] = true
+				GlobalTimer.stop_timer()
+				SceneSwitcher.switch_scene("res://scenes/lexicon.tscn", animal_name, animal_continent, animal_species)
+			else:
+				SceneSwitcher.switch_scene("res://scenes/game.tscn")
 		else:
 			SceneSwitcher.switch_scene("res://scenes/game.tscn")
 	if $AnswerFeedback/AnswerFeedbackButtonText.text == "Quiz Beenden":
 		if right_answers >= right_answers_needed:
 			congrats_sound.play()
-			GlobalVariables.score += 1
 			$AnswerFeedback/RightWrongText.text = "Glückwunsch!"
-			$AnswerFeedback/FeedbackText.text = "Du hast das Quiz bestanden und ein neues Tier wird registriert!"
+			if already_discovered == true:
+				$AnswerFeedback/FeedbackText.text = "Du hast das Quiz bestanden, aber das Tier wurde bereits registriert!"
+			else:
+				$AnswerFeedback/FeedbackText.text = "Du hast das Quiz bestanden und ein neues Tier wird registriert!"
 		else:
 			wrong_sound.play()
 			$AnswerFeedback/RightWrongText.text = "Schade!"

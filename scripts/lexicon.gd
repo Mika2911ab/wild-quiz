@@ -48,4 +48,5 @@ func set_animal(name: String, continent: String, species: String):
 
 
 func _on_next_pressed() -> void:
+	GlobalTimer.start_timer()
 	SceneSwitcher.switch_scene("res://scenes/game.tscn")

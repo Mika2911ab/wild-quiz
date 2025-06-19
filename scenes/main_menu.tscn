@@ -489,6 +489,7 @@ scale = Vector2(4, 4)
 texture = ExtResource("1_tbmy8")
 
 [node name="GrayOverlay" type="Panel" parent="Background"]
+layout_mode = 0
 offset_left = -640.0
 offset_top = -360.0
 offset_right = 640.0

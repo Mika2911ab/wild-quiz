@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://gesb2njds2yb" path="res://scripts/quiz.gd" id="1_16nxq"]
 [ext_resource type="Texture2D" uid="uid://cd6xmhplh6vbr" path="res://assets/sprites/quiz_ui/bg.png" id="1_euwqo"]
 [ext_resource type="Texture2D" uid="uid://b7sasdpxq60jh" path="res://assets/sprites/quiz_ui/underground.png" id="2_m81w7"]
-[ext_resource type="Texture2D" uid="uid://bb61eyf750fk3" path="res://assets/sprites/quiz_ui/lexicon.png" id="3_vwwmd"]
 [ext_resource type="Texture2D" uid="uid://bmnlu4cs3s2rs" path="res://assets/sprites/knight.png" id="3_w5ac1"]
+[ext_resource type="Texture2D" uid="uid://b50qc8shvu6lm" path="res://assets/sprites/quiz_ui/lexicon_grey.png" id="4_ahqvi"]
 [ext_resource type="Texture2D" uid="uid://x230edb2cy6o" path="res://assets/sprites/quiz_ui/earth.png" id="5_4qkfh"]
 [ext_resource type="Texture2D" uid="uid://78e4mfbsejub" path="res://assets/sprites/quiz_ui/animal_status_bg.png" id="5_xq7j8"]
 [ext_resource type="Texture2D" uid="uid://cbrot3y6row5l" path="res://assets/sprites/quiz_ui/dna.png" id="6_5da4r"]
@@ -237,7 +237,7 @@ texture = ExtResource("5_xq7j8")
 [node name="Lexicon" type="Sprite2D" parent="AnimalStatusBar"]
 position = Vector2(-605, -244)
 scale = Vector2(2.8, 2.8)
-texture = ExtResource("3_vwwmd")
+texture = ExtResource("4_ahqvi")
 
 [node name="AnimalName" type="Label" parent="AnimalStatusBar"]
 layout_mode = 0

@@ -44,6 +44,7 @@ anchors_preset = 0
 script = ExtResource("1_bumqu")
 
 [node name="Background" type="Panel" parent="."]
+layout_mode = 0
 offset_left = 891.0
 offset_top = 585.0
 offset_right = 931.0
@@ -56,6 +57,7 @@ scale = Vector2(4, 4)
 texture = ExtResource("2_cgnwt")
 
 [node name="GrayOverlay" type="Panel" parent="Background"]
+layout_mode = 0
 offset_left = -1531.0
 offset_top = -945.0
 offset_right = -251.0
@@ -63,6 +65,7 @@ offset_bottom = -225.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_jd5cs")
 
 [node name="Story" type="Panel" parent="."]
+layout_mode = 0
 offset_left = 4.0
 offset_top = 20.0
 offset_right = 633.0

@@ -2,7 +2,7 @@
 extends Node
 
 var score = 0
-var difficulty: String; # default -> zweiter versuch, sonst nicht
+var difficulty = "easy"
 
 signal score_changed
 
