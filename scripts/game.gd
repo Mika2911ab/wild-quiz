@@ -33,3 +33,8 @@ func _on_ten_minutes_up():
 	print("10 Minuten sind abgelaufen! Szene wird gewechselt.")
 	# Replace "res://scenes/game_over.tscn" with the path to your desired scene
 	SceneSwitcher.switch_scene("res://scenes/GameOver.tscn")
+
+
+func _on_button_pressed() -> void:
+	GlobalTimer.stop_timer()
+	SceneSwitcher.switch_scene("res://scenes/lexicon.tscn", "lexicon")

@@ -2,6 +2,7 @@
 extends Node
 
 var score = 0
+var lexicon_page = 1
 var difficulty = "easy"
 
 signal score_changed

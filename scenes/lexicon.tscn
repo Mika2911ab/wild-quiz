@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://bug2fepast4gq"]
+[gd_scene load_steps=39 format=3 uid="uid://bug2fepast4gq"]
 
 [ext_resource type="Script" uid="uid://c5civiem0do2" path="res://scripts/lexicon.gd" id="1_p2kj3"]
 [ext_resource type="Texture2D" uid="uid://kpj47ldhnui" path="res://assets/sprites/lexicon/lexicon_cover.png" id="1_pb84f"]
@@ -10,6 +10,12 @@
 [ext_resource type="Texture2D" uid="uid://coq2njcw4d7mr" path="res://assets/sprites/quiz_ui/info_box_button_press.png" id="8_eumqo"]
 [ext_resource type="Texture2D" uid="uid://e5e1t73prj8g" path="res://assets/sprites/quiz_ui/info_box_button.png" id="8_p2kj3"]
 [ext_resource type="Texture2D" uid="uid://bs6l4wlyno6be" path="res://assets/sprites/quiz_ui/info_box_button_hover.png" id="9_i2hna"]
+[ext_resource type="Texture2D" uid="uid://ppnh7k7tv34p" path="res://assets/sprites/lexicon/arrow_left_press.png" id="11_8klbi"]
+[ext_resource type="Texture2D" uid="uid://d3dgds2xc37v3" path="res://assets/sprites/lexicon/arrow_right_press.png" id="11_cjkb2"]
+[ext_resource type="Texture2D" uid="uid://cewtpxfnt507f" path="res://assets/sprites/lexicon/arrow_right_hover.png" id="12_s16n1"]
+[ext_resource type="Texture2D" uid="uid://dudai660muf42" path="res://assets/sprites/lexicon/arrow_left_hover.png" id="12_uh88x"]
+[ext_resource type="Texture2D" uid="uid://blq3t1q2bftgf" path="res://assets/sprites/lexicon/arrow_left.png" id="13_elxp5"]
+[ext_resource type="Texture2D" uid="uid://m0ulseajr5we" path="res://assets/sprites/lexicon/arrow_right.png" id="13_sqbfy"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4dj2o"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -45,6 +51,34 @@ texture = ExtResource("8_eumqo")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rqmfs"]
 texture = ExtResource("8_p2kj3")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_glpb1"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vrnxu"]
+texture = ExtResource("11_8klbi")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sluy6"]
+texture = ExtResource("12_uh88x")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uc6x4"]
+texture = ExtResource("11_8klbi")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_62om8"]
+texture = ExtResource("13_elxp5")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8klbi"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uh88x"]
+texture = ExtResource("11_cjkb2")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_elxp5"]
+texture = ExtResource("12_s16n1")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xvgyg"]
+texture = ExtResource("11_cjkb2")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_i15dp"]
+texture = ExtResource("13_sqbfy")
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_p2kj3")
@@ -437,6 +471,34 @@ text = "Weiter"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="ArrowLeft" type="Button" parent="."]
+visible = false
+offset_left = -448.0
+offset_top = 245.0
+offset_right = -431.0
+offset_bottom = 258.0
+scale = Vector2(3, 3)
+theme_override_styles/focus = SubResource("StyleBoxTexture_glpb1")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_vrnxu")
+theme_override_styles/hover = SubResource("StyleBoxTexture_sluy6")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_uc6x4")
+theme_override_styles/normal = SubResource("StyleBoxTexture_62om8")
+
+[node name="ArrowRight" type="Button" parent="."]
+visible = false
+offset_left = 397.0
+offset_top = 244.0
+offset_right = 414.0
+offset_bottom = 257.0
+scale = Vector2(3, 3)
+theme_override_styles/focus = SubResource("StyleBoxTexture_8klbi")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_uh88x")
+theme_override_styles/hover = SubResource("StyleBoxTexture_elxp5")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_xvgyg")
+theme_override_styles/normal = SubResource("StyleBoxTexture_i15dp")
+
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [connection signal="pressed" from="NextButton/Next" to="." method="_on_next_pressed"]
+[connection signal="pressed" from="ArrowLeft" to="." method="_on_arrow_left_pressed"]
+[connection signal="pressed" from="ArrowRight" to="." method="_on_arrow_right_pressed"]

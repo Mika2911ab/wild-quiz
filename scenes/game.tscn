@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dbo4ired1kh8r"]
+[gd_scene load_steps=22 format=3 uid="uid://dbo4ired1kh8r"]
 
 [ext_resource type="Script" uid="uid://f8qlcesk8cpc" path="res://scripts/game.gd" id="1_gee14"]
 [ext_resource type="PackedScene" uid="uid://mcsc0eqqqpno" path="res://scenes/player.tscn" id="1_uwrxv"]
@@ -6,8 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://ckrx0su70ldcs" path="res://assets/sprites/Water.png" id="3_lbhrr"]
 [ext_resource type="Texture2D" uid="uid://cah46fj0afffl" path="res://assets/sprites/icefinal.png" id="4_0tnpc"]
 [ext_resource type="FontFile" uid="uid://dne4aphor0uht" path="res://assets/fonts/alagard.ttf" id="6_0tnpc"]
+[ext_resource type="Texture2D" uid="uid://8ufc2nic5e52" path="res://assets/sprites/quiz_ui/lexicon_press.png" id="6_kvpfn"]
 [ext_resource type="Script" uid="uid://xpn0ixc4pmix" path="res://scripts/spawner.gd" id="6_p57ef"]
 [ext_resource type="AudioStream" uid="uid://8ikc7qgrrbkj" path="res://assets/sounds/Forgotten Biomes.wav" id="6_u5sy4"]
+[ext_resource type="Texture2D" uid="uid://b63h0i4fyeexi" path="res://assets/sprites/quiz_ui/lexicon_hover.png" id="7_dinhu"]
 [ext_resource type="Texture2D" uid="uid://bb61eyf750fk3" path="res://assets/sprites/quiz_ui/lexicon.png" id="7_u5sy4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lnu2h"]
@@ -379,6 +381,20 @@ sources/0 = SubResource("TileSetAtlasSource_lnu2h")
 sources/1 = SubResource("TileSetAtlasSource_iywne")
 sources/2 = SubResource("TileSetAtlasSource_vtaks")
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kvuet"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_trtic"]
+texture = ExtResource("6_kvpfn")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ir15t"]
+texture = ExtResource("7_dinhu")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ca42v"]
+texture = ExtResource("6_kvpfn")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0tnpc"]
+texture = ExtResource("7_u5sy4")
+
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_gee14"]
 
 [node name="Game" type="Node2D"]
@@ -405,21 +421,28 @@ position_smoothing_enabled = true
 
 [node name="UI" type="CanvasLayer" parent="."]
 
-[node name="LexiconImage" type="Sprite2D" parent="UI"]
-position = Vector2(15, 19)
-scale = Vector2(1.9, 1.9)
-texture = ExtResource("7_u5sy4")
+[node name="Button" type="Button" parent="UI"]
+offset_left = 10.0
+offset_top = 5.0
+offset_right = 22.0
+offset_bottom = 19.0
+scale = Vector2(2.5, 2.5)
+theme_override_styles/focus = SubResource("StyleBoxTexture_kvuet")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_trtic")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ir15t")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ca42v")
+theme_override_styles/normal = SubResource("StyleBoxTexture_0tnpc")
 
 [node name="ScoreText" type="Label" parent="UI"]
-offset_left = 29.0
-offset_top = 3.0
-offset_right = 293.0
-offset_bottom = 32.0
+offset_left = 48.0
+offset_top = 5.0
+offset_right = 401.0
+offset_bottom = 43.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 2
 theme_override_constants/shadow_offset_y = 2
 theme_override_fonts/font = ExtResource("6_0tnpc")
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 40
 text = "Registrierte Tiere: "
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -434,3 +457,5 @@ script = ExtResource("6_p57ef")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_u5sy4")
 autoplay = true
+
+[connection signal="pressed" from="UI/Button" to="." method="_on_button_pressed"]
