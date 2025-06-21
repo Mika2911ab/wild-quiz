@@ -4,6 +4,7 @@ extends Node
 var score = 0
 var lexicon_page = 1
 var difficulty = "easy"
+var character_coordinates = Vector2i(49,-66)
 
 signal score_changed
 

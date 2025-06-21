@@ -43,4 +43,6 @@ func set_animal(name: String, continent: String, species: String):
 	anim.play(str(animal_name))
 
 func _on_body_entered(body: Node2D) -> void:
+	var player = get_node("/root/Game/Player")
+	GlobalVariables.character_coordinates = player.position
 	SceneSwitcher.switch_scene("res://scenes/quiz.tscn", animal_name, animal_continent, animal_species)

@@ -36,7 +36,6 @@ func _ready():
 	spawn_animals_at_region(Animals.animals["af"], "Afrika", spawn_points["af"]) #Afrika
 	spawn_animals_at_region(Animals.animals["as"], "Asien", spawn_points["as"]) #Asien
 	spawn_animals_at_region(Animals.animals["ant"], "Antarktis", spawn_points["ant"]) 
-	# TODO: Add Antarctica
 
 func spawn_animals_at_region(animals, animal_continent, spawns) -> void:
 	spawns.shuffle()
@@ -44,7 +43,9 @@ func spawn_animals_at_region(animals, animal_continent, spawns) -> void:
 	for i in range(animals.size()):
 		var animal_name = animals[i]["name"]
 		var animal_species = animals[i]["type"]
-		var spawn = spawns[i]
+		var spawn
+		# TODO: Change spawn point of animal if the character is standing here (Saved in GlobalVariables.character_coordinates)
+		spawn = spawns[i]
 		spawn_animal_at_tile(spawn, animal_name, animal_continent, animal_species)
 
 func spawn_animal_at_tile(tile_coords: Vector2i, animal_name: String, animal_continent: String, animal_species: String) -> void:
