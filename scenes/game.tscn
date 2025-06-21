@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://dbo4ired1kh8r"]
+[gd_scene load_steps=27 format=3 uid="uid://dbo4ired1kh8r"]
 
 [ext_resource type="Script" uid="uid://f8qlcesk8cpc" path="res://scripts/game.gd" id="1_gee14"]
 [ext_resource type="PackedScene" uid="uid://mcsc0eqqqpno" path="res://scenes/player.tscn" id="1_uwrxv"]
@@ -11,6 +11,11 @@
 [ext_resource type="AudioStream" uid="uid://8ikc7qgrrbkj" path="res://assets/sounds/Forgotten Biomes.wav" id="6_u5sy4"]
 [ext_resource type="Texture2D" uid="uid://b63h0i4fyeexi" path="res://assets/sprites/quiz_ui/lexicon_hover.png" id="7_dinhu"]
 [ext_resource type="Texture2D" uid="uid://bb61eyf750fk3" path="res://assets/sprites/quiz_ui/lexicon.png" id="7_u5sy4"]
+[ext_resource type="Texture2D" uid="uid://ch11yvuuxefoa" path="res://assets/sprites/keys/l_key.png" id="9_dinhu"]
+[ext_resource type="Texture2D" uid="uid://cigbx8tdkeixn" path="res://assets/sprites/keys/up_key.png" id="11_ca42v"]
+[ext_resource type="Texture2D" uid="uid://dgxxy58t4s6yl" path="res://assets/sprites/keys/left_key.png" id="11_kvuet"]
+[ext_resource type="Texture2D" uid="uid://di20bc0qpac76" path="res://assets/sprites/keys/down_key.png" id="12_rysoc"]
+[ext_resource type="Texture2D" uid="uid://xftl0uj811b6" path="res://assets/sprites/keys/right_key.png" id="13_ssvqc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lnu2h"]
 texture = ExtResource("2_yqjtg")
@@ -433,6 +438,11 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_ir15t")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_ca42v")
 theme_override_styles/normal = SubResource("StyleBoxTexture_0tnpc")
 
+[node name="Sprite2D" type="Sprite2D" parent="UI/Button"]
+position = Vector2(6.4, 15.2)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("9_dinhu")
+
 [node name="ScoreText" type="Label" parent="UI"]
 offset_left = 48.0
 offset_top = 5.0
@@ -444,6 +454,22 @@ theme_override_constants/shadow_offset_y = 2
 theme_override_fonts/font = ExtResource("6_0tnpc")
 theme_override_font_sizes/font_size = 40
 text = "Registrierte Tiere: "
+
+[node name="Up" type="Sprite2D" parent="UI"]
+position = Vector2(34, 72)
+texture = ExtResource("11_ca42v")
+
+[node name="Down" type="Sprite2D" parent="UI"]
+position = Vector2(34, 92)
+texture = ExtResource("12_rysoc")
+
+[node name="Right" type="Sprite2D" parent="UI"]
+position = Vector2(45, 82)
+texture = ExtResource("13_ssvqc")
+
+[node name="Left" type="Sprite2D" parent="UI"]
+position = Vector2(23, 82)
+texture = ExtResource("11_kvuet")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = -1

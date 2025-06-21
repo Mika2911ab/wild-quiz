@@ -23,8 +23,14 @@ func _on_ten_minutes_up():
 	# Replace "res://scenes/game_over.tscn" with the path to your desired scene
 	SceneSwitcher.switch_scene("res://scenes/GameOver.tscn")
 
-
 func _on_button_pressed() -> void:
+	open_lexicon()
+	
+func _process(delta):
+	if Input.is_action_just_pressed("ui_l"):
+		open_lexicon()
+
+func open_lexicon():
 	GlobalTimer.stop_timer()
 	GlobalVariables.character_coordinates = $Player.position
 	SceneSwitcher.switch_scene("res://scenes/lexicon.tscn", "lexicon")

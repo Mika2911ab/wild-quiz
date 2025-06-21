@@ -3,6 +3,13 @@ extends Control
 var counter = 0
 
 func _on_button_pressed():
+	set_story()
+
+func _process(delta):
+	if Input.is_action_just_pressed("ui_accept"):
+		set_story()
+		
+func set_story():
 	if counter == 4: 
 		SceneSwitcher.switch_scene("res://scenes/game.tscn")
 		GlobalTimer.reset_timer()

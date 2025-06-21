@@ -1,4 +1,4 @@
-[gd_scene load_steps=85 format=3 uid="uid://biaqn65s1pguc"]
+[gd_scene load_steps=88 format=3 uid="uid://biaqn65s1pguc"]
 
 [ext_resource type="Texture2D" uid="uid://hrtimjs7vwpn" path="res://assets/sprites/sprite_sheets/fox_sheet.png" id="1_rtw2f"]
 [ext_resource type="Texture2D" uid="uid://cd6xmhplh6vbr" path="res://assets/sprites/quiz_ui/bg.png" id="1_tbmy8"]
@@ -10,6 +10,9 @@
 [ext_resource type="Texture2D" uid="uid://coq2njcw4d7mr" path="res://assets/sprites/quiz_ui/info_box_button_press.png" id="5_lgwnu"]
 [ext_resource type="AudioStream" uid="uid://cjfcgwnpcd6hl" path="res://assets/sounds/Evening Harmony.wav" id="6_lgwnu"]
 [ext_resource type="Texture2D" uid="uid://e5e1t73prj8g" path="res://assets/sprites/quiz_ui/info_box_button.png" id="6_oa1go"]
+[ext_resource type="Texture2D" uid="uid://de0vqw416ipoh" path="res://assets/sprites/keys/1_key.png" id="7_rcqid"]
+[ext_resource type="Texture2D" uid="uid://btsmmqlq3c3d8" path="res://assets/sprites/keys/2_key.png" id="8_1ajci"]
+[ext_resource type="Texture2D" uid="uid://dyg7qqa5jg7dq" path="res://assets/sprites/keys/3_key.png" id="9_7b55j"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lgwnu"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -578,6 +581,10 @@ text = "Spiel Starten"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Sprite2D" type="Sprite2D" parent="UI/Buttons/StartGame"]
+position = Vector2(61, 35.5)
+texture = ExtResource("7_rcqid")
+
 [node name="Settings" type="Button" parent="UI/Buttons"]
 layout_mode = 2
 offset_top = 89.0
@@ -612,6 +619,10 @@ text = "Einstellungen"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Sprite2D" type="Sprite2D" parent="UI/Buttons/Settings"]
+position = Vector2(61, 35.5)
+texture = ExtResource("8_1ajci")
+
 [node name="Quit" type="Button" parent="UI/Buttons"]
 layout_mode = 2
 offset_top = 178.0
@@ -645,6 +656,10 @@ theme_override_fonts/font = ExtResource("5_5dd4i")
 text = "Beenden"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="UI/Buttons/Quit"]
+position = Vector2(61, 35.5)
+texture = ExtResource("9_7b55j")
 
 [node name="Creators" type="Label" parent="UI"]
 layout_mode = 2

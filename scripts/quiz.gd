@@ -74,8 +74,40 @@ func set_random_question():
 		var label_path = "QuizBox/AnswerGrid/AnswerButton" + str(i+1) + "/AnswerLabel" + str(i+1)
 		if has_node(label_path):
 			get_node(label_path).text = answers[i]
+			
+func _process(delta):
+	if Input.is_action_just_pressed("ui_1"):
+		if $AnswerFeedback.visible == false:
+			execute_button1()
+	if Input.is_action_just_pressed("ui_2"):
+		if $AnswerFeedback.visible == false:
+			execute_button2()
+	if Input.is_action_just_pressed("ui_3"):
+		if $AnswerFeedback.visible == false:
+			execute_button3()
+	if Input.is_action_just_pressed("ui_4"):
+		if $AnswerFeedback.visible == false:
+			execute_button4()
+	if Input.is_action_just_pressed("ui_accept"):
+		if $AnswerFeedback.visible == true:
+			execute_feedback_button()
 
 func _on_answer_button_1_pressed() -> void:
+	execute_button1()
+
+
+func _on_answer_button_2_pressed() -> void:
+	execute_button2()
+
+
+func _on_answer_button_3_pressed() -> void:
+	execute_button3()
+
+
+func _on_answer_button_4_pressed() -> void:
+	execute_button4()
+		
+func execute_button1(): 
 	if $QuizBox/AnswerGrid/AnswerButton1/AnswerLabel1.text == correct_answer:
 		correct_sound.play()
 		right_answers += 1
@@ -83,9 +115,8 @@ func _on_answer_button_1_pressed() -> void:
 	else:
 		wrong_sound.play()
 		give_answer_feedback(false)
-
-
-func _on_answer_button_2_pressed() -> void:
+		
+func execute_button2(): 
 	if $QuizBox/AnswerGrid/AnswerButton2/AnswerLabel2.text == correct_answer:
 		correct_sound.play()
 		right_answers += 1
@@ -93,9 +124,8 @@ func _on_answer_button_2_pressed() -> void:
 	else:
 		wrong_sound.play()
 		give_answer_feedback(false)
-
-
-func _on_answer_button_3_pressed() -> void:
+	
+func execute_button3(): 
 	if $QuizBox/AnswerGrid/AnswerButton3/AnswerLabel3.text == correct_answer:
 		correct_sound.play()
 		right_answers += 1
@@ -103,9 +133,8 @@ func _on_answer_button_3_pressed() -> void:
 	else:
 		wrong_sound.play()
 		give_answer_feedback(false)
-
-
-func _on_answer_button_4_pressed() -> void:
+	
+func execute_button4(): 
 	if $QuizBox/AnswerGrid/AnswerButton4/AnswerLabel4.text == correct_answer:
 		correct_sound.play()
 		right_answers += 1
@@ -132,6 +161,9 @@ func give_answer_feedback(is_answer_correct: bool):
 	$AnswerFeedback.visible = true
 
 func _on_answer_feedback_button_pressed() -> void:
+	execute_feedback_button()
+
+func execute_feedback_button():
 	if $AnswerFeedback/AnswerFeedbackButtonText.text == "Weiter":
 		$GrayOverlay.visible = false
 		$AnswerFeedback.visible = false

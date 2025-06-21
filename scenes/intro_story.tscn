@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://q2de6qkh1cgq"]
+[gd_scene load_steps=20 format=3 uid="uid://q2de6qkh1cgq"]
 
 [ext_resource type="Script" uid="uid://d120i22jnumgp" path="res://scripts/intro_story.gd" id="1_bumqu"]
 [ext_resource type="Texture2D" uid="uid://cd6xmhplh6vbr" path="res://assets/sprites/quiz_ui/bg.png" id="2_cgnwt"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://cojq1v4iak611" path="res://assets/sprites/quiz_ui/info_box_banner_right.png" id="6_kfay6"]
 [ext_resource type="Texture2D" uid="uid://coq2njcw4d7mr" path="res://assets/sprites/quiz_ui/info_box_button_press.png" id="7_whfbt"]
 [ext_resource type="Texture2D" uid="uid://bs6l4wlyno6be" path="res://assets/sprites/quiz_ui/info_box_button_hover.png" id="8_3fxxn"]
+[ext_resource type="Texture2D" uid="uid://dr34f5tvpr4kq" path="res://assets/sprites/keys/enter_key.png" id="9_hg05c"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pmj2g"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -149,6 +150,11 @@ theme_override_font_sizes/font_size = 25
 text = "Weiter"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 247)
+scale = Vector2(2, 2)
+texture = ExtResource("9_hg05c")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, -6.10352e-05)

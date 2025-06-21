@@ -18,6 +18,7 @@ func set_animal(name: String, continent: String, species: String):
 			$ArrowLeft.visible = true
 		if GlobalVariables.lexicon_page != 35:
 			$ArrowRight.visible = true
+		$NextButton/NextText.text = "Zurück"
 		get_animal()
 	else:
 		var animal
@@ -33,20 +34,10 @@ func _on_next_pressed() -> void:
 
 
 func _on_arrow_left_pressed() -> void:
-	GlobalVariables.lexicon_page -= 1
-	if GlobalVariables.lexicon_page == 1:
-		$ArrowLeft.visible = false
-	if GlobalVariables.lexicon_page == 34:
-		$ArrowRight.visible = true
-	get_animal()
+	execute_left()
 
 func _on_arrow_right_pressed() -> void:
-	GlobalVariables.lexicon_page += 1
-	if GlobalVariables.lexicon_page == 35:
-		$ArrowRight.visible = false
-	if GlobalVariables.lexicon_page == 2:
-		$ArrowLeft.visible = true
-	get_animal()
+	execute_right()
 	
 func get_animal():
 	var continent
@@ -127,3 +118,30 @@ func set_page(animal):
 		$AnimalEntry/Other/Reproduction/ReproductionField.text = ""
 		$AnimalEntry/Other/SpecialCharacteristics/SpecialCharacteristicsField.text = ""
 		$AnimalEntry/Other/ConservationStatus/ConservationStatusField.text = ""
+		
+func _process(delta):
+	if Input.is_action_just_pressed("ui_accept"):
+		GlobalTimer.start_timer()
+		SceneSwitcher.switch_scene("res://scenes/game.tscn")
+	if Input.is_action_just_pressed("ui_right"):
+		if $ArrowRight.visible == true:
+			execute_right()
+	if Input.is_action_just_pressed("ui_left"):
+		if $ArrowLeft.visible == true: 
+			execute_left()
+		
+func execute_left():
+	GlobalVariables.lexicon_page -= 1
+	if GlobalVariables.lexicon_page == 1:
+		$ArrowLeft.visible = false
+	if GlobalVariables.lexicon_page == 34:
+		$ArrowRight.visible = true
+	get_animal()
+	
+func execute_right():
+	GlobalVariables.lexicon_page += 1
+	if GlobalVariables.lexicon_page == 35:
+		$ArrowRight.visible = false
+	if GlobalVariables.lexicon_page == 2:
+		$ArrowLeft.visible = true
+	get_animal()

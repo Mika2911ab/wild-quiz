@@ -20,9 +20,6 @@ func _physics_process(delta: float) -> void:
 	# ID aus gewünschtem Layer holen (z. B. Layer 1 = "Map")
 	var tile_id = tilemap.get_cell_source_id(1, tile_pos)
 
-	# Debug-Ausgabe
-	#print("tile_pos:", tile_pos, " → tile_id:", tile_id)
-
 	# Erkennung anhand ID
 	if tile_id != -1:
 		SPEED = 200
