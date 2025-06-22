@@ -19,6 +19,7 @@ var current_question = 0
 var right_answers_needed = 1
 var right_answers  = 0
 var already_discovered = false
+var last_question = ""
 
 @onready var correct_sound: AudioStreamPlayer = $correct_sound
 @onready var wrong_sound: AudioStreamPlayer = $wrong_sound
@@ -51,13 +52,17 @@ func set_animal(name: String, continent: String, species: String):
 func set_random_question():	
 	if current_question == 1:
 		$PlayerStatusBar/QuestionNumber.text = "Frage 2/2"
-	current_question += 1
 	var questions
 	for i in range(Animals.animals[continents[animal_continent]].size()):
 		if Animals.animals[continents[animal_continent]][i]["name"] == animal_name:
 			questions = Animals.animals[continents[animal_continent]][i]["questions"]
 	var question_data = questions[randi() % questions.size()]
 	
+	if current_question == 0:
+		while last_question == question_data["question"]:
+			question_data = questions[randi() % questions.size()]
+	
+	last_question = question_data["question"]
 	# Set text on labels
 	$AnimalStatusBar/AnimalName.text = animal_name
 	$QuizBox/QuestionLabel.text = question_data["question"]
@@ -77,7 +82,9 @@ func set_random_question():
 		var label_path = "QuizBox/AnswerGrid/AnswerButton" + str(i+1) + "/AnswerLabel" + str(i+1)
 		if has_node(label_path):
 			get_node(label_path).text = answers[i]
-			
+	
+	current_question += 1
+	
 func _process(delta):
 	if Input.is_action_just_pressed("ui_1"):
 		if $AnswerFeedback.visible == false:

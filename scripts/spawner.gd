@@ -51,7 +51,6 @@ func spawn_animals_at_region(animals, animal_continent, spawns) -> void:
 		var spawn
 		spawn = spawns[i]
 		if spawn.distance_to(player_tile_pos) < min_dist:
-			print("spawn to close: changed spawn")
 			spawn = spawns[-1]
 			
 		

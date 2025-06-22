@@ -1,9 +1,8 @@
-[gd_scene load_steps=87 format=3 uid="uid://biaqn65s1pguc"]
+[gd_scene load_steps=86 format=3 uid="uid://biaqn65s1pguc"]
 
 [ext_resource type="Texture2D" uid="uid://hrtimjs7vwpn" path="res://assets/sprites/sprite_sheets/fox_sheet.png" id="1_rtw2f"]
 [ext_resource type="Texture2D" uid="uid://cd6xmhplh6vbr" path="res://assets/sprites/quiz_ui/bg.png" id="1_tbmy8"]
 [ext_resource type="Script" uid="uid://enkrjgyq8mgo" path="res://scripts/fox_script.gd" id="2_oa1go"]
-[ext_resource type="Script" uid="uid://dota204jo626s" path="res://scripts/camera_2d.gd" id="3_tbmy8"]
 [ext_resource type="Texture2D" uid="uid://bs6l4wlyno6be" path="res://assets/sprites/quiz_ui/info_box_button_hover.png" id="4_5dd4i"]
 [ext_resource type="Script" uid="uid://crp3cw182qqxw" path="res://scripts/main_menu.gd" id="4_jk1qb"]
 [ext_resource type="FontFile" uid="uid://dne4aphor0uht" path="res://assets/fonts/alagard.ttf" id="5_5dd4i"]
@@ -682,7 +681,6 @@ autoplay = "idle"
 script = ExtResource("2_oa1go")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-script = ExtResource("3_tbmy8")
 
 [node name="Fox" type="Node2D" parent="."]
 visible = false

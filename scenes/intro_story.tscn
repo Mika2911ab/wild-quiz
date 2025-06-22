@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://q2de6qkh1cgq"]
+[gd_scene load_steps=21 format=3 uid="uid://q2de6qkh1cgq"]
 
 [ext_resource type="Script" uid="uid://d120i22jnumgp" path="res://scripts/intro_story.gd" id="1_bumqu"]
 [ext_resource type="Texture2D" uid="uid://cd6xmhplh6vbr" path="res://assets/sprites/quiz_ui/bg.png" id="2_cgnwt"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cpdax7jd1fjql" path="res://assets/sprites/quiz_ui/info_box_banner_left.png" id="4_10tom"]
 [ext_resource type="Texture2D" uid="uid://cffwryg4amrtg" path="res://assets/sprites/quiz_ui/info_box_banner_middle.png" id="5_kh7uq"]
 [ext_resource type="Texture2D" uid="uid://cojq1v4iak611" path="res://assets/sprites/quiz_ui/info_box_banner_right.png" id="6_kfay6"]
+[ext_resource type="FontFile" uid="uid://dne4aphor0uht" path="res://assets/fonts/alagard.ttf" id="7_10tom"]
 [ext_resource type="Texture2D" uid="uid://coq2njcw4d7mr" path="res://assets/sprites/quiz_ui/info_box_button_press.png" id="7_whfbt"]
 [ext_resource type="Texture2D" uid="uid://bs6l4wlyno6be" path="res://assets/sprites/quiz_ui/info_box_button_hover.png" id="8_3fxxn"]
 [ext_resource type="Texture2D" uid="uid://dr34f5tvpr4kq" path="res://assets/sprites/keys/enter_key.png" id="9_hg05c"]
@@ -33,11 +34,11 @@ texture = ExtResource("8_3fxxn")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1jpu1"]
 texture = ExtResource("7_whfbt")
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_oa1go"]
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_hg05c"]
 load_path = "res://.godot/imported/info_box_button.png-41b251bf14f3be012fa9619ce9333f49.ctex"
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yu6ak"]
-texture = SubResource("CompressedTexture2D_oa1go")
+texture = SubResource("CompressedTexture2D_hg05c")
 
 [node name="IntroStory" type="Control"]
 layout_mode = 3
@@ -108,6 +109,7 @@ offset_top = -106.0
 offset_right = 512.0
 offset_bottom = 13.0
 theme_override_colors/font_color = Color(1, 0.94902, 0.823529, 1)
+theme_override_fonts/font = ExtResource("7_10tom")
 theme_override_font_sizes/font_size = 40
 text = "🌀 Der große Wissenssturm"
 horizontal_alignment = 1
@@ -120,6 +122,7 @@ offset_top = -139.0
 offset_right = 318.0
 offset_bottom = 156.0
 theme_override_colors/font_color = Color(0.427451, 0.294118, 0.152941, 1)
+theme_override_fonts/font = ExtResource("7_10tom")
 theme_override_font_sizes/font_size = 30
 text = "Lange Zeit lebten Tiere in Harmonie auf der ganzen Welt – im Dschungel, in der Steppe, in den Bergen und Meeren."
 horizontal_alignment = 1
@@ -146,6 +149,7 @@ offset_top = 12.0
 offset_right = 232.0
 offset_bottom = 62.0
 theme_override_colors/font_color = Color(1, 0.94902, 0.823529, 1)
+theme_override_fonts/font = ExtResource("7_10tom")
 theme_override_font_sizes/font_size = 25
 text = "Weiter"
 horizontal_alignment = 1

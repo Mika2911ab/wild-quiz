@@ -1,7 +1,45 @@
-[gd_scene load_steps=3 format=3 uid="uid://qtbyjkaw4fjm"]
+[gd_scene load_steps=22 format=3 uid="uid://qtbyjkaw4fjm"]
 
 [ext_resource type="Script" uid="uid://d1iu4f2pxrffw" path="res://scripts/game_over.gd" id="1_wqhvx"]
 [ext_resource type="FontFile" uid="uid://dne4aphor0uht" path="res://assets/fonts/alagard.ttf" id="2_tbwuq"]
+[ext_resource type="Texture2D" uid="uid://cd6xmhplh6vbr" path="res://assets/sprites/quiz_ui/bg.png" id="3_wawo4"]
+[ext_resource type="Texture2D" uid="uid://06h005hdupsg" path="res://assets/sprites/quiz_ui/info_box_bg.png" id="4_56v3a"]
+[ext_resource type="Texture2D" uid="uid://cpdax7jd1fjql" path="res://assets/sprites/quiz_ui/info_box_banner_left.png" id="5_o57t2"]
+[ext_resource type="Texture2D" uid="uid://cffwryg4amrtg" path="res://assets/sprites/quiz_ui/info_box_banner_middle.png" id="6_uq3qu"]
+[ext_resource type="Texture2D" uid="uid://cojq1v4iak611" path="res://assets/sprites/quiz_ui/info_box_banner_right.png" id="7_0p6qk"]
+[ext_resource type="Texture2D" uid="uid://coq2njcw4d7mr" path="res://assets/sprites/quiz_ui/info_box_button_press.png" id="8_s4bmq"]
+[ext_resource type="Texture2D" uid="uid://bs6l4wlyno6be" path="res://assets/sprites/quiz_ui/info_box_button_hover.png" id="9_r8nfu"]
+[ext_resource type="Texture2D" uid="uid://btsmmqlq3c3d8" path="res://assets/sprites/keys/2_key.png" id="10_56v3a"]
+[ext_resource type="Texture2D" uid="uid://de0vqw416ipoh" path="res://assets/sprites/keys/1_key.png" id="11_o57t2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jlwav"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oye1b"]
+bg_color = Color(0.6, 0.6, 0.6, 0.392157)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u27yo"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qllq4"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_n0gna"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ly8l7"]
+texture = ExtResource("8_s4bmq")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gj05a"]
+texture = ExtResource("9_r8nfu")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tdjww"]
+texture = ExtResource("8_s4bmq")
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_56v3a"]
+load_path = "res://.godot/imported/info_box_button.png-41b251bf14f3be012fa9619ce9333f49.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_w8bol"]
+texture = SubResource("CompressedTexture2D_56v3a")
 
 [node name="GameOver" type="Control"]
 layout_mode = 3
@@ -12,41 +50,151 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_wqhvx")
 
-[node name="Label" type="Label" parent="."]
+[node name="Background" type="Panel" parent="."]
+offset_left = 891.0
+offset_top = 585.0
+offset_right = 931.0
+offset_bottom = 625.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_jlwav")
+
+[node name="Image" type="Sprite2D" parent="Background"]
+position = Vector2(-891, -585)
+scale = Vector2(4, 4)
+texture = ExtResource("3_wawo4")
+
+[node name="GrayOverlay" type="Panel" parent="Background"]
 layout_mode = 0
-offset_left = 204.0
-offset_top = 209.0
-offset_right = 332.0
-offset_bottom = 232.0
-scale = Vector2(7.15665, 7.15665)
-theme_override_colors/font_color = Color(1, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_tbwuq")
-text = "Zeit abgelaufen..."
+offset_left = -1531.0
+offset_top = -945.0
+offset_right = -251.0
+offset_bottom = -225.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_oye1b")
 
-[node name="Quit" type="Button" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.258
-anchor_top = 0.676
-anchor_right = 0.258
-anchor_bottom = 0.676
-offset_left = 476.76
-offset_top = -46.72
-offset_right = 515.76
-offset_bottom = -23.72
-scale = Vector2(8.02567, 8.02567)
-theme_override_fonts/font = ExtResource("2_tbwuq")
-text = "Quit"
+[node name="Story" type="Panel" parent="."]
+offset_left = 4.0
+offset_top = 20.0
+offset_right = 633.0
+offset_bottom = 116.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_u27yo")
 
-[node name="Start Again" type="Button" parent="."]
+[node name="Background" type="Sprite2D" parent="Story"]
+position = Vector2(-4, -20)
+scale = Vector2(3, 3)
+texture = ExtResource("4_56v3a")
+
+[node name="Banner" type="Panel" parent="Story"]
 layout_mode = 0
-offset_left = 190.0
-offset_top = 446.0
-offset_right = 251.0
-offset_bottom = 469.0
-scale = Vector2(7.25019, 7.25019)
-theme_override_fonts/font = ExtResource("2_tbwuq")
-text = "Restart"
+offset_left = -222.0
+offset_top = -215.0
+offset_right = 238.0
+offset_bottom = -55.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_qllq4")
 
-[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
-[connection signal="pressed" from="Start Again" to="." method="_on_start_again_pressed"]
+[node name="BannerLeft" type="Sprite2D" parent="Story/Banner"]
+position = Vector2(-6, -36)
+scale = Vector2(7, 7)
+texture = ExtResource("5_o57t2")
+
+[node name="BannerMiddle" type="Sprite2D" parent="Story/Banner"]
+position = Vector2(218, -43)
+scale = Vector2(7, 7)
+texture = ExtResource("6_uq3qu")
+
+[node name="BannerRight" type="Sprite2D" parent="Story/Banner"]
+position = Vector2(442, -36)
+scale = Vector2(7, 7)
+texture = ExtResource("7_0p6qk")
+
+[node name="StoryTitle" type="Label" parent="Story/Banner"]
+layout_mode = 0
+offset_left = -76.0
+offset_top = -106.0
+offset_right = 512.0
+offset_bottom = 13.0
+theme_override_colors/font_color = Color(1, 0.94902, 0.823529, 1)
+theme_override_fonts/font = ExtResource("2_tbwuq")
+theme_override_font_sizes/font_size = 40
+text = "Zeit abgelaufen!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StoryText" type="Label" parent="Story"]
+layout_mode = 0
+offset_left = -326.0
+offset_top = -139.0
+offset_right = 318.0
+offset_bottom = 156.0
+theme_override_colors/font_color = Color(0.427451, 0.294118, 0.152941, 1)
+theme_override_fonts/font = ExtResource("2_tbwuq")
+theme_override_font_sizes/font_size = 30
+text = "Leider hast du es nicht geschaft, alle Tiere im Lexikon zu registrieren, bevor deren Wissen entgültig verloren geht. Du konntest 30 von 35 Tieren registrieren. Viel Glück beim nächsten mal!"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+clip_text = true
+
+[node name="Restart" type="Button" parent="Story"]
+layout_mode = 0
+offset_left = -326.0
+offset_top = 156.0
+offset_right = -82.0
+offset_bottom = 230.0
+theme_override_styles/focus = SubResource("StyleBoxTexture_n0gna")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_ly8l7")
+theme_override_styles/hover = SubResource("StyleBoxTexture_gj05a")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_tdjww")
+theme_override_styles/normal = SubResource("StyleBoxTexture_w8bol")
+
+[node name="ButtonText" type="Label" parent="Story/Restart"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 12.0
+offset_right = 232.0
+offset_bottom = 62.0
+theme_override_colors/font_color = Color(1, 0.94902, 0.823529, 1)
+theme_override_fonts/font = ExtResource("2_tbwuq")
+theme_override_font_sizes/font_size = 25
+text = "Nochmal"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="Story/Restart"]
+position = Vector2(122, 71)
+scale = Vector2(2, 2)
+texture = ExtResource("11_o57t2")
+
+[node name="Quit" type="Button" parent="Story"]
+offset_left = 74.0
+offset_top = 156.0
+offset_right = 318.0
+offset_bottom = 230.0
+theme_override_styles/focus = SubResource("StyleBoxTexture_n0gna")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_ly8l7")
+theme_override_styles/hover = SubResource("StyleBoxTexture_gj05a")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_tdjww")
+theme_override_styles/normal = SubResource("StyleBoxTexture_w8bol")
+
+[node name="ButtonText" type="Label" parent="Story/Quit"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 12.0
+offset_right = 232.0
+offset_bottom = 62.0
+theme_override_colors/font_color = Color(1, 0.94902, 0.823529, 1)
+theme_override_fonts/font = ExtResource("2_tbwuq")
+theme_override_font_sizes/font_size = 25
+text = "Beenden"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="Story/Quit"]
+position = Vector2(122, 71)
+scale = Vector2(2, 2)
+texture = ExtResource("10_56v3a")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, -6.10352e-05)
+scale = Vector2(5.00669, 4.88847)
+
+[connection signal="pressed" from="Story/Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="Story/Quit" to="." method="_on_quit_pressed"]

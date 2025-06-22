@@ -115,6 +115,7 @@ position = Vector2(61.5, 35.5)
 texture = ExtResource("7_loegw")
 
 [node name="DifficultLabel" type="Label" parent="."]
+layout_mode = 0
 offset_left = 68.0
 offset_top = -90.0
 offset_right = 376.0

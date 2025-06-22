@@ -1,4 +1,4 @@
-[gd_scene load_steps=69 format=3 uid="uid://cg1o35hgs01lw"]
+[gd_scene load_steps=70 format=3 uid="uid://cg1o35hgs01lw"]
 
 [ext_resource type="Script" uid="uid://gesb2njds2yb" path="res://scripts/quiz.gd" id="1_16nxq"]
 [ext_resource type="Texture2D" uid="uid://cd6xmhplh6vbr" path="res://assets/sprites/quiz_ui/bg.png" id="1_euwqo"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bmnlu4cs3s2rs" path="res://assets/sprites/knight.png" id="3_w5ac1"]
 [ext_resource type="Texture2D" uid="uid://b50qc8shvu6lm" path="res://assets/sprites/quiz_ui/lexicon_grey.png" id="4_ahqvi"]
 [ext_resource type="Texture2D" uid="uid://x230edb2cy6o" path="res://assets/sprites/quiz_ui/earth.png" id="5_4qkfh"]
+[ext_resource type="FontFile" uid="uid://dne4aphor0uht" path="res://assets/fonts/alagard.ttf" id="5_nyefh"]
 [ext_resource type="Texture2D" uid="uid://78e4mfbsejub" path="res://assets/sprites/quiz_ui/animal_status_bg.png" id="5_xq7j8"]
 [ext_resource type="Texture2D" uid="uid://cbrot3y6row5l" path="res://assets/sprites/quiz_ui/dna.png" id="6_5da4r"]
 [ext_resource type="Texture2D" uid="uid://b3tofanynydj5" path="res://assets/sprites/quiz_ui/character_status_bg.png" id="6_bn6h1"]
@@ -247,6 +248,7 @@ offset_top = -321.0
 offset_right = -227.0
 offset_bottom = -279.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_nyefh")
 theme_override_font_sizes/font_size = 30
 text = "Wolf"
 autowrap_mode = 2
@@ -264,6 +266,7 @@ offset_top = -251.0
 offset_right = -393.0
 offset_bottom = -223.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_nyefh")
 theme_override_font_sizes/font_size = 20
 text = "Europa"
 
@@ -279,6 +282,7 @@ offset_top = -251.0
 offset_right = -270.0
 offset_bottom = -223.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_nyefh")
 theme_override_font_sizes/font_size = 20
 text = "Raubtier"
 
@@ -322,6 +326,7 @@ offset_top = -91.0
 offset_right = 636.0
 offset_bottom = -49.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_nyefh")
 theme_override_font_sizes/font_size = 30
 text = "Player"
 autowrap_mode = 2
@@ -334,6 +339,7 @@ offset_top = -28.0
 offset_right = 486.0
 offset_bottom = 14.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_nyefh")
 theme_override_font_sizes/font_size = 30
 text = "Frage 1/2"
 horizontal_alignment = 1
@@ -376,6 +382,7 @@ offset_top = 25.0
 offset_right = 528.0
 offset_bottom = 295.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_nyefh")
 theme_override_font_sizes/font_size = 30
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -410,7 +417,8 @@ offset_bottom = 145.0
 theme_override_colors/font_color = Color(0.968627, 0.968627, 0.968627, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
-theme_override_font_sizes/font_size = 30
+theme_override_fonts/font = ExtResource("5_nyefh")
+theme_override_font_sizes/font_size = 25
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
@@ -439,7 +447,8 @@ offset_bottom = 145.0
 theme_override_colors/font_color = Color(0.968627, 0.968627, 0.968627, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
-theme_override_font_sizes/font_size = 30
+theme_override_fonts/font = ExtResource("5_nyefh")
+theme_override_font_sizes/font_size = 25
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
@@ -468,7 +477,8 @@ offset_bottom = 141.0
 theme_override_colors/font_color = Color(0.968627, 0.968627, 0.968627, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
-theme_override_font_sizes/font_size = 30
+theme_override_fonts/font = ExtResource("5_nyefh")
+theme_override_font_sizes/font_size = 25
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
@@ -497,7 +507,8 @@ offset_bottom = 143.0
 theme_override_colors/font_color = Color(0.968627, 0.968627, 0.968627, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
-theme_override_font_sizes/font_size = 30
+theme_override_fonts/font = ExtResource("5_nyefh")
+theme_override_font_sizes/font_size = 25
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
@@ -557,6 +568,7 @@ offset_top = -185.0
 offset_right = 190.0
 offset_bottom = -100.0
 theme_override_colors/font_color = Color(1, 0.94902, 0.823529, 1)
+theme_override_fonts/font = ExtResource("5_nyefh")
 theme_override_font_sizes/font_size = 40
 text = "Falsch!"
 horizontal_alignment = 1
@@ -569,6 +581,7 @@ offset_top = -55.0
 offset_right = 290.0
 offset_bottom = 106.0
 theme_override_colors/font_color = Color(0.427451, 0.294118, 0.152941, 1)
+theme_override_fonts/font = ExtResource("5_nyefh")
 theme_override_font_sizes/font_size = 30
 text = "Die richtige Antwort ist: ..."
 horizontal_alignment = 1
@@ -600,6 +613,7 @@ offset_top = 118.0
 offset_right = 110.0
 offset_bottom = 168.0
 theme_override_colors/font_color = Color(1, 0.94902, 0.823529, 1)
+theme_override_fonts/font = ExtResource("5_nyefh")
 theme_override_font_sizes/font_size = 25
 text = "Nächste Frage"
 horizontal_alignment = 1
