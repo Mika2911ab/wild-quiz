@@ -40,12 +40,21 @@ func _ready():
 func spawn_animals_at_region(animals, animal_continent, spawns) -> void:
 	spawns.shuffle()
 	
+	var player_world_pos = GlobalVariables.character_coordinates
+	var player_tile_pos = tile_map.local_to_map(player_world_pos)
+
+	var min_dist = 2
+	
 	for i in range(animals.size()):
 		var animal_name = animals[i]["name"]
 		var animal_species = animals[i]["type"]
 		var spawn
-		# TODO: Change spawn point of animal if the character is standing here (Saved in GlobalVariables.character_coordinates)
 		spawn = spawns[i]
+		if spawn.distance_to(player_tile_pos) < min_dist:
+			print("spawn to close: changed spawn")
+			spawn = spawns[-1]
+			
+		
 		spawn_animal_at_tile(spawn, animal_name, animal_continent, animal_species)
 
 func spawn_animal_at_tile(tile_coords: Vector2i, animal_name: String, animal_continent: String, animal_species: String) -> void:
