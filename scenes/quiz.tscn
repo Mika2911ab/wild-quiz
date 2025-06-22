@@ -1,4 +1,4 @@
-[gd_scene load_steps=73 format=3 uid="uid://cg1o35hgs01lw"]
+[gd_scene load_steps=69 format=3 uid="uid://cg1o35hgs01lw"]
 
 [ext_resource type="Script" uid="uid://gesb2njds2yb" path="res://scripts/quiz.gd" id="1_16nxq"]
 [ext_resource type="Texture2D" uid="uid://cd6xmhplh6vbr" path="res://assets/sprites/quiz_ui/bg.png" id="1_euwqo"]
@@ -23,11 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://cgfoncg8rpsfa" path="res://assets/sprites/keys/4_key.png" id="18_en5co"]
 [ext_resource type="Texture2D" uid="uid://cpdax7jd1fjql" path="res://assets/sprites/quiz_ui/info_box_banner_left.png" id="18_fpy57"]
 [ext_resource type="Texture2D" uid="uid://cffwryg4amrtg" path="res://assets/sprites/quiz_ui/info_box_banner_middle.png" id="19_fiaka"]
-[ext_resource type="AudioStream" uid="uid://b45pyfuf0ocdf" path="res://assets/sounds/Sunlight Through Leaves.wav" id="19_wsttk"]
 [ext_resource type="Texture2D" uid="uid://cojq1v4iak611" path="res://assets/sprites/quiz_ui/info_box_banner_right.png" id="20_4l17v"]
-[ext_resource type="AudioStream" uid="uid://vrap4usofsp0" path="res://assets/sounds/correct_sound_effect.mp3" id="20_fpy57"]
-[ext_resource type="AudioStream" uid="uid://dh33pc4tn2hnk" path="res://assets/sounds/wrong_sound_effect.mp3" id="21_fiaka"]
-[ext_resource type="AudioStream" uid="uid://c1mlc7dkwqldq" path="res://assets/sounds/congrats_sound.mp3" id="22_fiaka"]
 [ext_resource type="Texture2D" uid="uid://dr34f5tvpr4kq" path="res://assets/sprites/keys/enter_key.png" id="25_xojrb"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_16nxq"]
@@ -331,6 +327,18 @@ text = "Player"
 autowrap_mode = 2
 clip_text = true
 
+[node name="QuestionNumber" type="Label" parent="PlayerStatusBar"]
+layout_mode = 0
+offset_left = 352.0
+offset_top = -28.0
+offset_right = 486.0
+offset_bottom = 14.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "Frage 1/2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Player" type="Panel" parent="."]
 offset_right = 40.0
 offset_bottom = 40.0
@@ -598,20 +606,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Camera2D" type="Camera2D" parent="."]
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("19_wsttk")
-autoplay = true
-
-[node name="correct_sound" type="AudioStreamPlayer" parent="."]
-unique_name_in_owner = true
-stream = ExtResource("20_fpy57")
-
-[node name="wrong_sound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("21_fiaka")
-
-[node name="congrats_sound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("22_fiaka")
 
 [connection signal="pressed" from="QuizBox/AnswerGrid/AnswerButton1" to="." method="_on_answer_button_1_pressed"]
 [connection signal="pressed" from="QuizBox/AnswerGrid/AnswerButton2" to="." method="_on_answer_button_2_pressed"]

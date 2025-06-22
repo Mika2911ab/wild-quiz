@@ -10,13 +10,16 @@ func _process(delta):
 		set_story()
 		
 func set_story():
-	if counter == 4: 
+	SoundController.play_click()
+	if counter == 5:
 		SceneSwitcher.switch_scene("res://scenes/game.tscn")
 		GlobalTimer.reset_timer()
 		GlobalTimer.start_timer()
-	if counter == 3: 
-		$Story/StoryText.text = "⏳ Du hast 10 Minuten, um Tiere zu entdecken und ihr Wissen zu retten."
+	if counter == 4: 
+		$Story/StoryText.text = "Laufe über die 7 Kontinente, finde Tiere und beantworte ihre Quizfragen richtig, um sie im Lexikon zu registrieren."
 		$Story/Button/ButtonText.text = "Los!"
+	if counter == 3: 
+		$Story/StoryText.text = "⏳ Du hast 10 Minuten, um ale 35 Tiere zu entdecken und ihr Wissen zu retten."
 	if counter == 2: 
 		$Story/StoryText.text = "Jetzt liegt es an dir: Ein neues, magisches Lexikon ist aufgetaucht – und DU bist die einzige Hoffnung!"
 	if counter == 1: 

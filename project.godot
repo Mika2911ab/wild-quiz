@@ -20,6 +20,7 @@ SceneSwitcher="*res://scripts/scene_switcher.gd"
 GlobalTimer="*res://scenes/timer.tscn"
 GlobalVariables="*res://scripts/global_variables.gd"
 Animals="*res://scripts/animals.gd"
+SoundController="*res://scripts/sound_controller.gd"
 
 [display]
 

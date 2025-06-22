@@ -35,6 +35,7 @@ func set_animal(name: String, continent: String, species: String):
 	right_answers  = 0
 	if GlobalVariables.difficulty == "difficult":
 		number_of_questions = 1
+		$PlayerStatusBar/QuestionNumber.text = "Frage 1/1"
 	
 	$Animal/Animal_Test.set_animal(name, continent, species)
 	
@@ -48,6 +49,8 @@ func set_animal(name: String, continent: String, species: String):
 	set_random_question()
 	
 func set_random_question():	
+	if current_question == 1:
+		$PlayerStatusBar/QuestionNumber.text = "Frage 2/2"
 	current_question += 1
 	var questions
 	for i in range(Animals.animals[continents[animal_continent]].size()):
@@ -109,38 +112,38 @@ func _on_answer_button_4_pressed() -> void:
 		
 func execute_button1(): 
 	if $QuizBox/AnswerGrid/AnswerButton1/AnswerLabel1.text == correct_answer:
-		correct_sound.play()
+		SoundController.play_correct()
 		right_answers += 1
 		give_answer_feedback(true)
 	else:
-		wrong_sound.play()
+		SoundController.play_wrong()
 		give_answer_feedback(false)
 		
 func execute_button2(): 
 	if $QuizBox/AnswerGrid/AnswerButton2/AnswerLabel2.text == correct_answer:
-		correct_sound.play()
+		SoundController.play_correct()
 		right_answers += 1
 		give_answer_feedback(true)
 	else:
-		wrong_sound.play()
+		SoundController.play_wrong()
 		give_answer_feedback(false)
 	
 func execute_button3(): 
 	if $QuizBox/AnswerGrid/AnswerButton3/AnswerLabel3.text == correct_answer:
-		correct_sound.play()
+		SoundController.play_correct()
 		right_answers += 1
 		give_answer_feedback(true)
 	else:
-		wrong_sound.play()
+		SoundController.play_wrong()
 		give_answer_feedback(false)
 	
 func execute_button4(): 
 	if $QuizBox/AnswerGrid/AnswerButton4/AnswerLabel4.text == correct_answer:
-		correct_sound.play()
+		SoundController.play_correct()
 		right_answers += 1
 		give_answer_feedback(true)
 	else:
-		wrong_sound.play()
+		SoundController.play_wrong()
 		give_answer_feedback(false)
 		
 func give_answer_feedback(is_answer_correct: bool):
@@ -165,6 +168,7 @@ func _on_answer_feedback_button_pressed() -> void:
 
 func execute_feedback_button():
 	if $AnswerFeedback/AnswerFeedbackButtonText.text == "Weiter":
+		SoundController.play_click()
 		$GrayOverlay.visible = false
 		$AnswerFeedback.visible = false
 		if right_answers >= right_answers_needed:
@@ -181,18 +185,19 @@ func execute_feedback_button():
 			SceneSwitcher.switch_scene("res://scenes/game.tscn")
 	if $AnswerFeedback/AnswerFeedbackButtonText.text == "Quiz Beenden":
 		if right_answers >= right_answers_needed:
-			congrats_sound.play()
+			SoundController.play_congrats()
 			$AnswerFeedback/RightWrongText.text = "Glückwunsch!"
 			if already_discovered == true:
 				$AnswerFeedback/FeedbackText.text = "Du hast das Quiz bestanden, aber das Tier wurde bereits registriert!"
 			else:
 				$AnswerFeedback/FeedbackText.text = "Du hast das Quiz bestanden und ein neues Tier wird registriert!"
 		else:
-			wrong_sound.play()
+			SoundController.play_wrong()
 			$AnswerFeedback/RightWrongText.text = "Schade!"
 			$AnswerFeedback/FeedbackText.text = "Du hast das Quiz nicht bestanden. Viel Glück beim nächsten mal."
 		$AnswerFeedback/AnswerFeedbackButtonText.text = "Weiter"
 	else: 
+		SoundController.play_click()
 		set_random_question()
 		$GrayOverlay.visible = false
 		$AnswerFeedback.visible = false

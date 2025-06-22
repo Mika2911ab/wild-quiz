@@ -13,9 +13,11 @@ func _on_difficult_pressed() -> void:
 	difficult()
 
 func easy():
+	SoundController.play_click()
 	GlobalVariables.difficulty = "easy"
 	SceneSwitcher.switch_scene("res://scenes/intro_story.tscn")
 	
 func difficult():
+	SoundController.play_click()
 	GlobalVariables.difficulty = "difficult"
 	SceneSwitcher.switch_scene("res://scenes/intro_story.tscn")

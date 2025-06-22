@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://dbo4ired1kh8r"]
+[gd_scene load_steps=26 format=3 uid="uid://dbo4ired1kh8r"]
 
 [ext_resource type="Script" uid="uid://f8qlcesk8cpc" path="res://scripts/game.gd" id="1_gee14"]
 [ext_resource type="PackedScene" uid="uid://mcsc0eqqqpno" path="res://scenes/player.tscn" id="1_uwrxv"]
@@ -8,7 +8,6 @@
 [ext_resource type="FontFile" uid="uid://dne4aphor0uht" path="res://assets/fonts/alagard.ttf" id="6_0tnpc"]
 [ext_resource type="Texture2D" uid="uid://8ufc2nic5e52" path="res://assets/sprites/quiz_ui/lexicon_press.png" id="6_kvpfn"]
 [ext_resource type="Script" uid="uid://xpn0ixc4pmix" path="res://scripts/spawner.gd" id="6_p57ef"]
-[ext_resource type="AudioStream" uid="uid://8ikc7qgrrbkj" path="res://assets/sounds/Forgotten Biomes.wav" id="6_u5sy4"]
 [ext_resource type="Texture2D" uid="uid://b63h0i4fyeexi" path="res://assets/sprites/quiz_ui/lexicon_hover.png" id="7_dinhu"]
 [ext_resource type="Texture2D" uid="uid://bb61eyf750fk3" path="res://assets/sprites/quiz_ui/lexicon.png" id="7_u5sy4"]
 [ext_resource type="Texture2D" uid="uid://ch11yvuuxefoa" path="res://assets/sprites/keys/l_key.png" id="9_dinhu"]
@@ -479,9 +478,5 @@ texture = SubResource("CompressedTexture2D_gee14")
 
 [node name="spawner" type="Node2D" parent="."]
 script = ExtResource("6_p57ef")
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("6_u5sy4")
-autoplay = true
 
 [connection signal="pressed" from="UI/Button" to="." method="_on_button_pressed"]

@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://cl7l7tsvqxsfx"]
+
+[ext_resource type="AudioStream" uid="uid://cjfcgwnpcd6hl" path="res://assets/sounds/Evening Harmony.wav" id="1_ii1ul"]
+
+[node name="Sound" type="Node2D"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_ii1ul")
+autoplay = true

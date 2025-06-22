@@ -31,6 +31,7 @@ func _process(delta):
 		open_lexicon()
 
 func open_lexicon():
+	SoundController.play_click()
 	GlobalTimer.stop_timer()
 	GlobalVariables.character_coordinates = $Player.position
 	SceneSwitcher.switch_scene("res://scenes/lexicon.tscn", "lexicon")

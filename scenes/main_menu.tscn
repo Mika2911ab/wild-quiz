@@ -1,4 +1,4 @@
-[gd_scene load_steps=88 format=3 uid="uid://biaqn65s1pguc"]
+[gd_scene load_steps=87 format=3 uid="uid://biaqn65s1pguc"]
 
 [ext_resource type="Texture2D" uid="uid://hrtimjs7vwpn" path="res://assets/sprites/sprite_sheets/fox_sheet.png" id="1_rtw2f"]
 [ext_resource type="Texture2D" uid="uid://cd6xmhplh6vbr" path="res://assets/sprites/quiz_ui/bg.png" id="1_tbmy8"]
@@ -8,7 +8,6 @@
 [ext_resource type="Script" uid="uid://crp3cw182qqxw" path="res://scripts/main_menu.gd" id="4_jk1qb"]
 [ext_resource type="FontFile" uid="uid://dne4aphor0uht" path="res://assets/fonts/alagard.ttf" id="5_5dd4i"]
 [ext_resource type="Texture2D" uid="uid://coq2njcw4d7mr" path="res://assets/sprites/quiz_ui/info_box_button_press.png" id="5_lgwnu"]
-[ext_resource type="AudioStream" uid="uid://cjfcgwnpcd6hl" path="res://assets/sounds/Evening Harmony.wav" id="6_lgwnu"]
 [ext_resource type="Texture2D" uid="uid://e5e1t73prj8g" path="res://assets/sprites/quiz_ui/info_box_button.png" id="6_oa1go"]
 [ext_resource type="Texture2D" uid="uid://de0vqw416ipoh" path="res://assets/sprites/keys/1_key.png" id="7_rcqid"]
 [ext_resource type="Texture2D" uid="uid://btsmmqlq3c3d8" path="res://assets/sprites/keys/2_key.png" id="8_1ajci"]
@@ -687,10 +686,6 @@ script = ExtResource("3_tbmy8")
 
 [node name="Fox" type="Node2D" parent="."]
 visible = false
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("6_lgwnu")
-autoplay = true
 
 [connection signal="pressed" from="UI/Buttons/StartGame" to="." method="_on_start_game_pressed"]
 [connection signal="pressed" from="UI/Buttons/Settings" to="." method="_on_settings_pressed"]

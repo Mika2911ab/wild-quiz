@@ -29,6 +29,7 @@ func set_animal(name: String, continent: String, species: String):
 		
 
 func _on_next_pressed() -> void:
+	SoundController.play_click()
 	GlobalTimer.start_timer()
 	SceneSwitcher.switch_scene("res://scenes/game.tscn")
 
@@ -121,6 +122,7 @@ func set_page(animal):
 		
 func _process(delta):
 	if Input.is_action_just_pressed("ui_accept"):
+		SoundController.play_click()
 		GlobalTimer.start_timer()
 		SceneSwitcher.switch_scene("res://scenes/game.tscn")
 	if Input.is_action_just_pressed("ui_right"):
@@ -131,6 +133,7 @@ func _process(delta):
 			execute_left()
 		
 func execute_left():
+	SoundController.play_click()
 	GlobalVariables.lexicon_page -= 1
 	if GlobalVariables.lexicon_page == 1:
 		$ArrowLeft.visible = false
@@ -139,6 +142,7 @@ func execute_left():
 	get_animal()
 	
 func execute_right():
+	SoundController.play_click()
 	GlobalVariables.lexicon_page += 1
 	if GlobalVariables.lexicon_page == 35:
 		$ArrowRight.visible = false

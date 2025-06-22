@@ -40,7 +40,6 @@ func set_state(state: String):
 			randf_range(-walk_radius, walk_radius),
 			randf_range(-walk_radius, walk_radius)
 		)
-		print("New target:", target_position)
 
 func move_towards_target(delta):
 	global_position += (target_position - global_position).normalized() * walk_speed * delta

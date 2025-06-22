@@ -70,6 +70,19 @@ offset_right = 640.0
 offset_bottom = 360.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_lbwsi")
 
+[node name="EasyLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = -401.0
+offset_top = -90.0
+offset_right = -43.0
+offset_bottom = -52.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_fonts/font = ExtResource("2_hyel3")
+theme_override_font_sizes/font_size = 40
+text = "2 Chancen pro Quiz"
+
 [node name="Easy" type="Button" parent="."]
 layout_mode = 0
 offset_left = -344.0
@@ -100,6 +113,18 @@ vertical_alignment = 1
 [node name="Sprite2D" type="Sprite2D" parent="Easy"]
 position = Vector2(61.5, 35.5)
 texture = ExtResource("7_loegw")
+
+[node name="DifficultLabel" type="Label" parent="."]
+offset_left = 68.0
+offset_top = -90.0
+offset_right = 376.0
+offset_bottom = -52.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_fonts/font = ExtResource("2_hyel3")
+theme_override_font_sizes/font_size = 40
+text = "1 Chane pro Quiz"
 
 [node name="Difficult" type="Button" parent="."]
 layout_mode = 0

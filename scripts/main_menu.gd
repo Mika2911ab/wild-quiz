@@ -18,10 +18,13 @@ func _on_quit_pressed():
 	quit()
 
 func start():
+	SoundController.play_click()
 	SceneSwitcher.switch_scene("res://scenes/set_difficulty.tscn")
 	
 func settings():
+	SoundController.play_click()
 	print("Go into settings")
 	
 func quit():
+	SoundController.play_click()
 	get_tree().quit()
