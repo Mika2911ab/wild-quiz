@@ -39,6 +39,7 @@ theme_override_fonts/font = ExtResource("1_ix7v3")
 text = "Quit"
 
 [node name="Start Again" type="Button" parent="."]
+layout_mode = 0
 offset_left = 190.0
 offset_top = 446.0
 offset_right = 251.0

@@ -43,7 +43,7 @@ func spawn_animals_at_region(animals, animal_continent, spawns) -> void:
 	var player_world_pos = GlobalVariables.character_coordinates
 	var player_tile_pos = tile_map.local_to_map(player_world_pos)
 
-	var min_dist = 2
+	var min_dist = 3
 	
 	for i in range(animals.size()):
 		var animal_name = animals[i]["name"]
