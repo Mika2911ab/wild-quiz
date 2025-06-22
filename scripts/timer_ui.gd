@@ -15,7 +15,7 @@ func _process(delta: float) -> void:
 	if running:
 		time_passed += delta
 		_update_label()
-	if timer_label.text == "00:02" and not hit_time_once:
+	if timer_label.text == "10:00" and not hit_time_once:
 		hit_time_once = true
 		print("Zeit um")
 		SceneSwitcher.switch_scene("res://scenes/game_over.tscn")
